@@ -9,6 +9,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Is There Such a Thing as &quot;The Perfect Wallet?&quot;" />
   <meta property="og:description" content="Open silicon, open secure element, open software, open company. Auditable trust from chip to company." />
+  <meta property="og:image" content="https://illithics.github.io/the-device-layer-website/assets/heroes/ed8.webp" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -59,7 +60,7 @@
           <span class="topic-chip">Device Architecture</span>
           <span>Edition 8</span>
           <time datetime="2026-08-02">August 2, 2026</time>
-          <span>5 min read</span>
+          <span>4 min read</span>
           <span>by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a></span>
         </p>
         <h1>Is There Such a Thing as &ldquo;The Perfect Wallet?&rdquo;</h1>
@@ -71,6 +72,10 @@
           open company.
         </div>
       </header>
+
+      <figure class="hero-figure">
+        <img src="../assets/heroes/ed8.webp" alt="A red laser beam striking a mound of sand, melting its peak into glowing molten glass against a black background." width="1600" height="640" />
+      </figure>
 
       <p>
         If I were asked to build the perfect wallet today I would look at three specific
@@ -147,67 +152,10 @@
         If you put effort into demonstrating where your trust is derived, I'm back on board
         and listening.
       </p>
-      <p>
-        I find myself discussing more than the &ldquo;perfect wallet&rdquo; in design, and that's because
-        the question that becomes the most important at the end of the day is <em>who do you
-        trust</em>. A lot of technical and engineering capacity is going into making that less
-        and less of a technical question and more a psychological one. What the ColdCard
-        incident showed us is the same story we've witnessed again and again in the
-        cryptosphere — you can get wrecked. It won't be your fault. It will be systemic. I
-        have nothing but sympathy for the folks that had their assets on a great product with
-        a fatal flaw. A flaw that was behind their open source code and discoverable through
-        its whole product cycle. In the end it was no different to the user than someone who
-        got wrecked by Mt.&nbsp;Gox or FTX. They got drained. This time it was because of the
-        lack of people checking the homework. What changed is we can actually participate
-        now, and that's an improvement categorically.
-      </p>
-
-      <h2 id="component-notes">Appendix: the component ledger</h2>
-      <p>Working notes on each layer of the hypothetical build, as shipped with this edition:</p>
-      <ul>
-        <li>
-          <strong>Secure MCU — baochip.</strong> You can scan the actual silicon connections.
-          Every part is auditable. In a near-future scenario, you would 3D-print your own
-          processor sufficient for the wallet.
-        </li>
-        <li>
-          <strong>Secure element — TROPIC.</strong> Prevents physical attacks with the same
-          level of quality as secure elements like the ST33. Fully auditable, open-source
-          tech. Even Ledger's Donjon hit it and it held up.
-        </li>
-        <li>
-          <strong>Open-source firmware.</strong> No more walled gardens. You have to have your
-          code out there, and it needs to be hit by attacks constantly and constantly
-          protected. Updates that explain themselves in more and more human terms — no one
-          reads, and we have to meet the user where they are.
-        </li>
-        <li>
-          <strong>Open-source software.</strong> If you are a legit company offering services
-          to customers, they get to see your bones now. This is big-data land; we've had
-          every bit tracked by our SaaS providers and screens for long enough. You win by
-          iteration and brand trust — trust cannot be quantified by innovation alone.
-        </li>
-        <li>
-          <strong>Open-source mission.</strong> The company's history tracked and audited:
-          which manufacturers it works with, what it has done about past problems, its
-          security record and an honest assessment of how it's addressed. The only way to
-          hold it in place is a radically free market where success is maintained by
-          delivering on what you actually promise.
-        </li>
-      </ul>
-      <p>
-        On governance: DAOs were, or are, promising — but the technical hurdle to
-        participation leads to security implications, and they can find themselves captured
-        by minority interests not serving the mission. The gig economy looks downright
-        criminal when huge-cap companies pay pennies to laborers who can be mistreated as a
-        rule, but for things like bug-bounty programs and consulting, we find a sweeter spot:
-        pulling expertise in at market rate to provide services when needed, and not more.
-      </p>
-
       <aside class="disclosure-note">
         <strong>Disclosure:</strong> the author is COO of KeepKey, an open-source hardware-wallet
         company; the "radically open" model argued for here aligns with the author's commercial
-        position, and vendors named (Ledger, ST, Infineon, Microchip, TROPIC, Coinkite/ColdCard)
+        position, and vendors named (Ledger, ST, Infineon, Microchip, TROPIC)
         include competitors and potential suppliers. See the
         <a href="../about.html#affiliations">affiliation policy</a>.
       </aside>
@@ -218,14 +166,12 @@
           <h3>Claims checked</h3>
           <ul>
             <li>This year's DEF CON badge features the bunnie/baochip inspectable-silicon project.</li>
-            <li>TROPIC's secure element has undergone published external security testing, including by Ledger's Donjon team, and weaknesses found were disclosed openly.</li>
-            <li>The ColdCard incident: a flaw present in open-source code, discoverable across the product cycle, drained user assets.</li>
+            <li>TROPIC's secure element has undergone published external security testing, and weaknesses found were disclosed openly.</li>
           </ul>
           <h3>Primary sources</h3>
           <ul>
-            <li>bunnie/baochip project documentation and DEF CON badge coverage (archive links being added).</li>
-            <li>Ledger Donjon's published evaluation of the TROPIC secure element (archive link being added).</li>
-            <li>ColdCard incident disclosure and post-mortem coverage (archive link being added).</li>
+            <li><a href="https://www.wired.com/story/defcon-34-badge-baochip-andrew-bunnie-huang/" rel="noopener">WIRED — the bunnie/baochip DEF CON badge project</a>.</li>
+            <li>Published external testing of the TROPIC secure element (archive link being added).</li>
           </ul>
           <h3>Commercial interests</h3>
           <ul>

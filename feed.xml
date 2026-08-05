@@ -13,7 +13,11 @@
       <guid>https://illithics.github.io/the-device-layer-website/posts/is-there-such-a-thing-as-the-perfect-wallet.html</guid>
       <pubDate>Sun, 02 Aug 2026 12:00:00 +0000</pubDate>
       <description>No. But try, fail, and try again.</description>
-      <content:encoded><![CDATA[<p>
+      <content:encoded><![CDATA[<figure class="hero-figure">
+        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed8.webp" alt="A red laser beam striking a mound of sand, melting its peak into glowing molten glass against a black background." width="1600" height="640" />
+      </figure>
+
+      <p>
         If I were asked to build the perfect wallet today I would look at three specific
         things. What is it built out of: chips, elements, materials. How is it programmed:
         the firmware and the software. Finally, who built it, how do they behave, and what is
@@ -88,67 +92,10 @@
         If you put effort into demonstrating where your trust is derived, I'm back on board
         and listening.
       </p>
-      <p>
-        I find myself discussing more than the &ldquo;perfect wallet&rdquo; in design, and that's because
-        the question that becomes the most important at the end of the day is <em>who do you
-        trust</em>. A lot of technical and engineering capacity is going into making that less
-        and less of a technical question and more a psychological one. What the ColdCard
-        incident showed us is the same story we've witnessed again and again in the
-        cryptosphere — you can get wrecked. It won't be your fault. It will be systemic. I
-        have nothing but sympathy for the folks that had their assets on a great product with
-        a fatal flaw. A flaw that was behind their open source code and discoverable through
-        its whole product cycle. In the end it was no different to the user than someone who
-        got wrecked by Mt.&nbsp;Gox or FTX. They got drained. This time it was because of the
-        lack of people checking the homework. What changed is we can actually participate
-        now, and that's an improvement categorically.
-      </p>
-
-      <h2 id="component-notes">Appendix: the component ledger</h2>
-      <p>Working notes on each layer of the hypothetical build, as shipped with this edition:</p>
-      <ul>
-        <li>
-          <strong>Secure MCU — baochip.</strong> You can scan the actual silicon connections.
-          Every part is auditable. In a near-future scenario, you would 3D-print your own
-          processor sufficient for the wallet.
-        </li>
-        <li>
-          <strong>Secure element — TROPIC.</strong> Prevents physical attacks with the same
-          level of quality as secure elements like the ST33. Fully auditable, open-source
-          tech. Even Ledger's Donjon hit it and it held up.
-        </li>
-        <li>
-          <strong>Open-source firmware.</strong> No more walled gardens. You have to have your
-          code out there, and it needs to be hit by attacks constantly and constantly
-          protected. Updates that explain themselves in more and more human terms — no one
-          reads, and we have to meet the user where they are.
-        </li>
-        <li>
-          <strong>Open-source software.</strong> If you are a legit company offering services
-          to customers, they get to see your bones now. This is big-data land; we've had
-          every bit tracked by our SaaS providers and screens for long enough. You win by
-          iteration and brand trust — trust cannot be quantified by innovation alone.
-        </li>
-        <li>
-          <strong>Open-source mission.</strong> The company's history tracked and audited:
-          which manufacturers it works with, what it has done about past problems, its
-          security record and an honest assessment of how it's addressed. The only way to
-          hold it in place is a radically free market where success is maintained by
-          delivering on what you actually promise.
-        </li>
-      </ul>
-      <p>
-        On governance: DAOs were, or are, promising — but the technical hurdle to
-        participation leads to security implications, and they can find themselves captured
-        by minority interests not serving the mission. The gig economy looks downright
-        criminal when huge-cap companies pay pennies to laborers who can be mistreated as a
-        rule, but for things like bug-bounty programs and consulting, we find a sweeter spot:
-        pulling expertise in at market rate to provide services when needed, and not more.
-      </p>
-
       <aside class="disclosure-note">
         <strong>Disclosure:</strong> the author is COO of KeepKey, an open-source hardware-wallet
         company; the "radically open" model argued for here aligns with the author's commercial
-        position, and vendors named (Ledger, ST, Infineon, Microchip, TROPIC, Coinkite/ColdCard)
+        position, and vendors named (Ledger, ST, Infineon, Microchip, TROPIC)
         include competitors and potential suppliers. See the
         <a href="https://illithics.github.io/the-device-layer-website/about.html#affiliations">affiliation policy</a>.
       </aside>]]></content:encoded>
@@ -159,36 +106,53 @@
       <guid>https://illithics.github.io/the-device-layer-website/posts/the-architecture-of-agentic-commerce.html</guid>
       <pubDate>Sun, 26 Jul 2026 12:00:00 +0000</pubDate>
       <description>The first generation of wallets protected assets. The next generation may spend them.</description>
-      <content:encoded><![CDATA[<p>Software has always built more software. Now, software buys software.</p>
+      <content:encoded><![CDATA[<figure class="hero-figure">
+        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed7.webp" alt="A desk at dusk with an 'Agentic Commerce' architecture diagram on screen — AI agent, policy engine, wallet, x402/MCP, service — beside a KeepKey device and a notebook of sketches." width="1536" height="1024" />
+      </figure>
+
+      <p>Software has always built more software. Now, software buys software.</p>
+
+      <p>
+        Most modern AI systems introduce some level of Agentic Commerce. The AI, acting as an
+        agent for the user, buys tokens, pays for third party applications, and even has the
+        option to interact with financial systems. Hardware devices have a role to play in
+        building trust when it comes to these agentic systems and the reason is because of the
+        architecture of how they are built.
+      </p>
 
       <p>
         Previous efforts on the internet have gone through iterations of building human
         identity with usernames, passwords, accounts, and, dreadfully, subscriptions. New
         trends are emerging that bypass the identity crisis entirely and are being tooled for
-        autonomous economic activity. Autonomous commerce requires payments, identity,
-        authorization, and trust to become interoperable instead of separate products. I
-        think the interesting question becomes not just how do organizations come together to
-        build those standards; I remember my pops talking about the W3C and the many other
-        standards groups, particularly about how apparently Tim Berners-Lee was a bit of a
-        wanker, but mostly because groups like them got HTTP, OAuth, XML while conventions
+        autonomous economic activity. Autonomous commerce requires trust in heterogeneous
+        payments, identity, authorization systems to become interoperable instead of separate
+        products.
+      </p>
+
+      <p>
+        I think the interesting question becomes not just how do organizations come together
+        to build those standards; I remember my pops talking about the W3C and the many other
+        standards groups, particularly about how apparently Sir Tim Berners-Lee was a bit of a
+        Diva*, but mostly because they established HTTP, OAuth, and XML, while conventions
         like RSS and REST gave developers shared ways to build. Industry had to agree on
         common protocols or the web would fracture into incompatible ecosystems. The web did
         not scale because one company built the best browser. It scaled because competitors
         agreed on enough common protocols that innovation could happen above them. Agentic
-        commerce appears to be reaching a similar moment. MCP, x402, programmable wallets,
-        stablecoins, authorization frameworks and identity standards are all evolving
-        independently, but they become transformative if they converge into a shared
-        language.
+        commerce appears to be reaching a similar moment. MCP, x402, stablecoins,
+        authorization frameworks and identity standards are all evolving independently and
+        they will become transformative if they converge into a shared language.
       </p>
 
       <p>
-        Coinbase introduced Agentic Wallets in February 2026, MetaMask has one, Ledger has an
-        Agent Stack, many large crypto houses either have them or are similarly interested in
-        building them out. In many ways this mirrors the wider world of the new ecommerce
-        following similar trends in online shopping wallets, social media payment methods,
-        banking, trading and gambling platforms. Still, differences are starting to emerge
-        between the philosophies of the wallets. At first glance they appear to be solving
-        the same problem. They aren't. Those differences come down to this:
+        <a href="https://www.coinbase.com/developer-platform/discover/launches/agentic-wallets" rel="noopener">Coinbase
+        introduced Agentic Wallets in February 2026</a>, MetaMask has one,
+        <a href="https://www.ledger.com/blog-preview-ledger-agent-stack" rel="noopener">Ledger has an Agent Stack</a>.
+        Many large crypto houses either have them or are similarly interested in building them
+        out. In many ways this mirrors the wider world of the new ecommerce following similar
+        trends in online shopping wallets, social media payment methods, banking, trading and
+        gambling platforms. Still, differences are starting to emerge between the philosophies
+        of the wallets. At first glance they appear to be solving the same problem. They
+        aren't. Those differences come down to this:
       </p>
 
       <blockquote><p>&ldquo;When is human intervention required?&rdquo;</p></blockquote>
@@ -207,17 +171,12 @@
         when payments are necessary, but they build the authority into the wallets to approve
         the on-chain activity unseen by human eyes. Alternatively, emphasizing protocol
         allowlists, transaction simulation, revocable permissions, and most crucially human
-        approval bends the policy-driven wallet more towards a consumer UX than:
+        approval bends the policy-driven wallet more towards a consumer UX.
       </p>
 
-      <blockquote><p>&ldquo;An AI that happens to have a wallet.&rdquo;</p></blockquote>
-
       <p>
-        Instead of asking, how do I give this software a wallet? A self-custody security
-        approach asks, how useful can I make this wallet for my customer or myself? In
-        response the answer either becomes the software has essentially become the economic
-        actor, or alternatively, will people stay the driving force of decision and
-        governance? Further, if software does become the economic actor, is self-custody
+        In the hardware wallet world, you are the authority. It asks if you are willing to
+        sign this transaction. If software does become the economic actor, is self-custody
         still about controlling private keys, or is it more about controlling delegated
         authority? <a href="https://illithics.github.io/the-device-layer-website/posts/the-psychological-signature.html">I've postulated previously</a>
         that there is a signature that happens before a transaction even begins to be drawn
@@ -238,7 +197,11 @@
       <guid>https://illithics.github.io/the-device-layer-website/posts/the-psychological-signature.html</guid>
       <pubDate>Sun, 19 Jul 2026 12:00:00 +0000</pubDate>
       <description>Why the path to clear signing isn&#x27;t as clear as it seems.</description>
-      <content:encoded><![CDATA[<p>
+      <content:encoded><![CDATA[<figure class="hero-figure">
+        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed6.webp" alt="A blueprint-style diagram titled 'The Psychological Signature: a proposed trust model' — story, belief, and decision cross a trust boundary into hardware wallet, private key, signature, and blockchain." width="1600" height="640" />
+      </figure>
+
+      <p>
         Recently it was reported that Ledger users in Australia had been targeted by a
         sophisticated attack that involved mailing notices about hardening their wallets for
         the pending &ldquo;Quantum Crisis&rdquo; in cryptography. What many of these users didn't know
@@ -329,7 +292,11 @@
       <guid>https://illithics.github.io/the-device-layer-website/posts/the-wallet-was-secure-the-customer-wasnt.html</guid>
       <pubDate>Sun, 28 Jun 2026 12:00:00 +0000</pubDate>
       <description>Privacy is not the same thing as security — and crypto companies need to stop treating customer data like ordinary retail exhaust.</description>
-      <content:encoded><![CDATA[<p>
+      <content:encoded><![CDATA[<figure class="hero-figure">
+        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed5.webp" alt="A street of storefronts at dusk labeled Data Brokers, Ad Trackers, Lead Scrapers, Phishing Kits, SIM Swap, Identity Lookup, and Doxx Services — a Hardware Wallets / Self-Custody sign hangs further down." width="1600" height="900" />
+      </figure>
+
+      <p>
         For a security company, the amount of customer data floating around the internet
         should be terrifying. In crypto, even ordinary retail metadata can become attack
         infrastructure. A tracking pixel, checkout record, support ticket, or shipping address
@@ -400,7 +367,11 @@
       <guid>https://illithics.github.io/the-device-layer-website/posts/stress-test-self-custody.html</guid>
       <pubDate>Sun, 21 Jun 2026 12:00:00 +0000</pubDate>
       <description>Paper exposure is not weakening self-custody habits so much as revealing who was never practicing them.</description>
-      <content:encoded><![CDATA[<p>
+      <content:encoded><![CDATA[<figure class="hero-figure">
+        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed4.webp" alt="A security workstation: 'The Device Layer' on a monitor, a laptop reading 'Attack Surface is Growing', and a whiteboard of self-custody principles and threat models." width="1600" height="800" />
+      </figure>
+
+      <p>
         Despite the cyclical and almost passé reminders of the dangers of mismanagement in
         crypto — from the dissolution of Mt.&nbsp;Gox, to the freezing of assets at critical
         moments on retail trading platforms — there seems to be ever more hunger for "safer"
@@ -455,7 +426,11 @@
       <guid>https://illithics.github.io/the-device-layer-website/posts/self-custody-is-not-just-a-vibe.html</guid>
       <pubDate>Sun, 14 Jun 2026 12:00:00 +0000</pubDate>
       <description>The CLARITY Act is turning a crypto slogan into a legal boundary.</description>
-      <content:encoded><![CDATA[<p>
+      <content:encoded><![CDATA[<figure class="hero-figure">
+        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed3.webp" alt="A KeepKey hardware wallet resting on heavily annotated digital-asset custody legislation, the U.S. Capitol visible through the window." width="1600" height="643" />
+      </figure>
+
+      <p>
         Everyone markets self-custody as an aesthetic and jumps at the chance to plaster copy
         across socials with a hot buzzword. Now Congress is trying to turn self-custody into
         an actual legal boundary, and it is worth asking who benefits when that boundary gets
@@ -528,7 +503,11 @@
       <guid>https://illithics.github.io/the-device-layer-website/posts/the-interface-became-the-attack-surface.html</guid>
       <pubDate>Sun, 07 Jun 2026 12:00:00 +0000</pubDate>
       <description>This study didn&#x27;t test a single hardware wallet — and that&#x27;s exactly the point.</description>
-      <content:encoded><![CDATA[<p>
+      <content:encoded><![CDATA[<figure class="hero-figure">
+        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed2.webp" alt="A laptop with a dark screen on a wooden desk in a dim room." width="1600" height="643" />
+      </figure>
+
+      <p>
         For years, crypto security revolved around one question: can someone steal your keys?
       </p>
       <p>
@@ -613,7 +592,11 @@
       <guid>https://illithics.github.io/the-device-layer-website/posts/431m-and-the-map-nobody-is-reading-right.html</guid>
       <pubDate>Sun, 31 May 2026 12:00:00 +0000</pubDate>
       <description>North America still owns the hardware-wallet market on paper. The real growth is happening somewhere else — and most buyers are staring at the wrong number.</description>
-      <content:encoded><![CDATA[<p>
+      <content:encoded><![CDATA[<figure class="hero-figure">
+        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed1.webp" alt="A braided USB-C cable resting on a dark wooden desk beside a window." width="1584" height="672" />
+      </figure>
+
+      <p>
         Every deck this year opens with the same slide: the hardware-wallet market is worth
         $431M, and 39.4% of it is North America. It gets quoted in pitch meetings, press
         releases, and roughly half the crypto-Twitter threads I get tagged in.
