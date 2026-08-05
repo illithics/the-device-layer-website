@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Psychological Signature — The Device Layer</title>
+  <meta name="description" content="Why the path to clear signing isn't as clear as it seems. Before a cryptographic signature is ever produced, the user has already accepted a story." />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="The Device Layer" href="../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="container">
+      <a class="brand" href="../" aria-label="The Device Layer — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim" />
+          <rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim" />
+          <rect x="4" y="6"  width="24" height="5" rx="1.5" class="mark-hot" />
+        </svg>
+        <span class="brand-name">The&nbsp;Device&nbsp;Layer</span>
+      </a>
+      <nav class="masthead-links" aria-label="Primary">
+        <a href="../#posts">Posts</a>
+        <a href="../#about">About</a>
+        <a href="../feed.xml">RSS</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container article-wrap">
+    <article class="article">
+      <header class="article-head">
+        <time datetime="2026-08-04">Edition 6 · August 4, 2026</time>
+        <h1>The Psychological Signature</h1>
+        <p class="standfirst">Why the path to clear signing isn't as clear as it seems.</p>
+      </header>
+
+      <p>
+        Recently it was reported that Ledger users in Australia had been targeted by a
+        sophisticated attack that involved mailing notices about hardening their wallets for
+        the pending &ldquo;Quantum Crisis&rdquo; in cryptography. What many of these users didn't know
+        was not only were these letters not sent by Ledger, but the concept that any wallet
+        could address the quantum problem with any sort of simple firmware update was way
+        oversimplified. This attack allegedly netted the scammers at least 1.4 million AUD
+        according to the authorities in Queensland. At first glance, this looks like another
+        phishing story. I don't think it is.
+      </p>
+
+      <p>Normally we would think of signing flow as:</p>
+
+      <pre><code>the computer &gt; the transaction &gt; the wallet &gt; the cryptographic signature &gt; the blockchain</code></pre>
+
+      <p>
+        What we are seeing from advanced social engineering attacks changes the equation to
+        look more like this:
+      </p>
+
+      <pre><code>story &gt; belief &gt; decision &gt; cryptographic signature &gt; blockchain</code></pre>
+
+      <p>
+        This new attack surface is decidedly non-technical and requires a very different
+        approach to handling the threat. So far, the industry's response has largely been
+        focused on education. Wallet manufacturers publish phishing warnings, exchanges remind
+        customers never to share their recovery phrases, and security researchers dissect
+        yesterday's scams in the hope users will recognize tomorrow's. Those efforts matter,
+        but they all rely on the same assumption: that the user will remember the lesson at
+        exactly the moment it matters. I think the challenge is slightly different.
+      </p>
+
+      <p>
+        Before a cryptographic signature is ever produced, something else has already
+        happened. The user has accepted a story. They believe they're speaking with Ledger.
+        They believe they're installing a security update. They believe they're recovering
+        forgotten bitcoin. By the time the wallet asks for approval, the decision has often
+        already been made. I'd call that moment <strong>the psychological signature</strong>.
+      </p>
+
+      <p>
+        Clear signing suddenly becomes much more interesting when viewed through that lens.
+        It isn't simply a way of displaying transaction details on a trusted screen. It is an
+        opportunity to interrupt the psychological signature before it becomes a cryptographic
+        one.
+      </p>
+
+      <p>The question changes from:</p>
+      <blockquote><p>&ldquo;Does this transaction look correct?&rdquo;</p></blockquote>
+      <p>to:</p>
+      <blockquote><p>&ldquo;Does this transaction actually match the reason I think I'm here?&rdquo;</p></blockquote>
+
+      <p>
+        That question isn't unique to crypto. It's how humans have always understood exchange.
+        We have never understood payments through numbers alone. We understand them through
+        context: where we are, who we are dealing with, what we expect to receive, and the
+        familiar rituals surrounding the exchange. At a grocery store, the building, the
+        cashier, the displayed total, and the food in front of us all reinforce the same
+        story. Crypto transactions often strip those cultural signals away, leaving an
+        address, an approval request, and a story supplied somewhere else. Clear signing
+        matters because it can return some of that missing context to the moment of
+        authorization — and expose when the transaction on the screen does not match the
+        exchange the user believes they are making.
+      </p>
+
+      <p>
+        Viewing the problem through the lens of the psychological signature also changes what
+        we should expect from hardware wallets. Their job is no longer just to protect
+        private keys or display transaction details, but to challenge the story that led the
+        user there. Good clear signing should create a moment of healthy skepticism, asking
+        not only whether the transaction is technically correct, but whether it matches the
+        user's actual intent. The larger problem is that crypto has reproduced the ability to
+        exchange value without reproducing many of the cultural signals people have relied on
+        for centuries to understand an exchange. As those signals disappear, attackers are
+        learning to supply their own. Clear signing, then, is not simply a UX feature. It is
+        part of the larger work of rebuilding context, meaning, and informed consent at the
+        moment a digital decision becomes irreversible.
+      </p>
+
+      <footer class="article-foot">
+        <a class="back" href="../#posts">← All posts</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> The Device Layer · an independent blog</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="../#posts">Posts</a>
+        <a href="../feed.xml">RSS</a>
+        <a href="https://github.com/illithics/the-device-layer-website">Source</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

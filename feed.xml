@@ -8,6 +8,22 @@
     <language>en</language>
 
     <item>
+      <title>The Architecture of Agentic Commerce</title>
+      <link>https://illithics.github.io/the-device-layer-website/posts/the-architecture-of-agentic-commerce.html</link>
+      <guid>https://illithics.github.io/the-device-layer-website/posts/the-architecture-of-agentic-commerce.html</guid>
+      <pubDate>Wed, 05 Aug 2026 00:00:00 +0000</pubDate>
+      <description>The first generation of wallets protected assets. The next generation may spend them. Software has always built more software — now software buys software, and the wallets being built for it disagree on one question: when is human intervention required?</description>
+    </item>
+
+    <item>
+      <title>The Psychological Signature</title>
+      <link>https://illithics.github.io/the-device-layer-website/posts/the-psychological-signature.html</link>
+      <guid>https://illithics.github.io/the-device-layer-website/posts/the-psychological-signature.html</guid>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Why the path to clear signing isn't as clear as it seems. Before a cryptographic signature is ever produced, the user has already accepted a story — and the real attack surface is the moment that story becomes a decision.</description>
+    </item>
+
+    <item>
       <title>Phishing-proof by construction: what WebAuthn gets right</title>
       <link>https://illithics.github.io/the-device-layer-website/posts/what-webauthn-gets-right.html</link>
       <guid>https://illithics.github.io/the-device-layer-website/posts/what-webauthn-gets-right.html</guid>
