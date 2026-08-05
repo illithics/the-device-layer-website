@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>You are trusting more layers than you think — The Device Layer</title>
+  <meta name="description" content="Type a password on a laptop and you've trusted the browser, the OS, the firmware, and the silicon. A field guide to the stack under your software, and how each layer fails." />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="The Device Layer" href="../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="container">
+      <a class="brand" href="../" aria-label="The Device Layer — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim" />
+          <rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim" />
+          <rect x="4" y="6"  width="24" height="5" rx="1.5" class="mark-hot" />
+        </svg>
+        <span class="brand-name">The&nbsp;Device&nbsp;Layer</span>
+      </a>
+      <nav class="masthead-links" aria-label="Primary">
+        <a href="../#posts">Posts</a>
+        <a href="../#about">About</a>
+        <a href="../feed.xml">RSS</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container article-wrap">
+    <article class="article">
+      <header class="article-head">
+        <time datetime="2026-07-09">July 9, 2026</time>
+        <h1>You are trusting more layers than you think</h1>
+        <p class="standfirst">
+          Every security decision you make happens on top of a stack you mostly didn't choose
+          and mostly can't inspect. A field guide to what's actually underneath.
+        </p>
+      </header>
+
+      <p>
+        Here is an ordinary act of trust: you type a password into a login form. You believe
+        you've made one security decision — <em>is this the right website?</em> In fact you've
+        made six or seven, and most of them were made for you, years ago, by people you've
+        never met.
+      </p>
+
+      <p>Walk down the stack with me.</p>
+
+      <h2>The application</h2>
+      <p>
+        The browser renders the page and promises the padlock means what you think it means.
+        You're trusting its sandbox, its certificate validation, its extension model — and
+        every extension you've installed, each of which can typically read the page you're
+        typing into. Applications are the most attacked layer for a boring reason: they're
+        the layer that <em>talks to strangers</em> all day.
+      </p>
+
+      <h2>The operating system</h2>
+      <p>
+        The OS promises process isolation: the game in your dock can't read the password
+        manager's memory. Mostly true, constantly patched. The OS also holds the keyboard
+        buffer, the clipboard, the screen — which is why an infostealer with user-level access
+        doesn't need to break any cryptography at all. It just reads what you read.
+      </p>
+
+      <h2>The firmware</h2>
+      <p>
+        Below the OS sits code almost nobody audits: UEFI, the SSD controller, the webcam
+        MCU, the baseband radio. Firmware runs early, runs privileged, and persists across
+        reinstalls. When implants show up here, "wipe the machine and start over" quietly
+        stops being a remediation. Secure Boot chains exist to defend this layer, and they
+        work — right up to the vendor key that anchors them.
+      </p>
+
+      <h2>The silicon</h2>
+      <p>
+        At the bottom: microarchitecture. Spectre and Meltdown were a decade ago, and their
+        lesson was structural, not incidental — performance optimizations <em>are</em> side
+        channels, and the CPU's promise of isolation is a statistical claim, not a wall.
+        You cannot patch your way out of physics; you can only decide which secrets are
+        allowed to be near it.
+      </p>
+
+      <h2>The pattern</h2>
+      <p>
+        Notice two things about this tour. First: <strong>each layer's guarantees are only as
+        good as the layer below it.</strong> A perfect browser on a keylogged OS is perfectly
+        useless. Formal verification of an app means little if the firmware under it lies.
+        Trust composes downward, and it composes as a <em>minimum</em>, not an average.
+      </p>
+      <p>
+        Second: <strong>as you descend, your ability to observe drops faster than your need to
+        trust.</strong> You can read your browser's source. You can, in principle, read your
+        kernel's. The SSD controller firmware? The management engine? The mask that etched
+        the die? At the bottom of the stack, "trust" stops being a metaphor and becomes the
+        literal, technical term of art — a <em>trusted</em> component is precisely one that can
+        break you if it's wrong.
+      </p>
+
+      <h2>What to do with this</h2>
+      <p>
+        The wrong conclusion is paranoia; the stack mostly works, which is a minor miracle of
+        coordination. The right conclusion is a design principle:
+        <strong>put your most important secrets on the smallest stack you can find.</strong>
+      </p>
+      <p>
+        This is the entire argument for secure elements, enclaves, hardware tokens, and HSMs.
+        Not that they're magically unhackable — they're not — but that they replace a
+        billion-line, stranger-facing stack with a small one: no browser, no app store,
+        no general-purpose OS, one job. Fewer layers, fewer strangers, fewer minimums to
+        take. A key that lives in a two-thousand-line firmware image can still be stolen,
+        but the thief has to show up with a very different class of attack — and usually,
+        with your device physically in hand.
+      </p>
+      <p>
+        You can't opt out of trusting layers. You can only choose how many, and pick which
+        ones are load-bearing. That choice — where the stack bottoms out — is what this blog
+        is about.
+      </p>
+
+      <footer class="article-foot">
+        <a class="back" href="../#posts">← All posts</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> The Device Layer · an independent blog</span>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="../#posts">Posts</a>
+        <a href="../feed.xml">RSS</a>
+        <a href="https://github.com/illithics/the-device-layer-website">Source</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

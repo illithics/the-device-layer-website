@@ -1,23 +1,28 @@
 # The Device Layer
 
-Marketing / thesis website for **The Device Layer** — KeepKey's argument that crypto
-self-custody ultimately rests on open, auditable signing hardware: the one layer of the
-stack an attacker can't reach through a wire.
+An independent tech blog about security, from the metal up — hardware, firmware,
+authentication protocols, and the trust decisions baked into the devices we carry.
+A side project; not affiliated with any company or product.
 
-**Live structure:** single-page site — hero (stack diagram) → thesis → the three layers →
-principles → KeepKey hardware → builders / open source → closing CTA.
+## Structure
 
-## Stack
-
-Deliberately boring: static HTML + CSS + a few lines of vanilla JS. No framework, no build
-step, no dependencies.
+Deliberately boring: static HTML + CSS + two lines of vanilla JS. No framework, no
+build step, no dependencies.
 
 ```
-index.html          # all page content
-css/style.css       # design system + layout (dark, gold accent)
-js/main.js          # scroll-reveal + footer year
+index.html          # home: masthead, post index, about
+posts/*.html        # one file per article
+css/style.css       # design system (dark terminal aesthetic, green accent)
+js/main.js          # footer year
+feed.xml            # RSS (hand-maintained)
 assets/favicon.svg  # layered-stack mark
 ```
+
+## Writing a post
+
+1. Copy an existing file in `posts/` and edit the content.
+2. Add the post to the list in `index.html` (newest first).
+3. Add an `<item>` to `feed.xml` (newest first).
 
 ## Develop
 
@@ -30,6 +35,6 @@ python3 -m http.server 8000
 
 ## Deploy
 
-`.github/workflows/deploy.yml` publishes the repo root to **GitHub Pages** on every push to
-`main` (Settings → Pages → Source: "GitHub Actions" must be enabled once). Any static host
-(Netlify, Cloudflare Pages, S3) works too — there is nothing to build.
+`.github/workflows/deploy.yml` publishes the repo root to **GitHub Pages** on every push
+to `main` (enable Settings → Pages → Source: "GitHub Actions" once). Any static host
+works too — there is nothing to build.

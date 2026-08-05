@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The Device Layer</title>
+    <link>https://illithics.github.io/the-device-layer-website/</link>
+    <atom:link href="https://illithics.github.io/the-device-layer-website/feed.xml" rel="self" type="application/rss+xml" />
+    <description>An independent tech blog about security, from the metal up: hardware, firmware, protocols, and the trust decisions baked into the devices we carry.</description>
+    <language>en</language>
+
+    <item>
+      <title>Phishing-proof by construction: what WebAuthn gets right</title>
+      <link>https://illithics.github.io/the-device-layer-website/posts/what-webauthn-gets-right.html</link>
+      <guid>https://illithics.github.io/the-device-layer-website/posts/what-webauthn-gets-right.html</guid>
+      <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Passwords and one-time codes share a fatal flaw: they can be typed into the wrong website. WebAuthn removes the flaw instead of patching it — by never giving you a secret you could surrender.</description>
+    </item>
+
+    <item>
+      <title>Six digits, thirty seconds: how TOTP actually works</title>
+      <link>https://illithics.github.io/the-device-layer-website/posts/how-totp-actually-works.html</link>
+      <guid>https://illithics.github.io/the-device-layer-website/posts/how-totp-actually-works.html</guid>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+      <description>The rotating codes in your authenticator app are about fifteen lines of code. A walk through RFC 6238: the shared secret, the HMAC, dynamic truncation — and what the design does and doesn't protect you from.</description>
+    </item>
+
+    <item>
+      <title>You are trusting more layers than you think</title>
+      <link>https://illithics.github.io/the-device-layer-website/posts/the-layers-you-are-trusting.html</link>
+      <guid>https://illithics.github.io/the-device-layer-website/posts/the-layers-you-are-trusting.html</guid>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Type a password on a laptop and you've trusted the browser, the OS, the firmware, and the silicon. A field guide to the stack under your software, and how each layer fails.</description>
+    </item>
+
+  </channel>
+</rss>
