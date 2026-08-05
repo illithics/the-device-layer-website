@@ -1,0 +1,19 @@
+# The Device Layer newsletter automation.
+# Install with:  crontab deploy/listmonk/crontab   (adjust /opt path first)
+# All output is mailed to root/logged by cron; the backup's dead-man switch
+# alerts you if the nightly job silently stops.
+
+SHELL=/bin/bash
+DEPLOY=/opt/devicelayer/deploy/listmonk
+
+# Every 30 min: publish new feed items as (draft) campaigns
+*/30 * * * *  $DEPLOY/scripts/rss-to-campaign.py >> $DEPLOY/logs/rss.log 2>&1
+
+# Nightly 03:10: encrypted DB backup + offsite copy + healthcheck ping
+10 3 * * *    $DEPLOY/scripts/backup.sh >> $DEPLOY/logs/backup.log 2>&1
+
+# Weekly, Monday 04:15: pull + restart updated containers (backs up first)
+15 4 * * 1    $DEPLOY/scripts/update.sh >> $DEPLOY/logs/update.log 2>&1
+
+# Monthly, 1st 05:20: purge unsubscribed/blocklisted rows past retention
+20 5 1 * *    $DEPLOY/scripts/prune.sh >> $DEPLOY/logs/prune.log 2>&1

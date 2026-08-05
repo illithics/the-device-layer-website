@@ -2,3 +2,10 @@
 Thumbs.db
 *.log
 node_modules/
+
+# Newsletter deploy secrets/state
+deploy/listmonk/.env
+deploy/listmonk/data/
+deploy/listmonk/backups/
+deploy/listmonk/logs/
+deploy/listmonk/scripts/.rss-state
