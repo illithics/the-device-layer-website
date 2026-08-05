@@ -9,3 +9,4 @@ deploy/listmonk/data/
 deploy/listmonk/backups/
 deploy/listmonk/logs/
 deploy/listmonk/scripts/.rss-state
+__pycache__/
