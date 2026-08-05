@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Device Layer — Security you can hold. By KeepKey.</title>
+  <meta name="description" content="Every layer of crypto can be rewritten except one: the device in your hand. The Device Layer is KeepKey's thesis on why private keys belong in open, auditable hardware." />
+  <meta property="og:title" content="The Device Layer" />
+  <meta property="og:description" content="Security you can hold. Why private keys belong in open, auditable hardware — a thesis by KeepKey." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="nav" id="top">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="The Device Layer — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim" />
+          <rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim" />
+          <rect x="4" y="6"  width="24" height="5" rx="1.5" class="mark-hot" />
+        </svg>
+        <span class="brand-name">The&nbsp;Device&nbsp;Layer</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#thesis">Thesis</a>
+        <a href="#stack">The Stack</a>
+        <a href="#principles">Principles</a>
+        <a href="#keepkey">KeepKey</a>
+        <a href="#builders">Builders</a>
+      </nav>
+      <a class="btn btn-solid nav-cta" href="https://keepkey.com" target="_blank" rel="noopener">Get a KeepKey</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">A thesis by KeepKey</p>
+          <h1>Every layer of crypto can be rewritten.<br /><span class="accent">Except the one in your hand.</span></h1>
+          <p class="lede">
+            Apps get patched. Protocols get forked. Servers get breached. The device layer is the
+            only part of the stack where your keys can be physically beyond reach — offline,
+            auditable, and answering to no one but you.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-solid" href="#thesis">Read the thesis</a>
+            <a class="btn btn-ghost" href="#stack">See the stack</a>
+          </div>
+        </div>
+        <figure class="hero-visual reveal" aria-hidden="true">
+          <svg viewBox="0 0 420 360" class="stack-svg">
+            <defs>
+              <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f2c464" />
+                <stop offset="1" stop-color="#c9932a" />
+              </linearGradient>
+            </defs>
+            <!-- application layer -->
+            <g class="float f1">
+              <rect x="70" y="30" width="280" height="64" rx="10" class="layer-dim" />
+              <text x="210" y="57" class="layer-label">APPLICATION LAYER</text>
+              <text x="210" y="78" class="layer-sub">wallets · exchanges · dapps</text>
+            </g>
+            <!-- protocol layer -->
+            <g class="float f2">
+              <rect x="55" y="124" width="310" height="64" rx="10" class="layer-dim" />
+              <text x="210" y="151" class="layer-label">PROTOCOL LAYER</text>
+              <text x="210" y="172" class="layer-sub">chains · consensus · contracts</text>
+            </g>
+            <!-- device layer -->
+            <g class="float f3">
+              <rect x="40" y="218" width="340" height="84" rx="12" fill="url(#gold)" class="layer-hot" />
+              <text x="210" y="253" class="layer-label hot">THE DEVICE LAYER</text>
+              <text x="210" y="278" class="layer-sub hot">your keys · your hardware · your hands</text>
+            </g>
+            <!-- ground line -->
+            <line x1="20" y1="330" x2="400" y2="330" class="ground" />
+            <text x="210" y="352" class="ground-label">physical world — where you are</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ THESIS ============ -->
+    <section class="section" id="thesis">
+      <div class="container narrow">
+        <p class="eyebrow reveal">The thesis</p>
+        <h2 class="reveal">Crypto's promise is self-custody.<br />Self-custody's foundation is hardware.</h2>
+        <div class="prose reveal">
+          <p>
+            A private key is just a number — but whoever knows that number owns the money. Keep it
+            on an internet-connected computer and it lives alongside every browser tab, extension,
+            and background process you've ever trusted. One phishing page, one malicious update,
+            one infostealer, and the number is gone. Not frozen. Not disputed. <em>Gone.</em>
+          </p>
+          <p>
+            The industry's first answer was to hand keys back to custodians — and custodians
+            became the single points of failure crypto was invented to remove. Mt.&nbsp;Gox, FTX,
+            and a decade of frozen withdrawals made the lesson expensive:
+            <strong>a key someone else holds is a promise, not property.</strong>
+          </p>
+          <p>
+            The durable answer is architectural. Move the key to a device that has one job: hold
+            secrets and sign transactions. No browser. No app store. No general-purpose operating
+            system for malware to live in. The key is generated on the device, never leaves the
+            device, and every transaction is confirmed on the device's own screen with your own
+            thumb. That is the device layer — and it's the only layer of the stack an attacker
+            can't reach through a wire.
+          </p>
+        </div>
+        <div class="stat-row reveal">
+          <div class="stat">
+            <span class="stat-num">1</span>
+            <span class="stat-label">job: keep keys and sign — nothing else runs on the device</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">0</span>
+            <span class="stat-label">times a private key crosses the wire — signatures travel, secrets don't</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">of firmware open source and auditable, built deterministically</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE STACK ============ -->
+    <section class="section alt" id="stack">
+      <div class="container">
+        <p class="eyebrow reveal">The stack</p>
+        <h2 class="reveal">Know which layer you're trusting</h2>
+        <p class="section-lede reveal">
+          Every crypto interaction passes through three layers. Each one fails differently —
+          and only one of them fails safe.
+        </p>
+        <div class="layer-cards">
+          <article class="card reveal">
+            <div class="card-tag">Layer 3</div>
+            <h3>Application layer</h3>
+            <p>
+              Wallet apps, exchanges, dapps, browser extensions. The most useful layer — and the
+              most attacked. Interfaces can be spoofed, updates hijacked, sessions drained.
+              Assume it is compromised, and design so that it doesn't matter.
+            </p>
+            <p class="card-fail">Fails by: phishing · malware · supply-chain attacks</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-tag">Layer 2</div>
+            <h3>Protocol layer</h3>
+            <p>
+              Chains, consensus, smart contracts. Remarkably resilient in aggregate, but contracts
+              have bugs, bridges get drained, and governance can change the rules underneath you.
+              You can verify it — you just can't control it.
+            </p>
+            <p class="card-fail">Fails by: contract bugs · bridge exploits · governance capture</p>
+          </article>
+          <article class="card hot reveal">
+            <div class="card-tag">Layer 1</div>
+            <h3>The device layer</h3>
+            <p>
+              Purpose-built signing hardware. Keys are generated here, live here, and die here.
+              Every outbound transaction is displayed on a screen malware can't draw on and
+              approved by a button malware can't press. It's the layer where <em>you</em> are the consensus.
+            </p>
+            <p class="card-fail hot">Fails only by: physical access + your PIN — and you'll know</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRINCIPLES ============ -->
+    <section class="section" id="principles">
+      <div class="container">
+        <p class="eyebrow reveal">Principles</p>
+        <h2 class="reveal">What a device-layer product must be</h2>
+        <p class="section-lede reveal">
+          Not every gadget with a screen qualifies. These are the tests we hold KeepKey to —
+          and that you should hold any hardware wallet to.
+        </p>
+        <div class="principle-grid">
+          <article class="principle reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 10-4-1.6-7-5.6-7-10V6l7-3z" /></svg>
+            <h3>Keys never leave</h3>
+            <p>Generated on-device from hardware entropy, stored on-device, used on-device. Only signatures ever cross the wire.</p>
+          </article>
+          <article class="principle reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+            <h3>Trusted display</h3>
+            <p>The device's own screen shows the real address and amount. What you approve is what gets signed — no host software in between.</p>
+          </article>
+          <article class="principle reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+            <h3>Physical confirmation</h3>
+            <p>Nothing moves without a button press. A remote attacker can steal your session — they can't steal your thumb.</p>
+          </article>
+          <article class="principle reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg>
+            <h3>Open source, top to bottom</h3>
+            <p>Closed firmware is a custodian in disguise. Every line is public, and deterministic builds prove the binary matches the code.</p>
+          </article>
+          <article class="principle reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10m8 10V4m8 16v-7"/></svg>
+            <h3>No operating system</h3>
+            <p>No OS means no processes, no downloads, no attack surface for keyloggers and viruses. The layers malware infects simply don't exist.</p>
+          </article>
+          <article class="principle reveal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+            <h3>Recoverable by you alone</h3>
+            <p>A standard BIP-39 seed restores everything onto any compliant device. Lose the hardware, keep the money. No account. No permission slip.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KEEPKEY ============ -->
+    <section class="section alt" id="keepkey">
+      <div class="container keepkey-grid">
+        <figure class="device-visual reveal" aria-hidden="true">
+          <svg viewBox="0 0 260 380" class="device-svg">
+            <defs>
+              <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#26282e" />
+                <stop offset="1" stop-color="#101114" />
+              </linearGradient>
+              <linearGradient id="screenGlow" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#181a1f" />
+                <stop offset="1" stop-color="#0b0c0f" />
+              </linearGradient>
+            </defs>
+            <rect x="20" y="20" width="220" height="340" rx="36" fill="url(#body)" stroke="#3a3d45" stroke-width="1.5" />
+            <rect x="44" y="58" width="172" height="210" rx="10" fill="url(#screenGlow)" stroke="#2c2f36" />
+            <text x="130" y="120" class="dev-line1">SEND 0.5 BTC</text>
+            <text x="130" y="150" class="dev-line2">to bc1q…8x4x</text>
+            <line x1="60" y1="180" x2="200" y2="180" class="dev-rule" />
+            <text x="130" y="215" class="dev-confirm">HOLD TO CONFIRM</text>
+            <circle cx="130" cy="310" r="18" fill="none" stroke="#c9932a" stroke-width="2.5" class="dev-btn" />
+            <circle cx="130" cy="310" r="7" fill="#c9932a" />
+          </svg>
+        </figure>
+        <div class="keepkey-copy">
+          <p class="eyebrow reveal">The hardware</p>
+          <h2 class="reveal">KeepKey: the device layer, shipped since 2015</h2>
+          <div class="prose reveal">
+            <p>
+              KeepKey has been building open hardware for self-custody for over a decade — a
+              large trusted display, a single confirmation button, fully open-source firmware,
+              and support for Bitcoin, Ethereum, and thousands of assets across chains.
+            </p>
+          </div>
+          <ul class="check-list reveal">
+            <li>Large OLED display — read the <em>entire</em> address before you approve</li>
+            <li>100% open-source, deterministically built firmware</li>
+            <li>PIN protection with clone-resistant cipher entry</li>
+            <li>BIP-39 recovery — restore on any standards-compliant wallet</li>
+            <li>Native multi-chain support and on-device swap confirmation</li>
+          </ul>
+          <div class="cta-row reveal">
+            <a class="btn btn-solid" href="https://keepkey.com" target="_blank" rel="noopener">Get a KeepKey</a>
+            <a class="btn btn-ghost" href="https://github.com/keepkey" target="_blank" rel="noopener">Audit the code</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BUILDERS ============ -->
+    <section class="section" id="builders">
+      <div class="container narrow">
+        <p class="eyebrow reveal">For builders</p>
+        <h2 class="reveal">Build on the device layer</h2>
+        <div class="prose reveal">
+          <p>
+            The device layer is a public good, not a walled garden. KeepKey's firmware, transport
+            protocol, and integration SDKs are open source — wire hardware signing into your
+            wallet, dapp, or desktop app without asking anyone's permission.
+          </p>
+        </div>
+        <div class="builder-cards">
+          <a class="builder-card reveal" href="https://github.com/keepkey/keepkey-firmware" target="_blank" rel="noopener">
+            <span class="mono">keepkey-firmware</span>
+            <p>The device itself. C, open source, deterministic builds.</p>
+          </a>
+          <a class="builder-card reveal" href="https://github.com/keepkey/keepkey-sdk" target="_blank" rel="noopener">
+            <span class="mono">keepkey-sdk</span>
+            <p>TypeScript SDK for talking to the device from your app.</p>
+          </a>
+          <a class="builder-card reveal" href="https://github.com/keepkey/keepkey-desktop" target="_blank" rel="noopener">
+            <span class="mono">keepkey-desktop</span>
+            <p>Reference desktop client and pairing/REST bridge.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLOSING CTA ============ -->
+    <section class="section closing">
+      <div class="container narrow center">
+        <h2 class="reveal">The stack will keep changing.<br /><span class="accent">Your keys shouldn't have to.</span></h2>
+        <p class="section-lede reveal">Put them on the one layer built to say no.</p>
+        <div class="cta-row center reveal">
+          <a class="btn btn-solid btn-lg" href="https://keepkey.com" target="_blank" rel="noopener">Get a KeepKey</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim" />
+          <rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim" />
+          <rect x="4" y="6"  width="24" height="5" rx="1.5" class="mark-hot" />
+        </svg>
+        <span>The Device Layer — a thesis by <a href="https://keepkey.com" target="_blank" rel="noopener">KeepKey</a></span>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="https://keepkey.com" target="_blank" rel="noopener">keepkey.com</a>
+        <a href="https://github.com/keepkey" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://keepkey.com/blog" target="_blank" rel="noopener">Blog</a>
+      </nav>
+      <p class="footer-note">© <span id="year"></span> KeepKey. Your keys, your crypto.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
