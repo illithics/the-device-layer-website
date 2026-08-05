@@ -347,6 +347,34 @@ a:hover { color: var(--accent); }
   line-height: 1.6;
 }
 
+/* chart figures (inline SVG data graphics) */
+:root {
+  --ch-blue: #5b80e8;
+  --ch-amber: #c9832e;
+  --ch-green: #2f9e6f;
+  --ch-navy: #3b5fa0;
+  --ch-mapgreen: #58b97a;
+  --ch-neutral: #2a3134;
+}
+:root[data-theme="light"] {
+  --ch-neutral: #d7dcd7;
+}
+.chart-figure {
+  margin: 0 0 1.6em;
+  background: var(--panel);
+  border: 1px solid var(--panel-edge);
+  border-radius: 12px;
+  padding: 18px 18px 12px;
+}
+.chart-figure svg { width: 100%; height: auto; display: block; }
+.ch-label { font-family: var(--font-body); font-size: 13px; fill: var(--muted); }
+.ch-val { font-family: var(--font-mono); font-size: 13px; fill: var(--text); font-weight: 500; }
+.ch-big { font-family: var(--font-display); font-size: 26px; font-weight: 700; fill: var(--text); }
+.ch-sub { font-family: var(--font-mono); font-size: 11px; fill: var(--faint); letter-spacing: 0.06em; }
+.ch-onnavy, .ch-onnavy.ch-val { fill: #e8ecf5; }
+.ch-ongreen, .ch-ongreen.ch-val { fill: #10331f; }
+.chart-figure figcaption { padding-top: 10px; }
+
 .hero-figure { margin: 0 0 2.2rem; }
 .hero-figure img {
   width: 100%; height: auto; display: block;

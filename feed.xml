@@ -601,6 +601,27 @@
         $431M, and 39.4% of it is North America. It gets quoted in pitch meetings, press
         releases, and roughly half the crypto-Twitter threads I get tagged in.
       </p>
+
+      <figure class="chart-figure">
+        <svg viewBox="0 0 560 264" role="img" aria-label="Donut chart: 2026 hardware-wallet market revenue share by type. USB 45.7 percent, Bluetooth 33.6 percent, near-field communication 20.7 percent. Total market 431 million US dollars.">
+          <g>
+            <path d="M 196.6 54.0 A 78 78 0 0 1 217.4 206.7" fill="none" stroke="var(--ch-blue)" stroke-width="32"><title>USB: 45.7% of 2026 market revenue</title></path>
+            <path d="M 214.2 207.6 A 78 78 0 0 1 119.4 112.8" fill="none" stroke="var(--ch-amber)" stroke-width="32"><title>Bluetooth: 33.6% of 2026 market revenue</title></path>
+            <path d="M 120.3 109.6 A 78 78 0 0 1 193.4 54.0" fill="none" stroke="var(--ch-green)" stroke-width="32"><title>Near-field communication: 20.7% of 2026 market revenue</title></path>
+          </g>
+          <text x="304" y="117" text-anchor="start" class="ch-label">USB <tspan class="ch-val">45.7%</tspan></text>
+          <text x="117" y="210" text-anchor="end" class="ch-label">Bluetooth <tspan class="ch-val">33.6%</tspan></text>
+          <text x="128" y="44" text-anchor="end" class="ch-label">NFC <tspan class="ch-val">20.7%</tspan></text>
+          <text x="195" y="126" text-anchor="middle" class="ch-big">$431M</text>
+          <text x="195" y="148" text-anchor="middle" class="ch-sub">2026 total</text>
+          <g class="ch-legend" transform="translate(360,180)">
+            <rect x="0" y="0" width="11" height="11" rx="3" fill="var(--ch-blue)"/><text x="18" y="10" class="ch-label">USB</text>
+            <rect x="0" y="22" width="11" height="11" rx="3" fill="var(--ch-amber)"/><text x="18" y="32" class="ch-label">Bluetooth</text>
+            <rect x="0" y="44" width="11" height="11" rx="3" fill="var(--ch-green)"/><text x="18" y="54" class="ch-label">NFC (near-field comm.)</text>
+          </g>
+        </svg>
+        <figcaption><span class="source">Data:</span> Coherent Market Insights, <em>Hardware Wallet Market</em>, 2026 — revenue share by device type. Schematic recreation of the report's chart.</figcaption>
+      </figure>
       <p>
         It's also the least interesting number on the chart. Here's the one that actually
         matters — and what it means the next time you're standing in a checkout flow deciding
@@ -613,8 +634,26 @@
         trajectory. The map below is the one every analyst posts — and the one almost everyone
         reads backwards.
       </p>
-      <figure>
-        <figcaption><span class="source">Figure:</span> regional market share vs. growth — chart from the original edition, being restored to the archive.</figcaption>
+      <figure class="chart-figure">
+        <svg viewBox="0 0 560 300" role="img" aria-label="Schematic regional map of the 2026 hardware-wallet market. North America, in navy, is the dominant region with 39.4 percent of revenue. Asia-Pacific, in green, is the fastest-growing region. Other regions shown neutral.">
+          <g stroke="var(--bg)" stroke-width="2">
+            <path d="M 40 60 q 10 -26 44 -28 q 46 -3 74 6 q 26 9 20 32 q -5 18 -28 22 q 8 12 -2 24 q -12 14 -34 10 q -30 -6 -50 -24 q -22 -20 -24 -42 z" fill="var(--ch-navy)"><title>North America — dominant region, 39.4% of 2026 revenue</title></path>
+            <path d="M 128 142 q 18 -6 26 8 q 8 16 0 40 q -7 22 -22 30 q -14 6 -18 -10 q -4 -20 0 -40 q 4 -22 14 -28 z" fill="var(--ch-neutral)"><title>Latin America</title></path>
+            <path d="M 232 44 q 22 -14 48 -10 q 24 4 26 22 q 2 16 -18 24 q -24 9 -46 2 q -20 -7 -18 -22 q 1 -10 8 -16 z" fill="var(--ch-neutral)"><title>Europe</title></path>
+            <path d="M 246 100 q 26 -8 46 4 q 18 11 14 34 q -4 24 -22 40 q -18 15 -34 6 q -14 -8 -14 -30 q 0 -34 10 -54 z" fill="var(--ch-neutral)"><title>Middle East &amp; Africa</title></path>
+            <path d="M 330 78 q 20 -24 62 -26 q 48 -2 78 14 q 26 14 18 38 q -8 22 -38 28 q 12 14 2 28 q -12 16 -38 12 q -20 -3 -28 -18 q -26 4 -44 -10 q -22 -17 -20 -40 q 1 -15 8 -26 z" fill="var(--ch-mapgreen)"><title>Asia-Pacific — fastest-growing region</title></path>
+          </g>
+          <text x="108" y="46" text-anchor="middle" class="ch-label ch-onnavy">North America</text>
+          <text x="108" y="64" text-anchor="middle" class="ch-val ch-onnavy">39.4%</text>
+          <text x="428" y="96" text-anchor="middle" class="ch-label ch-ongreen">Asia-Pacific</text>
+          <text x="428" y="114" text-anchor="middle" class="ch-val ch-ongreen">fastest-growing</text>
+          <g class="ch-legend" transform="translate(40,254)">
+            <rect x="0" y="0" width="11" height="11" rx="3" fill="var(--ch-navy)"/><text x="18" y="10" class="ch-label">Dominant region (share of revenue)</text>
+            <rect x="270" y="0" width="11" height="11" rx="3" fill="var(--ch-mapgreen)"/><text x="288" y="10" class="ch-label">Fastest-growing region</text>
+          </g>
+          <text x="40" y="288" class="ch-sub">Total market size: $431.0M</text>
+        </svg>
+        <figcaption><span class="source">Data:</span> Coherent Market Insights, <em>Hardware Wallet Market</em>, 2026 — regional insights. Schematic recreation of the report's map.</figcaption>
       </figure>
       <p>
         Look at the green, not the navy. The fastest-growing region isn't the one with the
