@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Interface Became the Attack Surface — The Device Layer</title>
+  <meta name="description" content="A study of 39 browser wallets didn't test a single hardware wallet — and that's exactly the point. The cryptography worked as intended. The user's understanding did not." />
+  <link rel="canonical" href="https://illithics.github.io/the-device-layer-website/posts/the-interface-became-the-attack-surface.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Interface Became the Attack Surface" />
+  <meta property="og:description" content="Attackers are no longer trying to break encryption. They're trying to influence decisions." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Interface Became the Attack Surface",
+    "datePublished": "2026-06-07",
+    "dateModified": "2026-08-05",
+    "author": { "@type": "Person", "name": "illithics", "url": "https://x.com/illithicKeepKey" },
+    "publisher": { "@type": "Organization", "name": "The Device Layer" }
+  }
+  </script>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="The Device Layer" href="../feed.xml" />
+  <script>try{if(localStorage.getItem("tdl-theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="container">
+      <a class="brand" href="../" aria-label="The Device Layer — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+        <span class="brand-name">The&nbsp;Device&nbsp;Layer</span>
+      </a>
+      <nav class="masthead-links" aria-label="Primary">
+        <a href="../essays.html">Essays</a>
+        <a href="../topics/">Topics</a>
+        <a href="../about.html">About</a>
+        <a href="../subscribe.html">Subscribe</a>
+        <a href="../search.html">Search</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M19.5 4.5l-2 2M6.5 17.5l-2 2"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="article-wrap">
+    <article class="article">
+      <header class="article-head">
+        <p class="meta-line">
+          <span class="topic-chip">Security &amp; Signing</span>
+          <span>Edition 2</span>
+          <time datetime="2026-06-07">June 7, 2026</time>
+          <span>6 min read</span>
+          <span>by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a></span>
+        </p>
+        <h1>The Interface Became the Attack Surface</h1>
+        <p class="standfirst">
+          This study didn't test a single hardware wallet — and that's exactly the point.
+        </p>
+        <div class="argument-line">
+          <span class="label">The argument in one sentence</span>
+          Attackers are no longer trying to break encryption — they're trying to influence
+          decisions, and the interface is where those decisions get made.
+        </div>
+      </header>
+
+      <p>
+        For years, crypto security revolved around one question: can someone steal your keys?
+      </p>
+      <p>
+        A recent study of 39 browser wallets — <em>WalletProbe: A Testing Framework for
+        Browser-based Cryptocurrency Wallet Extensions</em> — suggests that's no longer the
+        whole story. Researchers found that many risks now emerge from the layer between users
+        and blockchains: wallet interfaces, transaction simulations, approval screens, and
+        warnings. In many cases, the cryptography worked exactly as intended. The user's
+        understanding did not.
+      </p>
+      <p>
+        That's an important shift. Security is no longer just about protecting secrets. It's
+        about understanding what you're being asked to approve.
+      </p>
+      <p>
+        This is why hardware wallets remain relevant. A dedicated signing device creates an
+        independent verification layer, separate from the browser or website, giving users one
+        final opportunity to verify what's happening before they authorize it.
+      </p>
+
+      <blockquote><p>A fake Uniswap ad on Google Search just drained over $400,000 from crypto users.</p></blockquote>
+
+      <h2 id="trust-is-shifting">Trust is shifting from brands to verification</h2>
+      <p>
+        The study highlights a growing problem: users increasingly trust interfaces,
+        simulations, and warnings they cannot independently verify.
+      </p>
+      <p>
+        In response, more of the industry is moving toward transparency, reproducibility, and
+        verification. The goal is no longer to trust the company behind the wallet. It's to
+        verify the system yourself.
+      </p>
+
+      <blockquote><p>"22,000 complaints related to AI last year, with the victims' losses totaling around $893 million."</p></blockquote>
+
+      <h2 id="ecosystem-not-device">The future wallet is an ecosystem, not a device</h2>
+      <p>
+        Modern crypto users don't live inside a single wallet. They move between browsers,
+        dApps, multisigs, mobile apps, and signing devices.
+      </p>
+      <p>
+        The study reflects this reality: security increasingly depends on how these systems
+        interact. The future wallet isn't a product. It's the trust layer connecting an
+        ecosystem.
+      </p>
+
+      <h2 id="the-takeaway">The takeaway</h2>
+      <p>
+        The study didn't uncover a crisis in cryptography. It uncovered a crisis in
+        interpretation.
+      </p>
+      <p>
+        Across 39 browser wallets, researchers found that users increasingly depend on
+        interfaces, simulations, warnings, and transaction displays to understand what they're
+        approving. Meanwhile, the FBI reports nearly $900 million in losses tied to AI-enabled
+        fraud, and a single fake Uniswap advertisement recently drained more than $400,000
+        from users.
+      </p>
+      <p>
+        The pattern is the same: attackers are no longer trying to break encryption. They're
+        trying to influence decisions.
+      </p>
+      <p>
+        That's why hardware wallets remain important. The best modern devices don't just
+        protect private keys — they create an independent verification layer between the user
+        and the software asking for approval.
+      </p>
+      <p>
+        The strongest security systems don't just protect secrets. They help users understand
+        what they're signing.
+      </p>
+
+      <aside class="disclosure-note">
+        <strong>Disclosure:</strong> the author is COO of KeepKey, a hardware-wallet company.
+        This essay argues for the continued relevance of hardware wallets. See the
+        <a href="../about.html#affiliations">affiliation policy</a>.
+      </aside>
+
+      <details class="trust-ledger">
+        <summary>Trust Ledger <span class="tl-sub">claims · sources · uncertainty</span></summary>
+        <div class="trust-ledger-body">
+          <h3>Claims checked</h3>
+          <ul>
+            <li>39 browser wallets tested with risks concentrated at the interface layer — from the WalletProbe study.</li>
+            <li>~$893M in losses across ~22,000 AI-related complaints — FBI internet-crime figures as reported by The Wall Street Journal.</li>
+            <li>Fake Uniswap ad on Google Search draining $400,000+ — incident reporting at time of writing.</li>
+          </ul>
+          <h3>Primary sources</h3>
+          <ul>
+            <li><em>WalletProbe: A Testing Framework for Browser-based Cryptocurrency Wallet Extensions</em> (academic study; archive link being added).</li>
+            <li><a href="https://www.wsj.com/tech/cybersecurity/internet-crime-fbi-report-fd7c16e8" rel="noopener">The Wall Street Journal — FBI internet-crime report coverage</a>.</li>
+          </ul>
+          <h3>Commercial interests</h3>
+          <ul>
+            <li>The author's employer sells the class of device this essay recommends.</li>
+          </ul>
+          <h3>What is confirmed / what remains uncertain</h3>
+          <ul>
+            <li>Confirmed: the FBI loss figures (via WSJ); the study's scope of 39 wallet extensions.</li>
+            <li>Uncertain: the precise total drained via the fake Uniswap ad (reported figure, not independently audited).</li>
+          </ul>
+          <div class="tl-dates">
+            <span>Published: 2026-06-07</span>
+            <span>Last reviewed: 2026-08-05</span>
+            <span>Corrections: none</span>
+          </div>
+        </div>
+      </details>
+
+      <nav class="pager" aria-label="Edition navigation">
+        <a href="431m-and-the-map-nobody-is-reading-right.html"><span class="dir">Previous · Edition 1</span><span class="title">$431M and the Map Nobody Is Reading Right</span></a>
+        <a class="next" href="self-custody-is-not-just-a-vibe.html"><span class="dir">Next · Edition 3</span><span class="title">Self-Custody Is Not Just a "Vibe"</span></a>
+      </nav>
+
+      <section class="related">
+        <h2>~$ related essays</h2>
+        <ol class="post-list">
+          <li><a class="post-item" href="the-psychological-signature.html"><span class="meta-line"><span class="topic-chip">Security &amp; Signing</span><span>Edition 6</span></span><h3>The Psychological Signature</h3><p>Before a cryptographic signature is ever produced, the user has already accepted a story.</p></a></li>
+          <li><a class="post-item" href="the-wallet-was-secure-the-customer-wasnt.html"><span class="meta-line"><span class="topic-chip">Security &amp; Signing</span><span>Edition 5</span></span><h3>The Wallet Was Secure. The Customer Wasn't.</h3><p>Privacy is not the same thing as security.</p></a></li>
+        </ol>
+      </section>
+
+      <footer class="article-foot"><a class="back" href="../essays.html">← All essays</a></footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+          <span>The Device Layer — long-form writing about devices, security, and the systems we trust with irreversible decisions. Written by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a>.</span>
+        </div>
+        <div>
+          <h4>Publication</h4>
+          <ul>
+            <li><a href="../essays.html">Essays</a></li>
+            <li><a href="../topics/">Topics</a></li>
+            <li><a href="../subscribe.html">Subscribe</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+            <li><a href="../search.html">Search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Trust</h4>
+          <ul>
+            <li><a href="../about.html">About &amp; the author</a></li>
+            <li><a href="../standards.html">Editorial standards</a></li>
+            <li><a href="../corrections.html">Corrections</a></li>
+            <li><a href="../privacy.html">Privacy</a></li>
+            <li><a href="../disclosure.html">Responsible disclosure</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">© <span id="year"></span> The Device Layer · An independent publication. The author is COO of KeepKey; the publication is editorially independent — <a href="../about.html#affiliations">read the disclosure</a>.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

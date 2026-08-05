@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Is There Such a Thing as "The Perfect Wallet?" — The Device Layer</title>
+  <meta name="description" content="No. But try, fail, and try again. Building a hypothetical wallet from known components: open silicon, open secure element, open software, open company." />
+  <link rel="canonical" href="https://illithics.github.io/the-device-layer-website/posts/is-there-such-a-thing-as-the-perfect-wallet.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Is There Such a Thing as &quot;The Perfect Wallet?&quot;" />
+  <meta property="og:description" content="Open silicon, open secure element, open software, open company. Auditable trust from chip to company." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Is There Such a Thing as \"The Perfect Wallet?\"",
+    "datePublished": "2026-08-02",
+    "dateModified": "2026-08-05",
+    "author": { "@type": "Person", "name": "illithics", "url": "https://x.com/illithicKeepKey" },
+    "publisher": { "@type": "Organization", "name": "The Device Layer" }
+  }
+  </script>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="The Device Layer" href="../feed.xml" />
+  <script>try{if(localStorage.getItem("tdl-theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="container">
+      <a class="brand" href="../" aria-label="The Device Layer — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+        <span class="brand-name">The&nbsp;Device&nbsp;Layer</span>
+      </a>
+      <nav class="masthead-links" aria-label="Primary">
+        <a href="../essays.html">Essays</a>
+        <a href="../topics/">Topics</a>
+        <a href="../about.html">About</a>
+        <a href="../subscribe.html">Subscribe</a>
+        <a href="../search.html">Search</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M19.5 4.5l-2 2M6.5 17.5l-2 2"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="article-wrap">
+    <article class="article">
+      <header class="article-head">
+        <p class="meta-line">
+          <span class="topic-chip">Device Architecture</span>
+          <span>Edition 8</span>
+          <time datetime="2026-08-02">August 2, 2026</time>
+          <span>5 min read</span>
+          <span>by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a></span>
+        </p>
+        <h1>Is There Such a Thing as &ldquo;The Perfect Wallet?&rdquo;</h1>
+        <p class="standfirst">No. But try, fail, and try again.</p>
+        <div class="argument-line">
+          <span class="label">The argument in one sentence</span>
+          No one can remove trust from the equation — the perfect wallet is the one that shows
+          you where its trust is derived: open silicon, open secure element, open software,
+          open company.
+        </div>
+      </header>
+
+      <p>
+        If I were asked to build the perfect wallet today I would look at three specific
+        things. What is it built out of: chips, elements, materials. How is it programmed:
+        the firmware and the software. Finally, who built it, how do they behave, and what is
+        their mission. Basically asking the wallet the classic Arnold Schwarzenegger line,
+        &ldquo;who is your daddy and what does he do?&rdquo;
+      </p>
+      <p>
+        Those three questions would lead me down a tree that is fraught with ideology,
+        technical limitations, economic trade-offs, and so many layers of trust. I think most
+        could agree that the &ldquo;Perfect Wallet&rdquo; is not only a difficult thing to achieve, but
+        perhaps a deeply personal one.
+      </p>
+      <p>
+        But let's give it a try. I'll build a hypothetical wallet out of known components and
+        explain why I think it represents the best of what I want out of a wallet.
+      </p>
+      <p>
+        Start with the grains of sand. This year's DEF CON will showcase in their badge a
+        long-awaited project by developer bunnie and baochip. The idea is to inspect your
+        wafer, then build visibly on top of that.
+      </p>
+      <p>
+        The first test will come through this year's DEF CON badge. The trust layers I'm
+        interested in are execution of firmware, screen control and transaction parsing — all
+        attack surfaces that rely on the semiconductor manufacturer's specs. So let's start
+        our hypothetical wallet here, with an MCU whose physical implementation can be
+        examined instead of merely documented.
+      </p>
+      <p>
+        Now we are interested in cryptography and physical attacks. Traditional secure
+        elements come from manufacturers like ST, Infineon, Microchip with proven track
+        records. Say some dastardly or fortunate actor grabs my new wallet and I no longer
+        have it in hand. The secure elements from these manufacturers provide varying levels
+        of security from zips and zaps that try to break in and steal my private keys. These
+        secure elements resist sophisticated attacks, but their internal design remains
+        basically closed even to the owner of the device.
+      </p>
+      <p>
+        The philosophy of obscurity from the chip design is believed to add security. The
+        manufacturer and its certification process become auditors of a component on my
+        device that I cannot fully inspect. The evidence says that trusting these chips is
+        often justified, but only as long as the game stays the same.
+      </p>
+      <p>
+        For this wallet, we'll try something different with a secure element from TROPIC.
+        Recent external tests have shown it handles some punishment in the zip-zap
+        department. The testing exposed weakness, but that is partly the point. In an open
+        system, weaknesses become inspectable engineering problems rather than forever
+        buried. The trust layer has not disappeared, but now it can be checked.
+      </p>
+      <p>
+        The next layer, auditable open source firmware and software, is almost universally
+        accepted. The open source claims from current wallet makers live mostly at this level
+        and they are legit. I will be 100 percent clear that I am not qualified to even
+        speculate as to what would be the most secure choice here, but will simply say I will
+        only pick one with fully open-source code and it's on me to learn.
+      </p>
+      <p>
+        The final layer I have focused on a lot in my previous articles but it is worth
+        mentioning here again: the open source mission. A wallet company's mission should be
+        auditable just like the code. I don't mean in a greenwashed CEO, or a finance bro's
+        bravado — I mean have you had your company's history tracked and audited? What have
+        you done about past problems? What's your security record as it stands today, and an
+        honest assessment about how you are addressing it?
+      </p>
+
+      <blockquote><p>Open silicon, open secure element, open software, open company. Are we picking up a theme?</p></blockquote>
+
+      <p>
+        This is the radically open model. Auditable trust from chip to company. If anyone
+        claims they can remove trust entirely from the equation I believe they are mistaken.
+        If you put effort into demonstrating where your trust is derived, I'm back on board
+        and listening.
+      </p>
+      <p>
+        I find myself discussing more than the &ldquo;perfect wallet&rdquo; in design, and that's because
+        the question that becomes the most important at the end of the day is <em>who do you
+        trust</em>. A lot of technical and engineering capacity is going into making that less
+        and less of a technical question and more a psychological one. What the ColdCard
+        incident showed us is the same story we've witnessed again and again in the
+        cryptosphere — you can get wrecked. It won't be your fault. It will be systemic. I
+        have nothing but sympathy for the folks that had their assets on a great product with
+        a fatal flaw. A flaw that was behind their open source code and discoverable through
+        its whole product cycle. In the end it was no different to the user than someone who
+        got wrecked by Mt.&nbsp;Gox or FTX. They got drained. This time it was because of the
+        lack of people checking the homework. What changed is we can actually participate
+        now, and that's an improvement categorically.
+      </p>
+
+      <h2 id="component-notes">Appendix: the component ledger</h2>
+      <p>Working notes on each layer of the hypothetical build, as shipped with this edition:</p>
+      <ul>
+        <li>
+          <strong>Secure MCU — baochip.</strong> You can scan the actual silicon connections.
+          Every part is auditable. In a near-future scenario, you would 3D-print your own
+          processor sufficient for the wallet.
+        </li>
+        <li>
+          <strong>Secure element — TROPIC.</strong> Prevents physical attacks with the same
+          level of quality as secure elements like the ST33. Fully auditable, open-source
+          tech. Even Ledger's Donjon hit it and it held up.
+        </li>
+        <li>
+          <strong>Open-source firmware.</strong> No more walled gardens. You have to have your
+          code out there, and it needs to be hit by attacks constantly and constantly
+          protected. Updates that explain themselves in more and more human terms — no one
+          reads, and we have to meet the user where they are.
+        </li>
+        <li>
+          <strong>Open-source software.</strong> If you are a legit company offering services
+          to customers, they get to see your bones now. This is big-data land; we've had
+          every bit tracked by our SaaS providers and screens for long enough. You win by
+          iteration and brand trust — trust cannot be quantified by innovation alone.
+        </li>
+        <li>
+          <strong>Open-source mission.</strong> The company's history tracked and audited:
+          which manufacturers it works with, what it has done about past problems, its
+          security record and an honest assessment of how it's addressed. The only way to
+          hold it in place is a radically free market where success is maintained by
+          delivering on what you actually promise.
+        </li>
+      </ul>
+      <p>
+        On governance: DAOs were, or are, promising — but the technical hurdle to
+        participation leads to security implications, and they can find themselves captured
+        by minority interests not serving the mission. The gig economy looks downright
+        criminal when huge-cap companies pay pennies to laborers who can be mistreated as a
+        rule, but for things like bug-bounty programs and consulting, we find a sweeter spot:
+        pulling expertise in at market rate to provide services when needed, and not more.
+      </p>
+
+      <aside class="disclosure-note">
+        <strong>Disclosure:</strong> the author is COO of KeepKey, an open-source hardware-wallet
+        company; the "radically open" model argued for here aligns with the author's commercial
+        position, and vendors named (Ledger, ST, Infineon, Microchip, TROPIC, Coinkite/ColdCard)
+        include competitors and potential suppliers. See the
+        <a href="../about.html#affiliations">affiliation policy</a>.
+      </aside>
+
+      <details class="trust-ledger">
+        <summary>Trust Ledger <span class="tl-sub">claims · sources · uncertainty</span></summary>
+        <div class="trust-ledger-body">
+          <h3>Claims checked</h3>
+          <ul>
+            <li>This year's DEF CON badge features the bunnie/baochip inspectable-silicon project.</li>
+            <li>TROPIC's secure element has undergone published external security testing, including by Ledger's Donjon team, and weaknesses found were disclosed openly.</li>
+            <li>The ColdCard incident: a flaw present in open-source code, discoverable across the product cycle, drained user assets.</li>
+          </ul>
+          <h3>Primary sources</h3>
+          <ul>
+            <li>bunnie/baochip project documentation and DEF CON badge coverage (archive links being added).</li>
+            <li>Ledger Donjon's published evaluation of the TROPIC secure element (archive link being added).</li>
+            <li>ColdCard incident disclosure and post-mortem coverage (archive link being added).</li>
+          </ul>
+          <h3>Commercial interests</h3>
+          <ul>
+            <li>The author's employer builds open-source wallets and could plausibly use the components praised here; no commercial relationship with baochip or TROPIC is asserted in the essay.</li>
+          </ul>
+          <h3>What is confirmed / what remains uncertain</h3>
+          <ul>
+            <li>Confirmed: the direction of the inspectable-silicon and open-secure-element projects described.</li>
+            <li>Uncertain: long-run security performance of the newer open components versus incumbent certified silicon — the essay argues the openness is the point, not a guarantee. The "hypothetical wallet" is a thought experiment, not a product.</li>
+          </ul>
+          <div class="tl-dates">
+            <span>Published: 2026-08-02 (provisional)</span>
+            <span>Last reviewed: 2026-08-05</span>
+            <span>Corrections: none</span>
+          </div>
+        </div>
+      </details>
+
+      <nav class="pager" aria-label="Edition navigation">
+        <a href="the-architecture-of-agentic-commerce.html"><span class="dir">Previous · Edition 7</span><span class="title">The Architecture of Agentic Commerce</span></a>
+      </nav>
+
+      <section class="related">
+        <h2>~$ related essays</h2>
+        <ol class="post-list">
+          <li><a class="post-item" href="the-wallet-was-secure-the-customer-wasnt.html"><span class="meta-line"><span class="topic-chip">Trust &amp; Institutions</span><span>Edition 5</span></span><h3>The Wallet Was Secure. The Customer Wasn't.</h3><p>Privacy is not the same thing as security.</p></a></li>
+          <li><a class="post-item" href="self-custody-is-not-just-a-vibe.html"><span class="meta-line"><span class="topic-chip">Trust &amp; Institutions</span><span>Edition 3</span></span><h3>Self-Custody Is Not Just a "Vibe"</h3><p>The CLARITY Act is turning a crypto slogan into a legal boundary.</p></a></li>
+        </ol>
+      </section>
+
+      <footer class="article-foot"><a class="back" href="../essays.html">← All essays</a></footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+          <span>The Device Layer — long-form writing about devices, security, and the systems we trust with irreversible decisions. Written by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a>.</span>
+        </div>
+        <div>
+          <h4>Publication</h4>
+          <ul>
+            <li><a href="../essays.html">Essays</a></li>
+            <li><a href="../topics/">Topics</a></li>
+            <li><a href="../subscribe.html">Subscribe</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+            <li><a href="../search.html">Search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Trust</h4>
+          <ul>
+            <li><a href="../about.html">About &amp; the author</a></li>
+            <li><a href="../standards.html">Editorial standards</a></li>
+            <li><a href="../corrections.html">Corrections</a></li>
+            <li><a href="../privacy.html">Privacy</a></li>
+            <li><a href="../disclosure.html">Responsible disclosure</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">© <span id="year"></span> The Device Layer · An independent publication. The author is COO of KeepKey; the publication is editorially independent — <a href="../about.html#affiliations">read the disclosure</a>.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Wallet Was Secure. The Customer Wasn't. — The Device Layer</title>
+  <meta name="description" content="Privacy is not the same thing as security — and crypto companies need to stop treating customer data like ordinary retail exhaust." />
+  <link rel="canonical" href="https://illithics.github.io/the-device-layer-website/posts/the-wallet-was-secure-the-customer-wasnt.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Wallet Was Secure. The Customer Wasn't." />
+  <meta property="og:description" content="In crypto, customer data isn't residual and harmless. It is a map." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Wallet Was Secure. The Customer Wasn't.",
+    "datePublished": "2026-06-28",
+    "dateModified": "2026-08-05",
+    "author": { "@type": "Person", "name": "illithics", "url": "https://x.com/illithicKeepKey" },
+    "publisher": { "@type": "Organization", "name": "The Device Layer" }
+  }
+  </script>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="The Device Layer" href="../feed.xml" />
+  <script>try{if(localStorage.getItem("tdl-theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="container">
+      <a class="brand" href="../" aria-label="The Device Layer — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+        <span class="brand-name">The&nbsp;Device&nbsp;Layer</span>
+      </a>
+      <nav class="masthead-links" aria-label="Primary">
+        <a href="../essays.html">Essays</a>
+        <a href="../topics/">Topics</a>
+        <a href="../about.html">About</a>
+        <a href="../subscribe.html">Subscribe</a>
+        <a href="../search.html">Search</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M19.5 4.5l-2 2M6.5 17.5l-2 2"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="article-wrap">
+    <article class="article">
+      <header class="article-head">
+        <p class="meta-line">
+          <span class="topic-chip">Security &amp; Signing</span>
+          <span>Edition 5</span>
+          <time datetime="2026-06-28">June 28, 2026</time>
+          <span>3 min read</span>
+          <span>by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a></span>
+        </p>
+        <h1>The Wallet Was Secure. The Customer Wasn't.</h1>
+        <p class="standfirst">
+          Privacy is not the same thing as security — and crypto companies need to stop
+          treating customer data like ordinary retail exhaust.
+        </p>
+        <div class="argument-line">
+          <span class="label">The argument in one sentence</span>
+          A privacy-first company does not ask "can we protect this data?" — it asks
+          "why do we have this data at all?"
+        </div>
+      </header>
+
+      <p>
+        For a security company, the amount of customer data floating around the internet
+        should be terrifying. In crypto, even ordinary retail metadata can become attack
+        infrastructure. A tracking pixel, checkout record, support ticket, or shipping address
+        may not contain a private key, but it can help connect a real person to assets that
+        cannot be reversed, recovered, or insured away.
+      </p>
+      <p>
+        The first layer of defense in this story is to not capture unnecessary data in the
+        first place. Data breaches are common, becoming more so, and inevitably going to be
+        even more of a problem as more powerful AI tools reach more hands. So what happens
+        when a company has to purge its customer list, minimize email scraping, turn off user
+        tracking on apps? Do sales automatically plunge?
+      </p>
+      <p>
+        I think a more important question we face now is how can we justify <em>not</em> doing
+        those things and proclaim to be a security business. We've seen time and again the
+        largest hardware wallet manufacturer Ledger have its customer rolls leaked over the
+        past several years. Is Ledger special? No. Other companies have had the same issue
+        across crypto and many other industries and public entities alike.
+      </p>
+
+      <blockquote><p>"Ledger's device security was not the issue; the privacy failure was in the commerce layer, where order data tied real people to confirmed hardware-wallet ownership."</p></blockquote>
+
+      <p>
+        At least with the Ledger leaks, users are aware there are security threats that they
+        are taking steps with self-custody to avoid. When custodial platforms' data is
+        breached, an entire new box is open. One can debate the response to the Coinbase
+        customer data breach, May 2025, but the reality was customers had one less tool
+        available to them: a hardware device. I don't typically delve into custodial or
+        software based problems and solutions for crypto — this is The Device Layer — but
+        needless to say, regardless of how well high-value customers were handled behind the
+        scenes, regular users still had to live with the exposure or the uncertainty around it.
+      </p>
+
+      <blockquote><p>"Coinbase expected a $180 million to $400 million hit after hackers bribed support staff outside the U.S. and stole account data from a small subset of customers."</p></blockquote>
+
+      <p>
+        A company focused on security needs to consider its privacy policies. Don't just
+        encrypt your database, minimize it. Collect only what information is necessary, retain
+        only what is crucial. This philosophy can be taken to the development level too. Find
+        alternatives to tracking user behavior in-app. They may be harder to research, but
+        frankly it can be pretty clear when developers don't use their own app. It doesn't
+        take wizardry, it takes work.
+      </p>
+      <p>
+        In crypto, customer data isn't just residual and harmless. It is a map. It can show
+        who bought a device, where they are and how they can be contacted. A company cannot be
+        expected to operate with zero data — devices have to ship. Support teams need to
+        answer real questions. But privacy first means every piece of data has to justify its
+        own existence and an exit plan for that data needs to be in order. Breaches aren't
+        just embarrassing, they are counter to the whole movement.
+      </p>
+      <p>
+        The wallet can be secure while the customer is exposed. A privacy-first company
+        understands that difference before the breach, not after it.
+      </p>
+
+      <aside class="disclosure-note">
+        <strong>Disclosure:</strong> the author is COO of KeepKey, a hardware-wallet company;
+        Ledger, discussed critically here, is a competitor. This publication practices the data
+        minimalism the essay argues for — see the <a href="../privacy.html">privacy policy</a> and
+        <a href="../about.html#affiliations">affiliation policy</a>.
+      </aside>
+
+      <details class="trust-ledger">
+        <summary>Trust Ledger <span class="tl-sub">claims · sources · uncertainty</span></summary>
+        <div class="trust-ledger-body">
+          <h3>Claims checked</h3>
+          <ul>
+            <li>Ledger's customer databases have leaked repeatedly, beginning with the 2020 e-commerce database breach that exposed customer names, addresses, and phone numbers.</li>
+            <li>Coinbase's May 2025 breach: overseas support agents were bribed to exfiltrate customer account data; Coinbase estimated a $180–400 million remediation cost in its SEC disclosure.</li>
+          </ul>
+          <h3>Primary sources</h3>
+          <ul>
+            <li>Ledger's public disclosures of its 2020 e-commerce data breach (archive link being added).</li>
+            <li>Coinbase's May 2025 incident disclosure and SEC Form 8-K (archive link being added).</li>
+          </ul>
+          <h3>Commercial interests</h3>
+          <ul>
+            <li>The essay criticizes the data practices of two competitors (Ledger, Coinbase) of the author's employer. The events described are independently documented.</li>
+          </ul>
+          <h3>What is confirmed / what remains uncertain</h3>
+          <ul>
+            <li>Confirmed: both breaches and the quoted cost range are on the public record.</li>
+            <li>Uncertain: the full scope of downstream harm to affected customers, which by nature resists measurement.</li>
+          </ul>
+          <div class="tl-dates">
+            <span>Published: 2026-06-28 (provisional)</span>
+            <span>Last reviewed: 2026-08-05</span>
+            <span>Corrections: none</span>
+          </div>
+        </div>
+      </details>
+
+      <nav class="pager" aria-label="Edition navigation">
+        <a href="stress-test-self-custody.html"><span class="dir">Previous · Edition 4</span><span class="title">Stress Test: Self-Custody for Users, Institutions, and Wallet Developers</span></a>
+        <a class="next" href="the-psychological-signature.html"><span class="dir">Next · Edition 6</span><span class="title">The Psychological Signature</span></a>
+      </nav>
+
+      <section class="related">
+        <h2>~$ related essays</h2>
+        <ol class="post-list">
+          <li><a class="post-item" href="the-psychological-signature.html"><span class="meta-line"><span class="topic-chip">Security &amp; Signing</span><span>Edition 6</span></span><h3>The Psychological Signature</h3><p>Before a cryptographic signature is ever produced, the user has already accepted a story.</p></a></li>
+          <li><a class="post-item" href="the-interface-became-the-attack-surface.html"><span class="meta-line"><span class="topic-chip">Security &amp; Signing</span><span>Edition 2</span></span><h3>The Interface Became the Attack Surface</h3><p>Attackers are no longer trying to break encryption. They're trying to influence decisions.</p></a></li>
+        </ol>
+      </section>
+
+      <footer class="article-foot"><a class="back" href="../essays.html">← All essays</a></footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+          <span>The Device Layer — long-form writing about devices, security, and the systems we trust with irreversible decisions. Written by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a>.</span>
+        </div>
+        <div>
+          <h4>Publication</h4>
+          <ul>
+            <li><a href="../essays.html">Essays</a></li>
+            <li><a href="../topics/">Topics</a></li>
+            <li><a href="../subscribe.html">Subscribe</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+            <li><a href="../search.html">Search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Trust</h4>
+          <ul>
+            <li><a href="../about.html">About &amp; the author</a></li>
+            <li><a href="../standards.html">Editorial standards</a></li>
+            <li><a href="../corrections.html">Corrections</a></li>
+            <li><a href="../privacy.html">Privacy</a></li>
+            <li><a href="../disclosure.html">Responsible disclosure</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">© <span id="year"></span> The Device Layer · An independent publication. The author is COO of KeepKey; the publication is editorially independent — <a href="../about.html#affiliations">read the disclosure</a>.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy — The Device Layer</title>
+  <meta name="description" content="The Device Layer collects as close to nothing as a website can." />
+  <link rel="canonical" href="https://illithics.github.io/the-device-layer-website/privacy.html" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="The Device Layer" href="feed.xml" />
+  <script>try{if(localStorage.getItem("tdl-theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="container">
+      <a class="brand" href="./" aria-label="The Device Layer — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+        <span class="brand-name">The&nbsp;Device&nbsp;Layer</span>
+      </a>
+      <nav class="masthead-links" aria-label="Primary">
+        <a href="essays.html">Essays</a>
+        <a href="topics/">Topics</a>
+        <a href="about.html">About</a>
+        <a href="subscribe.html">Subscribe</a>
+        <a href="search.html">Search</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M19.5 4.5l-2 2M6.5 17.5l-2 2"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container narrow page-head">
+      <h1>Privacy</h1>
+      <p class="lede">Edition 5 argues that every piece of data has to justify its own existence. This site holds itself to that.</p>
+    </div>
+    <section class="section">
+      <div class="container narrow prose">
+        <dl class="policy-list">
+          <dt>No analytics, no trackers, no ads</dt>
+          <dd>This site runs no analytics scripts, no tracking pixels, no advertising, and no social-media embeds. Share what you read by copying the URL.</dd>
+          <dt>No accounts, no cookies</dt>
+          <dd>There is nothing to log into. The only thing stored in your browser is your light/dark theme choice (in localStorage, never transmitted).</dd>
+          <dt>Fonts</dt>
+          <dd>Pages currently load typefaces from Google Fonts, which sees a standard font request from your browser. Self-hosting the fonts to remove that third party is on the roadmap.</dd>
+          <dt>Hosting</dt>
+          <dd>The site is static and served by its host (currently GitHub Pages), which processes IP addresses to deliver pages, as any web host does. The publication itself receives no visitor data.</dd>
+          <dt>Email subscription</dt>
+          <dd>If you subscribe by email once delivery is live, your address is used to send editions and nothing else — no resale, no enrichment, no "partners." Unsubscribing deletes it.</dd>
+          <dt>RSS</dt>
+          <dd>The <a href="feed.xml">feed</a> is the most private way to follow: your reader fetches it directly and this site learns nothing about you.</dd>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+          <span>The Device Layer — long-form writing about devices, security, and the systems we trust with irreversible decisions. Written by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a>.</span>
+        </div>
+        <div>
+          <h4>Publication</h4>
+          <ul>
+            <li><a href="essays.html">Essays</a></li>
+            <li><a href="topics/">Topics</a></li>
+            <li><a href="subscribe.html">Subscribe</a></li>
+            <li><a href="feed.xml">RSS</a></li>
+            <li><a href="search.html">Search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Trust</h4>
+          <ul>
+            <li><a href="about.html">About &amp; the author</a></li>
+            <li><a href="standards.html">Editorial standards</a></li>
+            <li><a href="corrections.html">Corrections</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="disclosure.html">Responsible disclosure</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">© <span id="year"></span> The Device Layer · An independent publication. The author is COO of KeepKey; the publication is editorially independent — <a href="about.html#affiliations">read the disclosure</a>.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

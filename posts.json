@@ -1,0 +1,90 @@
+{
+  "site": {
+    "title": "The Device Layer",
+    "baseUrl": "https://illithics.github.io/the-device-layer-website/",
+    "author": "illithics",
+    "authorUrl": "https://x.com/illithicKeepKey"
+  },
+  "editions": [
+    {
+      "edition": 1,
+      "status": "published",
+      "title": "$431M and the Map Nobody Is Reading Right",
+      "subtitle": "North America still owns the hardware-wallet market on paper. The real growth is happening somewhere else — and most buyers are staring at the wrong number.",
+      "url": "posts/431m-and-the-map-nobody-is-reading-right.html",
+      "date": "2026-05-31",
+      "readingTime": "8 min",
+      "topics": ["self-custody"]
+    },
+    {
+      "edition": 2,
+      "status": "published",
+      "title": "The Interface Became the Attack Surface",
+      "subtitle": "This study didn't test a single hardware wallet — and that's exactly the point.",
+      "url": "posts/the-interface-became-the-attack-surface.html",
+      "date": "2026-06-07",
+      "readingTime": "6 min",
+      "topics": ["security-and-signing"]
+    },
+    {
+      "edition": 3,
+      "status": "published",
+      "title": "Self-Custody Is Not Just a \"Vibe\"",
+      "subtitle": "The CLARITY Act is turning a crypto slogan into a legal boundary.",
+      "url": "posts/self-custody-is-not-just-a-vibe.html",
+      "date": "2026-06-14",
+      "readingTime": "8 min",
+      "topics": ["self-custody", "trust-and-institutions"]
+    },
+    {
+      "edition": 4,
+      "status": "published",
+      "title": "Stress Test: Self-Custody for Users, Institutions, and Wallet Developers",
+      "subtitle": "Paper exposure is not weakening self-custody habits so much as revealing who was never practicing them.",
+      "url": "posts/stress-test-self-custody.html",
+      "date": "2026-06-21",
+      "readingTime": "3 min",
+      "topics": ["self-custody", "trust-and-institutions"]
+    },
+    {
+      "edition": 5,
+      "status": "published",
+      "title": "The Wallet Was Secure. The Customer Wasn't.",
+      "subtitle": "Privacy is not the same thing as security — and crypto companies need to stop treating customer data like ordinary retail exhaust.",
+      "url": "posts/the-wallet-was-secure-the-customer-wasnt.html",
+      "date": "2026-06-28",
+      "readingTime": "3 min",
+      "topics": ["security-and-signing", "trust-and-institutions"]
+    },
+    {
+      "edition": 6,
+      "status": "published",
+      "title": "The Psychological Signature",
+      "subtitle": "Why the path to clear signing isn't as clear as it seems.",
+      "url": "posts/the-psychological-signature.html",
+      "date": "2026-07-19",
+      "readingTime": "4 min",
+      "topics": ["security-and-signing"]
+    },
+    {
+      "edition": 7,
+      "status": "published",
+      "title": "The Architecture of Agentic Commerce",
+      "subtitle": "The first generation of wallets protected assets. The next generation may spend them.",
+      "url": "posts/the-architecture-of-agentic-commerce.html",
+      "date": "2026-07-26",
+      "readingTime": "4 min",
+      "topics": ["agents-and-automation"]
+    },
+    {
+      "edition": 8,
+      "status": "published",
+      "title": "Is There Such a Thing as \"The Perfect Wallet?\"",
+      "subtitle": "No. But try, fail, and try again.",
+      "url": "posts/is-there-such-a-thing-as-the-perfect-wallet.html",
+      "date": "2026-08-02",
+      "readingTime": "5 min",
+      "topics": ["device-architecture", "trust-and-institutions"]
+    }
+  ]
+}

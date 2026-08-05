@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://illithics.github.io/the-device-layer-website/sitemap.xml
