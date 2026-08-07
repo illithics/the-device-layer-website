@@ -1,4 +1,4 @@
 Contact: https://github.com/illithics/the-device-layer-website/security/advisories/new
 Expires: 2027-08-05T00:00:00.000Z
 Preferred-Languages: en
-Policy: https://illithics.github.io/the-device-layer-website/disclosure.html
+Policy: https://www.thedevicelayer.com/disclosure.html

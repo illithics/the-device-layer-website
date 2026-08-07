@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>The Device Layer</title>
-    <link>https://illithics.github.io/the-device-layer-website/</link>
-    <atom:link href="https://illithics.github.io/the-device-layer-website/feed.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.thedevicelayer.com/</link>
+    <atom:link href="https://www.thedevicelayer.com/feed.xml" rel="self" type="application/rss+xml" />
     <description>Long-form writing about devices, security, and the systems we trust with irreversible decisions. An independent, essay-led publication by illithics.</description>
     <language>en</language>
 
     <item>
       <title>Is There Such a Thing as &quot;The Perfect Wallet?&quot;</title>
-      <link>https://illithics.github.io/the-device-layer-website/posts/is-there-such-a-thing-as-the-perfect-wallet.html</link>
-      <guid>https://illithics.github.io/the-device-layer-website/posts/is-there-such-a-thing-as-the-perfect-wallet.html</guid>
+      <link>https://www.thedevicelayer.com/posts/is-there-such-a-thing-as-the-perfect-wallet.html</link>
+      <guid>https://www.thedevicelayer.com/posts/is-there-such-a-thing-as-the-perfect-wallet.html</guid>
       <pubDate>Sun, 02 Aug 2026 12:00:00 +0000</pubDate>
       <description>No. But try, fail, and try again.</description>
       <content:encoded><![CDATA[<figure class="hero-figure">
-        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed8.webp" alt="A red laser beam striking a mound of sand, melting its peak into glowing molten glass against a black background." width="1600" height="640" />
+        <img src="https://www.thedevicelayer.com/assets/heroes/ed8.webp" alt="A red laser beam striking a mound of sand, melting its peak into glowing molten glass against a black background." width="1600" height="640" />
       </figure>
 
       <p>
@@ -97,17 +97,17 @@
         company; the "radically open" model argued for here aligns with the author's commercial
         position, and vendors named (Ledger, ST, Infineon, Microchip, TROPIC)
         include competitors and potential suppliers. See the
-        <a href="https://illithics.github.io/the-device-layer-website/about.html#affiliations">affiliation policy</a>.
+        <a href="https://www.thedevicelayer.com/about.html#affiliations">affiliation policy</a>.
       </aside>]]></content:encoded>
     </item>
     <item>
       <title>The Architecture of Agentic Commerce</title>
-      <link>https://illithics.github.io/the-device-layer-website/posts/the-architecture-of-agentic-commerce.html</link>
-      <guid>https://illithics.github.io/the-device-layer-website/posts/the-architecture-of-agentic-commerce.html</guid>
+      <link>https://www.thedevicelayer.com/posts/the-architecture-of-agentic-commerce.html</link>
+      <guid>https://www.thedevicelayer.com/posts/the-architecture-of-agentic-commerce.html</guid>
       <pubDate>Sun, 26 Jul 2026 12:00:00 +0000</pubDate>
       <description>The first generation of wallets protected assets. The next generation may spend them.</description>
       <content:encoded><![CDATA[<figure class="hero-figure">
-        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed7.webp" alt="A desk at dusk with an 'Agentic Commerce' architecture diagram on screen — AI agent, policy engine, wallet, x402/MCP, service — beside a KeepKey device and a notebook of sketches." width="1536" height="1024" />
+        <img src="https://www.thedevicelayer.com/assets/heroes/ed7.webp" alt="A desk at dusk with an 'Agentic Commerce' architecture diagram on screen — AI agent, policy engine, wallet, x402/MCP, service — beside a KeepKey device and a notebook of sketches." width="1536" height="1024" />
       </figure>
 
       <p>Software has always built more software. Now, software buys software.</p>
@@ -178,7 +178,7 @@
         In the hardware wallet world, you are the authority. It asks if you are willing to
         sign this transaction. If software does become the economic actor, is self-custody
         still about controlling private keys, or is it more about controlling delegated
-        authority? <a href="https://illithics.github.io/the-device-layer-website/posts/the-psychological-signature.html">I've postulated previously</a>
+        authority? <a href="https://www.thedevicelayer.com/posts/the-psychological-signature.html">I've postulated previously</a>
         that there is a signature that happens before a transaction even begins to be drawn
         up. If I delegate my willingness to buy, my trust in the counterparty, the timing of
         the decision and some measure of signing authority to my agent, where does my consent
@@ -188,17 +188,17 @@
       <aside class="disclosure-note">
         <strong>Disclosure:</strong> the author is COO of KeepKey, a self-custody hardware-wallet
         company; Coinbase, MetaMask, and Ledger — whose agentic products are discussed — are
-        competitors in adjacent markets. See the <a href="https://illithics.github.io/the-device-layer-website/about.html#affiliations">affiliation policy</a>.
+        competitors in adjacent markets. See the <a href="https://www.thedevicelayer.com/about.html#affiliations">affiliation policy</a>.
       </aside>]]></content:encoded>
     </item>
     <item>
       <title>The Psychological Signature</title>
-      <link>https://illithics.github.io/the-device-layer-website/posts/the-psychological-signature.html</link>
-      <guid>https://illithics.github.io/the-device-layer-website/posts/the-psychological-signature.html</guid>
+      <link>https://www.thedevicelayer.com/posts/the-psychological-signature.html</link>
+      <guid>https://www.thedevicelayer.com/posts/the-psychological-signature.html</guid>
       <pubDate>Sun, 19 Jul 2026 12:00:00 +0000</pubDate>
       <description>Why the path to clear signing isn&#x27;t as clear as it seems.</description>
       <content:encoded><![CDATA[<figure class="hero-figure">
-        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed6.webp" alt="A blueprint-style diagram titled 'The Psychological Signature: a proposed trust model' — story, belief, and decision cross a trust boundary into hardware wallet, private key, signature, and blockchain." width="1600" height="640" />
+        <img src="https://www.thedevicelayer.com/assets/heroes/ed6.webp" alt="A blueprint-style diagram titled 'The Psychological Signature: a proposed trust model' — story, belief, and decision cross a trust boundary into hardware wallet, private key, signature, and blockchain." width="1600" height="640" />
       </figure>
 
       <p>
@@ -283,17 +283,17 @@
       <aside class="disclosure-note">
         <strong>Disclosure:</strong> the author is COO of KeepKey, a hardware-wallet company;
         Ledger, whose customers were targeted in the attack described, is a competitor. See the
-        <a href="https://illithics.github.io/the-device-layer-website/about.html#affiliations">affiliation policy</a>.
+        <a href="https://www.thedevicelayer.com/about.html#affiliations">affiliation policy</a>.
       </aside>]]></content:encoded>
     </item>
     <item>
       <title>The Wallet Was Secure. The Customer Wasn&#x27;t.</title>
-      <link>https://illithics.github.io/the-device-layer-website/posts/the-wallet-was-secure-the-customer-wasnt.html</link>
-      <guid>https://illithics.github.io/the-device-layer-website/posts/the-wallet-was-secure-the-customer-wasnt.html</guid>
+      <link>https://www.thedevicelayer.com/posts/the-wallet-was-secure-the-customer-wasnt.html</link>
+      <guid>https://www.thedevicelayer.com/posts/the-wallet-was-secure-the-customer-wasnt.html</guid>
       <pubDate>Sun, 28 Jun 2026 12:00:00 +0000</pubDate>
       <description>Privacy is not the same thing as security — and crypto companies need to stop treating customer data like ordinary retail exhaust.</description>
       <content:encoded><![CDATA[<figure class="hero-figure">
-        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed5.webp" alt="A street of storefronts at dusk labeled Data Brokers, Ad Trackers, Lead Scrapers, Phishing Kits, SIM Swap, Identity Lookup, and Doxx Services — a Hardware Wallets / Self-Custody sign hangs further down." width="1600" height="900" />
+        <img src="https://www.thedevicelayer.com/assets/heroes/ed5.webp" alt="A street of storefronts at dusk labeled Data Brokers, Ad Trackers, Lead Scrapers, Phishing Kits, SIM Swap, Identity Lookup, and Doxx Services — a Hardware Wallets / Self-Custody sign hangs further down." width="1600" height="900" />
       </figure>
 
       <p>
@@ -357,18 +357,18 @@
       <aside class="disclosure-note">
         <strong>Disclosure:</strong> the author is COO of KeepKey, a hardware-wallet company;
         Ledger, discussed critically here, is a competitor. This publication practices the data
-        minimalism the essay argues for — see the <a href="https://illithics.github.io/the-device-layer-website/privacy.html">privacy policy</a> and
-        <a href="https://illithics.github.io/the-device-layer-website/about.html#affiliations">affiliation policy</a>.
+        minimalism the essay argues for — see the <a href="https://www.thedevicelayer.com/privacy.html">privacy policy</a> and
+        <a href="https://www.thedevicelayer.com/about.html#affiliations">affiliation policy</a>.
       </aside>]]></content:encoded>
     </item>
     <item>
       <title>Stress Test: Self-Custody for Users, Institutions, and Wallet Developers</title>
-      <link>https://illithics.github.io/the-device-layer-website/posts/stress-test-self-custody.html</link>
-      <guid>https://illithics.github.io/the-device-layer-website/posts/stress-test-self-custody.html</guid>
+      <link>https://www.thedevicelayer.com/posts/stress-test-self-custody.html</link>
+      <guid>https://www.thedevicelayer.com/posts/stress-test-self-custody.html</guid>
       <pubDate>Sun, 21 Jun 2026 12:00:00 +0000</pubDate>
       <description>Paper exposure is not weakening self-custody habits so much as revealing who was never practicing them.</description>
       <content:encoded><![CDATA[<figure class="hero-figure">
-        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed4.webp" alt="A security workstation: 'The Device Layer' on a monitor, a laptop reading 'Attack Surface is Growing', and a whiteboard of self-custody principles and threat models." width="1600" height="800" />
+        <img src="https://www.thedevicelayer.com/assets/heroes/ed4.webp" alt="A security workstation: 'The Device Layer' on a monitor, a laptop reading 'Attack Surface is Growing', and a whiteboard of self-custody principles and threat models." width="1600" height="800" />
       </figure>
 
       <p>
@@ -417,17 +417,17 @@
       <aside class="disclosure-note">
         <strong>Disclosure:</strong> the author is COO of KeepKey, a hardware-wallet company;
         Trezor, Ledger, and Tangem — all discussed here — are competitors. See the
-        <a href="https://illithics.github.io/the-device-layer-website/about.html#affiliations">affiliation policy</a>.
+        <a href="https://www.thedevicelayer.com/about.html#affiliations">affiliation policy</a>.
       </aside>]]></content:encoded>
     </item>
     <item>
       <title>Self-Custody Is Not Just a &quot;Vibe&quot;</title>
-      <link>https://illithics.github.io/the-device-layer-website/posts/self-custody-is-not-just-a-vibe.html</link>
-      <guid>https://illithics.github.io/the-device-layer-website/posts/self-custody-is-not-just-a-vibe.html</guid>
+      <link>https://www.thedevicelayer.com/posts/self-custody-is-not-just-a-vibe.html</link>
+      <guid>https://www.thedevicelayer.com/posts/self-custody-is-not-just-a-vibe.html</guid>
       <pubDate>Sun, 14 Jun 2026 12:00:00 +0000</pubDate>
       <description>The CLARITY Act is turning a crypto slogan into a legal boundary.</description>
       <content:encoded><![CDATA[<figure class="hero-figure">
-        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed3.webp" alt="A KeepKey hardware wallet resting on heavily annotated digital-asset custody legislation, the U.S. Capitol visible through the window." width="1600" height="643" />
+        <img src="https://www.thedevicelayer.com/assets/heroes/ed3.webp" alt="A KeepKey hardware wallet resting on heavily annotated digital-asset custody legislation, the U.S. Capitol visible through the window." width="1600" height="643" />
       </figure>
 
       <p>
@@ -494,17 +494,17 @@
       <aside class="disclosure-note">
         <strong>Disclosure:</strong> the author is COO of KeepKey, a self-custody hardware-wallet
         company that would operate under the regulatory framework this essay discusses. See the
-        <a href="https://illithics.github.io/the-device-layer-website/about.html#affiliations">affiliation policy</a>.
+        <a href="https://www.thedevicelayer.com/about.html#affiliations">affiliation policy</a>.
       </aside>]]></content:encoded>
     </item>
     <item>
       <title>The Interface Became the Attack Surface</title>
-      <link>https://illithics.github.io/the-device-layer-website/posts/the-interface-became-the-attack-surface.html</link>
-      <guid>https://illithics.github.io/the-device-layer-website/posts/the-interface-became-the-attack-surface.html</guid>
+      <link>https://www.thedevicelayer.com/posts/the-interface-became-the-attack-surface.html</link>
+      <guid>https://www.thedevicelayer.com/posts/the-interface-became-the-attack-surface.html</guid>
       <pubDate>Sun, 07 Jun 2026 12:00:00 +0000</pubDate>
       <description>This study didn&#x27;t test a single hardware wallet — and that&#x27;s exactly the point.</description>
       <content:encoded><![CDATA[<figure class="hero-figure">
-        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed2.webp" alt="A laptop with a dark screen on a wooden desk in a dim room." width="1600" height="643" />
+        <img src="https://www.thedevicelayer.com/assets/heroes/ed2.webp" alt="A laptop with a dark screen on a wooden desk in a dim room." width="1600" height="643" />
       </figure>
 
       <p>
@@ -583,17 +583,17 @@
       <aside class="disclosure-note">
         <strong>Disclosure:</strong> the author is COO of KeepKey, a hardware-wallet company.
         This essay argues for the continued relevance of hardware wallets. See the
-        <a href="https://illithics.github.io/the-device-layer-website/about.html#affiliations">affiliation policy</a>.
+        <a href="https://www.thedevicelayer.com/about.html#affiliations">affiliation policy</a>.
       </aside>]]></content:encoded>
     </item>
     <item>
       <title>$431M and the Map Nobody Is Reading Right</title>
-      <link>https://illithics.github.io/the-device-layer-website/posts/431m-and-the-map-nobody-is-reading-right.html</link>
-      <guid>https://illithics.github.io/the-device-layer-website/posts/431m-and-the-map-nobody-is-reading-right.html</guid>
+      <link>https://www.thedevicelayer.com/posts/431m-and-the-map-nobody-is-reading-right.html</link>
+      <guid>https://www.thedevicelayer.com/posts/431m-and-the-map-nobody-is-reading-right.html</guid>
       <pubDate>Sun, 31 May 2026 12:00:00 +0000</pubDate>
       <description>North America still owns the hardware-wallet market on paper. The real growth is happening somewhere else — and most buyers are staring at the wrong number.</description>
       <content:encoded><![CDATA[<figure class="hero-figure">
-        <img src="https://illithics.github.io/the-device-layer-website/assets/heroes/ed1.webp" alt="A braided USB-C cable resting on a dark wooden desk beside a window." width="1584" height="672" />
+        <img src="https://www.thedevicelayer.com/assets/heroes/ed1.webp" alt="A braided USB-C cable resting on a dark wooden desk beside a window." width="1584" height="672" />
       </figure>
 
       <p>
@@ -718,7 +718,7 @@
       <aside class="disclosure-note">
         <strong>Disclosure:</strong> the author is COO of KeepKey, a hardware-wallet company
         competing in the market this essay analyzes. See the
-        <a href="https://illithics.github.io/the-device-layer-website/about.html#affiliations">affiliation policy</a>.
+        <a href="https://www.thedevicelayer.com/about.html#affiliations">affiliation policy</a>.
       </aside>]]></content:encoded>
     </item>
 
