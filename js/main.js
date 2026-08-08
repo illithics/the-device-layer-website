@@ -6,13 +6,13 @@
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  // Theme toggle (dark is the default; choice persists in localStorage only)
+  // Theme toggle (paper/light is the default; choice persists in localStorage only)
   var toggle = document.querySelector(".theme-toggle");
   if (toggle) {
     toggle.addEventListener("click", function () {
       var root = document.documentElement;
-      var next = root.dataset.theme === "light" ? "dark" : "light";
-      if (next === "light") root.dataset.theme = "light";
+      var next = root.dataset.theme === "dark" ? "light" : "dark";
+      if (next === "dark") root.dataset.theme = "dark";
       else delete root.dataset.theme;
       try { localStorage.setItem("tdl-theme", next); } catch (e) { /* private mode */ }
     });
