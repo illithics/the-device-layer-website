@@ -408,7 +408,13 @@ a:hover { color: var(--accent); }
   border: 2px solid var(--ink);
   padding: 18px 18px 12px;
 }
+.chart-figure { touch-action: pan-y; }
 .chart-figure svg { width: 100%; height: auto; display: block; }
+/* On touch devices the hover tooltips are unreachable anyway — make the
+   charts inert so a finger scrolls the page instead of grabbing the SVG. */
+@media (hover: none) {
+  .chart-figure svg { pointer-events: none; }
+}
 .ch-label { font-family: var(--font-body); font-size: 13px; fill: var(--muted); }
 .ch-val { font-family: var(--font-mono); font-size: 13px; fill: var(--text); font-weight: 500; }
 .ch-big { font-family: var(--font-display); font-size: 27px; font-weight: 600; fill: var(--text); }
