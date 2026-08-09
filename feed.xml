@@ -8,6 +8,87 @@
     <language>en</language>
 
     <item>
+      <title>A Decline in User Demand for Privacy?</title>
+      <link>https://www.thedevicelayer.com/posts/a-decline-in-user-demand-for-privacy.html</link>
+      <guid>https://www.thedevicelayer.com/posts/a-decline-in-user-demand-for-privacy.html</guid>
+      <pubDate>Sun, 09 Aug 2026 12:00:00 +0000</pubDate>
+      <description>A longitudinal study from 2016 to 2025 found a drop in on-chain privacy activities. Is there really less demand for privacy, or did the hunter get outfoxed?</description>
+      <content:encoded><![CDATA[<figure class="hero-figure">
+        <img src="https://www.thedevicelayer.com/assets/heroes/ed9.webp" alt="A data-center aisle bathed in purple light, racks of servers stretching toward a glowing sign that reads VIKING HPC CLUSTER." width="1600" height="639" />
+      </figure>
+
+      <blockquote><p>How do you measure the adoption of technology whose purpose is to become harder to measure?</p></blockquote>
+
+      <p>
+        A recent paper from a group at the University of York,
+        <a href="https://arxiv.org/abs/2607.00772" rel="noopener"><em>No Country for Old
+        Privacy</em></a>, painstakingly researched the use of privacy techniques on a rapidly
+        changing Bitcoin landscape and found some interesting connections and some glaring
+        limitations. One of the most notable things they discovered was there was actually a
+        rather limited scope of the use of privacy techniques. They were looking at four
+        general categories: CoinJoin, CoinSwap, CoinShuffle, and Stealth Addresses. Briefly,
+        the first three use a combination of arranging transactions in such a way that it is
+        hard to determine the final destination of on-chain transactions, either through
+        making it difficult to connect or combining many participants' inputs and outputs,
+        making the final relationships similarly hard to find after the transaction. Stealth
+        Addresses use one-time payment addresses to shield repeated transactions from looking
+        like they end up at the same place. Despite so many advanced tools to conduct such
+        transactions, the researchers found that they represented less than 1% of all Bitcoin
+        transactions across the period of the study.
+      </p>
+
+      <blockquote><p>&ldquo;Our analysis reveals consistently low adoption rates, with these protocols constituting less than 1% of network transactions&rdquo;</p></blockquote>
+
+      <p>
+        Now, to say this kind of analysis is a heavy lift is a severe understatement. The team
+        decided not to use readily available commercial blockchain surveillance tools, which
+        use off-chain data, because it would strongly limit their reproducibility over the
+        9-year study period. They chose a heuristic approach that wasn't trying to identify
+        who was seeking privacy through the above-mentioned methods. They were looking for the
+        fingerprints that those known methods leave on Bitcoin's public ledger. Enter 2017's
+        SegWit change in Bitcoin's transaction structure: some information was moved to a
+        previously unused witness field and — boom — their parser didn't examine that field.
+        This is where we see our first drop in detections. Does that mean that CoinSwaps
+        didn't take place? No. It means the footprints were harder to find.
+      </p>
+
+      <p>
+        Things didn't get any better for the researchers when they worked on Stealth
+        Addresses. Like the Three Little Bears, the premise was straightforward. They tried
+        three different heuristics. One was too restrictive, leaving less than 5k candidates.
+        They broadened it, and now they captured arbitrary data and Bitcoin Ordinals that
+        merely looked similar but had nothing to do with the types of addresses they were
+        looking for. Finally, tightening the structure around the BIP47 structure, they found
+        nothing. Zero, zilch, nada. The authors acknowledge that ultimately they could not
+        rule out nonstandard stealth implementations their heuristic didn't capture.
+      </p>
+
+      <p>
+        So what does declining privacy mean in the context of the changes to the Bitcoin
+        protocol over this period? The article mentions several major events: SegWit being
+        the first, but Taproot, Terra/Luna, Ordinals, ETFs, and finally, event G —
+        <a href="https://www.ic3.gov/PSA/2024/PSA240425" rel="noopener">a letter from the FBI
+        in April of 2024</a> warning about unregistered money-transmitting services. This is
+        where the paper gets really interesting, and harder to distinguish from a speculative
+        assertion versus a forensic blockchain analysis. The paper mentions several drops in
+        recognition of certain privacy techniques after each event. Sometimes dramatically.
+      </p>
+
+      <p>
+        The authors openly acknowledge the obvious correlation-is-not-causation argument, but
+        they also do a remarkably good job at showing just how hard it is to determine user
+        intent by simply looking at on-chain behavior. They cannot tell whether the decline
+        represents less demand for privacy, migration to less detectable Bitcoin privacy
+        methods, or migration to privacy chains like Monero or Zcash.
+      </p>
+
+      <aside class="disclosure-note">
+        <strong>Disclosure:</strong> the author is COO of KeepKey, a hardware-wallet company
+        with a commercial interest in self-custody and user privacy. The research discussed is
+        independent academic work. See the <a href="https://www.thedevicelayer.com/about.html#affiliations">affiliation policy</a>.
+      </aside>]]></content:encoded>
+    </item>
+    <item>
       <title>Is There Such a Thing as &quot;The Perfect Wallet?&quot;</title>
       <link>https://www.thedevicelayer.com/posts/is-there-such-a-thing-as-the-perfect-wallet.html</link>
       <guid>https://www.thedevicelayer.com/posts/is-there-such-a-thing-as-the-perfect-wallet.html</guid>

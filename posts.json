@@ -10,21 +10,25 @@
       "edition": 1,
       "status": "published",
       "title": "$431M and the Map Nobody Is Reading Right",
-      "subtitle": "North America still owns the hardware-wallet market on paper. The real growth is happening somewhere else — and most buyers are staring at the wrong number.",
+      "subtitle": "North America still owns the hardware-wallet market on paper. The real growth is happening somewhere else \u2014 and most buyers are staring at the wrong number.",
       "url": "posts/431m-and-the-map-nobody-is-reading-right.html",
       "date": "2026-05-31",
       "readingTime": "8 min",
-      "topics": ["self-custody"]
+      "topics": [
+        "self-custody"
+      ]
     },
     {
       "edition": 2,
       "status": "published",
       "title": "The Interface Became the Attack Surface",
-      "subtitle": "This study didn't test a single hardware wallet — and that's exactly the point.",
+      "subtitle": "This study didn't test a single hardware wallet \u2014 and that's exactly the point.",
       "url": "posts/the-interface-became-the-attack-surface.html",
       "date": "2026-06-07",
       "readingTime": "6 min",
-      "topics": ["security-and-signing"]
+      "topics": [
+        "security-and-signing"
+      ]
     },
     {
       "edition": 3,
@@ -34,7 +38,10 @@
       "url": "posts/self-custody-is-not-just-a-vibe.html",
       "date": "2026-06-14",
       "readingTime": "8 min",
-      "topics": ["self-custody", "trust-and-institutions"]
+      "topics": [
+        "self-custody",
+        "trust-and-institutions"
+      ]
     },
     {
       "edition": 4,
@@ -44,17 +51,23 @@
       "url": "posts/stress-test-self-custody.html",
       "date": "2026-06-21",
       "readingTime": "3 min",
-      "topics": ["self-custody", "trust-and-institutions"]
+      "topics": [
+        "self-custody",
+        "trust-and-institutions"
+      ]
     },
     {
       "edition": 5,
       "status": "published",
       "title": "The Wallet Was Secure. The Customer Wasn't.",
-      "subtitle": "Privacy is not the same thing as security — and crypto companies need to stop treating customer data like ordinary retail exhaust.",
+      "subtitle": "Privacy is not the same thing as security \u2014 and crypto companies need to stop treating customer data like ordinary retail exhaust.",
       "url": "posts/the-wallet-was-secure-the-customer-wasnt.html",
       "date": "2026-06-28",
       "readingTime": "3 min",
-      "topics": ["security-and-signing", "trust-and-institutions"]
+      "topics": [
+        "security-and-signing",
+        "trust-and-institutions"
+      ]
     },
     {
       "edition": 6,
@@ -64,7 +77,9 @@
       "url": "posts/the-psychological-signature.html",
       "date": "2026-07-19",
       "readingTime": "4 min",
-      "topics": ["security-and-signing"]
+      "topics": [
+        "security-and-signing"
+      ]
     },
     {
       "edition": 7,
@@ -74,7 +89,9 @@
       "url": "posts/the-architecture-of-agentic-commerce.html",
       "date": "2026-07-26",
       "readingTime": "4 min",
-      "topics": ["agents-and-automation"]
+      "topics": [
+        "agents-and-automation"
+      ]
     },
     {
       "edition": 8,
@@ -84,7 +101,22 @@
       "url": "posts/is-there-such-a-thing-as-the-perfect-wallet.html",
       "date": "2026-08-02",
       "readingTime": "4 min",
-      "topics": ["device-architecture", "trust-and-institutions"]
+      "topics": [
+        "device-architecture",
+        "trust-and-institutions"
+      ]
+    },
+    {
+      "edition": 9,
+      "status": "published",
+      "title": "A Decline in User Demand for Privacy?",
+      "subtitle": "A longitudinal study from 2016 to 2025 found a drop in on-chain privacy activities. Is there really less demand for privacy, or did the hunter get outfoxed?",
+      "url": "posts/a-decline-in-user-demand-for-privacy.html",
+      "date": "2026-08-09",
+      "readingTime": "4 min",
+      "topics": [
+        "security-and-signing"
+      ]
     }
   ]
 }

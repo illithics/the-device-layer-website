@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A Decline in User Demand for Privacy? — The Device Layer</title>
+  <meta name="description" content="A longitudinal study from 2016 to 2025 found a drop in on-chain privacy activities. Is there really less demand for privacy, or did the hunter get outfoxed?" />
+  <link rel="canonical" href="https://www.thedevicelayer.com/posts/a-decline-in-user-demand-for-privacy.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="A Decline in User Demand for Privacy?" />
+  <meta property="og:description" content="How do you measure the adoption of technology whose purpose is to become harder to measure?" />
+  <meta property="og:image" content="https://www.thedevicelayer.com/assets/heroes/ed9.webp" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "A Decline in User Demand for Privacy?",
+    "datePublished": "2026-08-09",
+    "dateModified": "2026-08-09",
+    "author": { "@type": "Person", "name": "illithics", "url": "https://x.com/illithicKeepKey" },
+    "publisher": { "@type": "Organization", "name": "The Device Layer" }
+  }
+  </script>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="The Device Layer" href="../feed.xml" />
+  <script>try{if(localStorage.getItem("tdl-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="container">
+      <a class="brand" href="../" aria-label="The Device Layer — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+        <span class="brand-name">The&nbsp;Device&nbsp;Layer</span>
+      </a>
+      <nav class="masthead-links" aria-label="Primary">
+        <a href="../essays.html">Essays</a>
+        <a href="../topics/">Topics</a>
+        <a href="../about.html">About</a>
+        <a href="../subscribe.html">Subscribe</a>
+        <a href="../search.html">Search</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M19.5 4.5l-2 2M6.5 17.5l-2 2"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="article-wrap">
+    <article class="article">
+      <header class="article-head">
+        <p class="meta-line">
+          <span class="topic-chip">Security &amp; Signing</span>
+          <span>Edition 9</span>
+          <time datetime="2026-08-09">August 9, 2026</time>
+          <span>4 min read</span>
+          <span>by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a></span>
+        </p>
+        <h1>A Decline in User Demand for Privacy?</h1>
+        <p class="standfirst">
+          A longitudinal study from 2016 to 2025 found a drop in on-chain privacy activities.
+          Is there really less demand for privacy, or did the hunter get outfoxed?
+        </p>
+        <div class="argument-line">
+          <span class="label">The argument in one sentence</span>
+          The measured decline in Bitcoin privacy techniques may say less about the demand for
+          privacy than about how hard privacy is to measure — the tools didn't vanish, their
+          footprints did.
+        </div>
+      </header>
+
+      <figure class="hero-figure">
+        <img src="../assets/heroes/ed9.webp" alt="A data-center aisle bathed in purple light, racks of servers stretching toward a glowing sign that reads VIKING HPC CLUSTER." width="1600" height="639" />
+      </figure>
+
+      <blockquote><p>How do you measure the adoption of technology whose purpose is to become harder to measure?</p></blockquote>
+
+      <p>
+        A recent paper from a group at the University of York,
+        <a href="https://arxiv.org/abs/2607.00772" rel="noopener"><em>No Country for Old
+        Privacy</em></a>, painstakingly researched the use of privacy techniques on a rapidly
+        changing Bitcoin landscape and found some interesting connections and some glaring
+        limitations. One of the most notable things they discovered was there was actually a
+        rather limited scope of the use of privacy techniques. They were looking at four
+        general categories: CoinJoin, CoinSwap, CoinShuffle, and Stealth Addresses. Briefly,
+        the first three use a combination of arranging transactions in such a way that it is
+        hard to determine the final destination of on-chain transactions, either through
+        making it difficult to connect or combining many participants' inputs and outputs,
+        making the final relationships similarly hard to find after the transaction. Stealth
+        Addresses use one-time payment addresses to shield repeated transactions from looking
+        like they end up at the same place. Despite so many advanced tools to conduct such
+        transactions, the researchers found that they represented less than 1% of all Bitcoin
+        transactions across the period of the study.
+      </p>
+
+      <blockquote><p>&ldquo;Our analysis reveals consistently low adoption rates, with these protocols constituting less than 1% of network transactions&rdquo;</p></blockquote>
+
+      <p>
+        Now, to say this kind of analysis is a heavy lift is a severe understatement. The team
+        decided not to use readily available commercial blockchain surveillance tools, which
+        use off-chain data, because it would strongly limit their reproducibility over the
+        9-year study period. They chose a heuristic approach that wasn't trying to identify
+        who was seeking privacy through the above-mentioned methods. They were looking for the
+        fingerprints that those known methods leave on Bitcoin's public ledger. Enter 2017's
+        SegWit change in Bitcoin's transaction structure: some information was moved to a
+        previously unused witness field and — boom — their parser didn't examine that field.
+        This is where we see our first drop in detections. Does that mean that CoinSwaps
+        didn't take place? No. It means the footprints were harder to find.
+      </p>
+
+      <p>
+        Things didn't get any better for the researchers when they worked on Stealth
+        Addresses. Like the Three Little Bears, the premise was straightforward. They tried
+        three different heuristics. One was too restrictive, leaving less than 5k candidates.
+        They broadened it, and now they captured arbitrary data and Bitcoin Ordinals that
+        merely looked similar but had nothing to do with the types of addresses they were
+        looking for. Finally, tightening the structure around the BIP47 structure, they found
+        nothing. Zero, zilch, nada. The authors acknowledge that ultimately they could not
+        rule out nonstandard stealth implementations their heuristic didn't capture.
+      </p>
+
+      <p>
+        So what does declining privacy mean in the context of the changes to the Bitcoin
+        protocol over this period? The article mentions several major events: SegWit being
+        the first, but Taproot, Terra/Luna, Ordinals, ETFs, and finally, event G —
+        <a href="https://www.ic3.gov/PSA/2024/PSA240425" rel="noopener">a letter from the FBI
+        in April of 2024</a> warning about unregistered money-transmitting services. This is
+        where the paper gets really interesting, and harder to distinguish from a speculative
+        assertion versus a forensic blockchain analysis. The paper mentions several drops in
+        recognition of certain privacy techniques after each event. Sometimes dramatically.
+      </p>
+
+      <p>
+        The authors openly acknowledge the obvious correlation-is-not-causation argument, but
+        they also do a remarkably good job at showing just how hard it is to determine user
+        intent by simply looking at on-chain behavior. They cannot tell whether the decline
+        represents less demand for privacy, migration to less detectable Bitcoin privacy
+        methods, or migration to privacy chains like Monero or Zcash.
+      </p>
+
+      <aside class="disclosure-note">
+        <strong>Disclosure:</strong> the author is COO of KeepKey, a hardware-wallet company
+        with a commercial interest in self-custody and user privacy. The research discussed is
+        independent academic work. See the <a href="../about.html#affiliations">affiliation policy</a>.
+      </aside>
+
+      <details class="trust-ledger">
+        <summary>Trust Ledger <span class="tl-sub">claims · sources · uncertainty</span></summary>
+        <div class="trust-ledger-body">
+          <h3>Claims checked</h3>
+          <ul>
+            <li>The York study measured CoinJoin, CoinSwap, CoinShuffle, and Stealth Address usage on-chain from 2016–2025 and found the techniques constituted less than 1% of Bitcoin transactions.</li>
+            <li>The study's parser did not examine the post-SegWit witness field, coinciding with its first drop in detections.</li>
+            <li>The FBI issued an April 2024 public service announcement on unregistered cryptocurrency money-services businesses (the paper's "event G").</li>
+          </ul>
+          <h3>Primary sources</h3>
+          <ul>
+            <li><a href="https://arxiv.org/abs/2607.00772" rel="noopener"><em>No Country for Old Privacy</em> — University of York (arXiv:2607.00772)</a>.</li>
+            <li><a href="https://www.ic3.gov/PSA/2024/PSA240425" rel="noopener">FBI IC3 PSA240425 — warning on unregistered cryptocurrency money-transmitting services (April 25, 2024)</a>.</li>
+          </ul>
+          <h3>Commercial interests</h3>
+          <ul>
+            <li>The author's employer sells self-custody devices; the cited research is independent and academic, with no commercial relationship to the author.</li>
+          </ul>
+          <h3>What is confirmed / what remains uncertain</h3>
+          <ul>
+            <li>Confirmed: the paper's methodology, its measured adoption rates, and its own stated limitations.</li>
+            <li>Uncertain — by the paper's own admission: whether measured declines reflect reduced demand for privacy, migration to less detectable techniques, or migration to privacy chains. The event-correlation readings are suggestive, not causal.</li>
+          </ul>
+          <div class="tl-dates">
+            <span>Published: 2026-08-09</span>
+            <span>Last reviewed: 2026-08-09</span>
+            <span>Corrections: none</span>
+          </div>
+        </div>
+      </details>
+
+      <nav class="pager" aria-label="Edition navigation">
+        <a href="is-there-such-a-thing-as-the-perfect-wallet.html"><span class="dir">Previous · Edition 8</span><span class="title">Is There Such a Thing as "The Perfect Wallet?"</span></a>
+      </nav>
+
+      <section class="related">
+        <h2>~$ related essays</h2>
+        <ol class="post-list">
+          <li><a class="post-item" href="the-wallet-was-secure-the-customer-wasnt.html"><span class="meta-line"><span class="topic-chip">Security &amp; Signing</span><span>Edition 5</span></span><h3>The Wallet Was Secure. The Customer Wasn't.</h3><p>Privacy is not the same thing as security.</p></a></li>
+          <li><a class="post-item" href="the-interface-became-the-attack-surface.html"><span class="meta-line"><span class="topic-chip">Security &amp; Signing</span><span>Edition 2</span></span><h3>The Interface Became the Attack Surface</h3><p>Attackers are no longer trying to break encryption. They're trying to influence decisions.</p></a></li>
+        </ol>
+      </section>
+
+      <footer class="article-foot"><a class="back" href="../essays.html">← All essays</a></footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+          <span>The Device Layer — long-form writing about devices, security, and the systems we trust with irreversible decisions. Written by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a>.</span>
+        </div>
+        <div>
+          <h4>Publication</h4>
+          <ul>
+            <li><a href="../essays.html">Essays</a></li>
+            <li><a href="../topics/">Topics</a></li>
+            <li><a href="../subscribe.html">Subscribe</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+            <li><a href="../search.html">Search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Trust</h4>
+          <ul>
+            <li><a href="../about.html">About &amp; the author</a></li>
+            <li><a href="../standards.html">Editorial standards</a></li>
+            <li><a href="../corrections.html">Corrections</a></li>
+            <li><a href="../privacy.html">Privacy</a></li>
+            <li><a href="../disclosure.html">Responsible disclosure</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">© <span id="year"></span> The Device Layer · An independent publication. The author is COO of KeepKey; the publication is editorially independent — <a href="../about.html#affiliations">read the disclosure</a>.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
