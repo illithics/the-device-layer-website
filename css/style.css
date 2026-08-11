@@ -598,7 +598,7 @@ table.plain th { color: var(--text); font-family: var(--font-mono); font-size: 0
   border-radius: 50%;
   border: 1.5px solid var(--on-ink);
   vertical-align: -8px;
-  margin: 0 4px 0 4px;
+  margin: 0 1px 0 5px;
 }
 .footer-brand .brand-mark { width: 22px; height: 22px; margin-top: 2px; }
 .footer .mark-dim { fill: var(--on-ink); opacity: 0.4; }
