@@ -593,6 +593,13 @@ table.plain th { color: var(--text); font-family: var(--font-mono); font-size: 0
   display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px;
 }
 .footer-brand { display: flex; align-items: flex-start; gap: 10px; font-size: 0.92rem; opacity: 0.92; }
+.footer-avatar {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid var(--on-ink);
+  vertical-align: -8px;
+  margin: 0 4px 0 4px;
+}
 .footer-brand .brand-mark { width: 22px; height: 22px; margin-top: 2px; }
 .footer .mark-dim { fill: var(--on-ink); opacity: 0.4; }
 .footer h4 {
