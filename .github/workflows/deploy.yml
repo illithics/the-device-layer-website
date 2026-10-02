@@ -1,19 +1,19 @@
 name: Deploy to GitHub Pages
-
+ 
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
+ 
 permissions:
   contents: read
   pages: write
   id-token: write
-
+ 
 concurrency:
   group: pages
   cancel-in-progress: true
-
+ 
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -22,11 +22,32 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+ 
+      # Guard 1: refuse to deploy if private working material was committed.
+      # Manuscripts, source PDFs, office files, images outside assets/, and env files never belong in this repo.
+      - name: Block private material
+        run: |
+          bad=$(git ls-files | grep -E -i '\.(pdf|docx?|pages|key|numbers|xlsx?|pptx?|psd)$|(^|/)\.env$|(^|/)Raw Articles/|(^|/)Scratch' || true)
+          img=$(git ls-files | grep -E -i '\.(png|jpe?g|gif|webp|svg|heic)$' | grep -v '^assets/' || true)
+          if [ -n "$bad$img" ]; then
+            echo "::error::Private or out-of-place files are committed. Remove them before deploying:"
+            printf '%s\n' $bad $img
+            exit 1
+          fi
+ 
+      # Guard 2: publish only the site. Docs, tooling and deploy plans stay in the repo, not on the website.
+      - name: Assemble site
+        run: |
+          mkdir _site
+          cp *.html CNAME feed.xml sitemap.xml robots.txt posts.json _site/
+          cp -r posts topics css js assets .well-known _site/
+          echo "Published files:"; find _site -type f | sort
+ 
       - uses: actions/configure-pages@v5
         with:
           enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
