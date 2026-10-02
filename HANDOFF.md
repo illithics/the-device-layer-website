@@ -1,9 +1,13 @@
 # The Device Layer — Handoff
 
 **Self-contained record of how www.thedevicelayer.com was built, how it runs, and how to keep publishing it.**
-Drop this file (with `AGENTS.md`) into a Claude project folder; a fresh session with no other context should be able to publish an edition, run the monthly claims patrol, and fix the site from these two documents plus the repository.
+Drop this file (with `AGENTS.md`) into a Claude project folder; a fresh session with no other context should be able to publish an edition, run the monthly corrections check, and fix the site from these two documents plus the repository.
 
-Snapshot date: 2026-10-02. Repository: `github.com/illithics/the-device-layer-website`. Live: https://www.thedevicelayer.com/.
+**Order of authority:** the author's latest explicit instruction → this file and `AGENTS.md` → anything else. `claims-patrol.md` is **retired** (superseded by §9–§10 on 2026-10-02); ignore any copy of it.
+
+**Two versions of this file.** The repository copy is public (GitHub and the live site) and omits personal details, local paths, account/routine IDs and unpublished plans. The author's private copy (local folder and Claude project) is the full version. Never commit the private copy.
+
+Snapshot date: 2026-10-02 (revised the same day: claims patrol replaced by the corrections check and the Since Publication page). Repository: `github.com/illithics/the-device-layer-website`. Live: https://www.thedevicelayer.com/.
 
 ---
 
@@ -27,9 +31,10 @@ Snapshot date: 2026-10-02. Repository: `github.com/illithics/the-device-layer-we
 ## 2. State as of 2026-10-02
 
 - Nine editions published (see §7 for the table). Editions 1–3 and 9 have confirmed publication dates; Editions 4–8 carry **provisional** dates reconstructed from the weekly cadence, which `corrections.html` says will be corrected against the original X timestamps.
-- `main` = `e747229` ("Move footer avatar to after the illithics byline", 2026-08-11). `claude/device-layer-website-6xy4if` was level with it until this handoff commit. No open pull requests. A stale branch `claude/keepkey-2fa-authenticator-ly595k` exists from an unrelated early experiment (safe to delete).
-- GitHub Pages deploy from `main` works; last deploys succeeded.
-- Monthly claims patrol Routine exists and has fired twice (2026-09-01, 2026-10-01, both "SUCCEEDED") but **neither run produced a branch or PR**, and two findings it surfaced are not yet reflected on the site (see §10).
+- An Edition 10 manuscript exists in the author's `Drafts/` folder (§4a). Not yet scheduled; decisions pending (hero, date, standfirst, topics).
+- `main` = `fa6eded` ("Add handoff and agent behavior docs; commit the feed generator"). No open pull requests. A stale branch `claude/keepkey-2fa-authenticator-ly595k` exists from an unrelated early experiment (safe to delete).
+- GitHub Pages deploy from `main` works; last known deploys succeeded.
+- **Editorial model changed 2026-10-02.** The old monthly claims patrol (a Claude Code Routine that edited ledgers and logged developments as corrections) is retired. It fired twice and never produced a branch or PR. It is replaced by a report-only **monthly corrections check** (§10) and a public **Since Publication** page (§9). Neither the new page nor the correction-notice component is built yet (backlog §12). The old Routine must be disabled before its next scheduled run on 2026-11-01.
 - Newsletter: **not live.** The signup form deliberately shows an honest "not live yet" message. A complete self-hosted Listmonk + Amazon SES plan sits in `deploy/listmonk/` (see §11).
 - Search Console / Bing sitemap submission: not done.
 - About page uses no photo yet; the author plans to add a real photo later. The digital avatar (`assets/avatar.webp`) is used **only in the footer, after the name "illithics"**, for continuity with X / Discord / Signal.
@@ -45,7 +50,7 @@ Snapshot date: 2026-10-02. Repository: `github.com/illithics/the-device-layer-we
   git push -u origin HEAD:claude/device-layer-website-6xy4if
   git branch -f main HEAD && git push origin main
   ```
-  Never force-push `main`. Never push unreviewed automated findings (patrol output) straight to `main` — open a PR instead.
+  Never force-push `main`. Only human-reviewed work goes to `main` (editions the author sent, fixes the author asked for, corrections-check items the author approved). Automated runs do not write to the repository at all (§10).
 
 ### Deploy: GitHub Pages via Actions
 `.github/workflows/deploy.yml` — triggers on push to `main` and on `workflow_dispatch`:
@@ -80,7 +85,8 @@ topics/index.html          topic index
 topics/<slug>.html         one page per topic, essays newest first
 about.html                 publication + author + #affiliations (the conflict-of-interest statement)
 standards.html             editorial standards (what the Trust Ledger promises)
-corrections.html           public corrections log (table: Date / Essay / Change), newest first
+corrections.html           public corrections log (table: Date / Essay / Change), newest first — errors only
+since-publication.html     PLANNED (§9): developments after publication, one section per edition (#edition-N)
 privacy.html               no analytics/trackers/cookies; fonts self-hosted; GitHub Pages named as host
 disclosure.html            responsible-disclosure policy (linked from security.txt)
 contact.html               contact routes (X, GitHub)
@@ -108,6 +114,24 @@ HANDOFF.md, AGENTS.md      this handoff and the behavior contract
 
 There is **no build step** and **no dependency**. Local preview: `python3 -m http.server 8000` from the repo root.
 
+## 4a. The author's local folder
+
+`/Users/illithics.openclaw/Documents/Device Layer/` on the author's Mac (readable from the Claude project via the Filesystem connector):
+
+| Folder / file | What it holds | How to use it |
+|---|---|---|
+| `Drafts/` | Manuscripts not yet published (`Device Layer ED 10 .docx`) | Source for the next edition |
+| `Editions/` | Final `.docx` manuscripts, Editions 1–9 (`DV ED 1–3`, `DL ED 4–9`) | Reference copies of published text |
+| `Pages/` | The same manuscripts as `.pages` | Hero art is embedded here (`Data/`) |
+| `Graphics/` | Hero images (`DL ED N Hero.png`) | Convert to `assets/heroes/edN.webp` |
+| `Raw Articles/` | **Private offline library of source PDFs** | Evidence only — see below |
+| `AGENTS.md`, `HANDOFF.md` | Local copies of these documents | Keep in step with the repository copies |
+| Scratch Pad (separate document) | The author's private brainstorming | **Never open, read, quote, or use** |
+
+**Raw Articles rules.** The author saves source articles as PDFs because many sites block automated access. Agents may read them to check what a source says. They are never committed to the repository, never hosted, never linked from the site; Trust Ledgers and since-publication entries always link the original website. Before asking the author for a source, check whether it is already in this folder.
+
+**Scratch pad rules.** Never open, read, quote, summarize, research from, or publish anything from the Scratch Pad document, or from any section of a manuscript marked as a scratch pad (e.g. text below a "Scratch pad" divider). It is not part of any essay.
+
 ## 5. Design system — "Broadsheet"
 
 Chosen by the author from three mockups ("B stands out as a clear winner"). Ink on paper, condensed headlines, hard rules, a single red accent. Light is the default; dark is an opt-in **ink inversion** (paper lines on near-black), not a separate palette.
@@ -131,22 +155,23 @@ Chart colors `--ch-blue/--ch-amber/--ch-green/--ch-navy/--ch-mapgreen/--ch-neutr
 
 ## 6. Page anatomy
 
-### Shared chrome (every page, 25 files)
+### Shared chrome (every page — 25 files today, 26 once `since-publication.html` exists)
 `skip-link` → `.masthead` (brand mark + "The Device Layer" + nav: Essays, Topics, About, Subscribe, Search, theme toggle) → `<main id="main">` → `.footer` (brand blurb with byline + avatar; Publication links; Trust links; `footer-note` with the independence/COO statement and a link to `about.html#affiliations`) → `js/main.js`.
-Pages under `posts/` and `topics/` use `../` relative paths; root pages use bare relative paths. There is no templating, so **chrome changes must be applied to all 25 pages** (sed/perl over the file set, then diff-check).
+Pages under `posts/` and `topics/` use `../` relative paths; root pages use bare relative paths. There is no templating, so **chrome changes must be applied to every page** (sed/perl over the file set, then diff-check). When `since-publication.html` is built, add it to the footer's Trust links next to Corrections.
 
 ### Essay page (`posts/<slug>.html`) — use Edition 9 as the canonical template
 Head: `<title>{Title} — The Device Layer</title>`, `meta description` = subtitle, canonical, `og:type article`, `og:title`, `og:description` (usually the opening pull-quote), `og:image` = absolute hero URL, Article JSON-LD (`headline`, `datePublished`, `dateModified`, `author` Person illithics + X URL, `publisher` Organization "The Device Layer"), favicon, RSS alternate, theme pre-paint script, stylesheet.
 
 Body, inside `<main id="main" class="article-wrap"><article class="article">`:
 1. `header.article-head` → `p.meta-line` (topic chip, `Edition N`, `<time datetime>`, `N min read`, `by illithics`) → `h1` → `p.standfirst` (the subtitle) → `div.argument-line` with `<span class="label">The argument in one sentence</span>` + one sentence.
+1a. `aside.correction-notice` — **only if an approved correction exists** (spec below). Sits directly after the header, before the hero, so readers see it first and `genfeed.py` carries it into the feed.
 2. `figure.hero-figure` → `<img src="../assets/heroes/edN.webp" width="1600" height="…" alt="…">` with a real alt description.
 3. Essay body: `<p>` paragraphs, `<blockquote><p>…</p></blockquote>` pull-quotes, `h2[id]` section heads (main.js adds copy-link buttons), inline `<a rel="noopener">` source links exactly where the manuscript had them. Edition 1 additionally has `figure.chart-figure` inline SVGs.
 4. `aside.disclosure-note` — **required** on any essay that touches the wallet market; opens with `<strong>Disclosure:</strong> the author is COO of KeepKey…` and links `../about.html#affiliations`.
 5. `details.trust-ledger` — see spec below.
 6. `nav.pager` — Previous/Next edition links (update the neighbor's pager when adding an edition).
 7. `section.related` → `h2` "~$ related essays" → `ol.post-list` of 2–3 `a.post-item` (same topic preferred).
-8. `footer.article-foot` → "← All essays".
+8. `footer.article-foot` → "← All essays" **plus** a link to this edition's developments: `<a href="../since-publication.html#edition-N">Since publication →</a>` (present on every essay, even when nothing is recorded yet).
 
 ### Trust Ledger spec (every essay)
 ```html
@@ -166,7 +191,32 @@ Body, inside `<main id="main" class="article-wrap"><article class="article">`:
   </div>
 </details>
 ```
-Rules: no claim goes in "Claims checked" unless a source in "Primary sources" supports it; secondary coverage is labeled as such; anything taken from a search summary rather than a primary document goes under "uncertain"; placeholders are allowed only in the form "(archive link being added)" and must be tracked in the backlog (§12).
+Rules: no claim goes in "Claims checked" unless a source in "Primary sources" supports it; secondary coverage is labeled as such; anything taken from a search summary rather than a primary document goes under "uncertain"; placeholders are allowed only in the form "(archive link being added)" and must be tracked in the backlog (§12). Source links always point at the original website, never at a PDF from `Raw Articles/`.
+
+**The ledger is frozen at publication.** It records what was checked and known when the essay went out. After that it changes only for an approved correction: fix the wrong item, set `Corrections: see corrections log (YYYY-MM-DD)`, and bump `Last reviewed`. Developments never go in the ledger — they go on `since-publication.html`. `Last reviewed` therefore means "the last date this ledger was verified or corrected," not "the last monthly check."
+
+### Correction notice spec (only on essays with an approved correction)
+```html
+<aside class="correction-notice" id="correction">
+  <p><strong>Correction (YYYY-MM-DD):</strong> what was wrong, what it now says, and the source.
+     <a href="../corrections.html">Corrections log</a></p>
+</aside>
+```
+Newest correction first if there is more than one. Style it with existing tokens only (2px ink rule, red accent label, mono date; no radius), the same family as `aside.disclosure-note`. Whether the essay's prose is also edited is the author's decision, case by case.
+
+### Since Publication page (`since-publication.html`, planned)
+One page for the whole site. Short intro stating the rule: *essays are accurate as of their publication date; this page records what has happened since, without changing them; errors are handled on the corrections page.* Then one section per edition, newest edition first:
+```html
+<section class="since-edition" id="edition-N">
+  <h2><a href="posts/<slug>.html">Edition N — Title</a></h2>
+  <p class="meta-line"><span>Published YYYY-MM-DD</span><span>Last checked YYYY-MM-DD</span></p>
+  <ul>
+    <li><time datetime="YYYY-MM-DD">Mon D, YYYY</time> — what happened, in one or two plain sentences. <a href="…" rel="noopener">Source — publisher</a></li>
+  </ul>
+  <!-- or, when empty: <p>No developments recorded.</p> -->
+</section>
+```
+Entries are append-only, dated by the date of the event, newest first, primary source preferred, no commentary on whether the development helps or hurts the essay's argument. `Last checked` moves when the author approves a monthly report that covered that edition. Add `since-publication.html` to the static page list in `tools/genfeed.py` so it enters the sitemap.
 
 ### Listing cards (home / essays / topics)
 `a.post-item` → `p.meta-line` (chip, Edition, `<time>`, minutes) → `h3` title → `p` one-line hook → `span.read-more`. The homepage `a.featured` card has a longer `p.argument`. Topic pages render the date as ISO (`2026-08-09`), home/essays as `Aug 9, 2026`.
@@ -191,40 +241,96 @@ Hero art for every edition came embedded in the author's manuscripts (`.pages` �
 
 The author sends a manuscript (`.docx` or `.pages`) and sometimes a hero image. Prose is **preserved verbatim** apart from light copyedit (typos, obvious punctuation); structure, argument, and voice are the author's. If something looks factually wrong, flag it in the reply — do not rewrite it.
 
-1. **Extract the manuscript.** `.docx`: `python-docx` (paragraph runs preserve italics/links; `word/media/` holds images). `.pages`: unzip; text is in `Index/Document.iwa` as snappy-compressed IWA chunks (decompress with `cramjam`/`python-snappy` and pull the text runs); images are in `Data/`. System Python in the Claude sandbox had a broken `cryptography` module, so a venv (`python3 -m venv …; pip install python-docx cramjam pypdf Pillow`) was used.
+1. **Extract the manuscript** — the essay only; anything marked as a scratch pad (e.g. below a "Scratch pad" divider) is excluded entirely. `.docx`: `python-docx` (paragraph runs preserve italics/links; `word/media/` holds images). `.pages`: unzip; text is in `Index/Document.iwa` as snappy-compressed IWA chunks (decompress with `cramjam`/`python-snappy` and pull the text runs); images are in `Data/`. System Python in the Claude sandbox had a broken `cryptography` module, so a venv (`python3 -m venv …; pip install python-docx cramjam pypdf Pillow`) was used.
 2. **Hero.** Save to `assets/heroes/edN.webp` (1600w, q80). Write a real alt text.
 3. **Create `posts/<slug>.html`** by copying the most recent edition and replacing: title, description, canonical, og tags, JSON-LD dates, meta-line, h1, standfirst, argument-line, hero, body, disclosure note, Trust Ledger (research every claim and source now — this is the editorial product, not a formality), pager (Previous only for the newest; then add a Next link to the previous edition's pager), related essays.
 4. **Reading time:** words ÷ 230, rounded, minimum 3.
 5. **Update listings:** `posts.json` (append the edition object; keep fields identical to existing ones), `essays.html` (new card at top), `index.html` (new featured card; demote the old featured into the "latest" trio and drop the oldest of the three; bump the topic-card essay count), each `topics/<slug>.html` the essay belongs to (new card at top).
 6. **Regenerate feed/sitemap/robots:** `python3 tools/genfeed.py` from the repo root. It prints `feed: N items · sitemap: M urls · xml valid`. If it fails, the essay HTML is malformed (usually an unclosed tag inside `<article>`).
-7. **Verify locally:** `python3 -m http.server 8311` and screenshot at 1280px and 390px with Playwright (Chromium is preinstalled in the sandbox at `/opt/pw-browsers/chromium`; `playwright-core` can be installed in the scratchpad). Check: both themes, hero loads, ledger opens, pager links resolve, search finds a phrase from the new essay, no horizontal scroll on mobile. Run a link check over the new page's hrefs if the network allows.
+7. **Verify locally:** `python3 -m http.server 8311` and screenshot at 1280px and 390px with Playwright (Chromium is preinstalled in the sandbox at `/opt/pw-browsers/chromium`; `playwright-core` can be installed in the scratchpad). Check: both themes, hero loads, ledger opens, pager links resolve, the Since publication link resolves, search finds a phrase from the new essay, no horizontal scroll on mobile. Do **not** try to fetch the essay's external source links; list them for the author to confirm in a browser (§10).
 8. **Commit, push both branches** (§3), then poll the Actions API until the deploy run's `conclusion` is `success`. Report the live URL. The sandbox cannot fetch the live site (egress proxy), so ask the author to confirm in a browser.
-9. If any earlier essay's ledger or date was touched, add a row to `corrections.html` (newest first).
+9. If any earlier essay's ledger or date was touched, add a row to `corrections.html` (newest first). Add an empty `#edition-N` section for the new edition to `since-publication.html` ("No developments recorded.").
 
-## 9. Corrections and review discipline
+## 9. Corrections, developments, and review discipline
 
-- `corrections.html` is the public log; `standards.html` promises it. Every material change to a published essay (prose, date, ledger facts) gets a row: `Date | Edition | What changed and why`. Silent rewrites are not practiced. Typos and markup fixes do not need a row.
-- When a ledger changes, bump its `Last reviewed` and set `Corrections:` to point at the log date.
-- Dates in JSON-LD (`dateModified`) should move when the prose changes; ledger-only edits may leave it.
-- Current provisional-date debt: Editions 4–8. The fix is to read the original X post timestamps, set the real dates in `posts.json`, each essay's meta-line/`<time>`/JSON-LD/ledger, the listing cards, regenerate the feed, and close the 2026-08-05 "provisional dates" row with a new row.
+**The principle:** an essay is accurate as of the day it was published. Later events do not make it wrong, and must never be presented as if they did. Two kinds of change, kept strictly apart:
+
+| | Correction | Development |
+|---|---|---|
+| Meaning | Something in the essay or its apparatus was wrong **at publication** (figure, date, attribution, source, ledger fact) | Something happened **after** publication that bears on a time-sensitive claim |
+| Example | A misquoted figure; Editions 4–8 provisional dates | Edition 3: the CLARITY Act's Senate cloture vote on 2026-09-15 |
+| Where it goes | `aside.correction-notice` at the top of the essay + row at the top of `corrections.html` + ledger fix | An entry under `#edition-N` on `since-publication.html` |
+| Changes the essay page? | Yes (notice, ledger; prose only if the author decides) | No — only the "Since publication" link, which is always there |
+| Approval | Author, per item | Author, per item |
+
+Rules:
+- Nothing is posted in either category without the author's explicit approval.
+- Typos and markup fixes are neither; they need no notice, row, or entry.
+- `corrections.html` rows: `Date | Edition | What was wrong, what it now says, why`. Newest first.
+- On a correction: bump the ledger's `Last reviewed`, set `Corrections: see corrections log (YYYY-MM-DD)`, and move JSON-LD `dateModified` only if prose changed.
+- A resolved uncertainty is a development, not a correction. If a ledger listed something as uncertain and it later resolved, the ledger was right.
+- Current provisional-date debt: Editions 4–8. The fix is to get the original X post timestamps from the author, set the real dates in `posts.json`, each essay's meta-line/`<time>`/JSON-LD/ledger, the listing cards, regenerate the feed, and close the 2026-08-05 "provisional dates" row with a new row.
+- `standards.html` must say the same thing as this section (backlog §12). Its current line "Material changes to a developing technical claim are versioned the same way" conflicts with this model and is to be replaced with wording the author approves.
 
 ## 10. Automation
 
-### Monthly claims patrol (exists; needs one fix)
-- Routine id `trig_01Fimo47UE1ngqrmqoqnbhtd`, name "Device Layer — monthly claims patrol", cron `0 15 1 * *` (1st of each month, 15:00 UTC ≈ 9 am Denver), fires a **fresh Claude Code session** each time, push + email notifications to the author. Next run 2026-11-01. Prompt last updated 2026-10-01.
-- What it is told to do: clone the repo; read `posts.json` and every essay; list every time-sensitive claim (watchlist: Ed. 3 CLARITY Act; Ed. 8 bunnie/baochip DEF CON badge + TROPIC secure-element testing; Ed. 7 Coinbase Agentic Wallets / MetaMask agent wallet / Ledger Agent Stack; Ed. 6 Queensland letterbox scam; Ed. 9 arXiv 2607.00772; Ed. 1 Coherent Market Insights); web-search each since its "Last reviewed"; verify every Trust Ledger link resolves (report proxy-blocked links as *unverified*, not dead); update ledgers' confirmed/uncertain + Last reviewed and draft `corrections.html` rows; **never touch essay prose**; commit to `claude/claims-patrol-<YYYYMM>`; push; open a **draft PR** into `main` with the report as description; notify the author; end with "Reply 'approve' in this session to merge". Merge only on an explicit "approve"/"merge it" in that session; close on rejection; ask on ambiguity.
-- **Known gap:** the 2026-09-01 and 2026-10-01 runs reported success but no `claude/claims-patrol-*` branch and no PR exist. Most likely the fresh session did not hold the repository as a source, so `git push` was refused (and the fallback to GitHub MCP `push_files` was only added to the prompt on 2026-10-01). Fix options, in order of preference: (a) recreate the Routine from a session that has `illithics/the-device-layer-website` attached as a source so fired sessions inherit push access; (b) have the Routine fire into a persistent session that already holds the repo; (c) if neither is possible, keep the Routine as a research-only report and apply findings manually. After the next run, check `git ls-remote --heads origin 'claude/claims-patrol-*'` and the PR list.
-- **Findings already surfaced but not yet applied to the site** (verify against primary sources before editing):
-  1. Edition 3 — the CLARITY Act's Senate cloture vote failed 49–50 on 2026-09-15. Ledger currently says it "passed the House, advanced out of Senate Banking Committee, may reach the floor before elections". Update confirmed/uncertain, bump Last reviewed, add a corrections row. Prose stays.
-  2. Edition 8 — DEF CON 34 has happened and the bunnie/baochip badge shipped on the Baochip-1x. Update the ledger's confirmed section accordingly; check for new published TROPIC security testing while there.
+### Monthly corrections check (replaces the claims patrol)
+
+**Status:** specified, not yet running. The author is choosing the tool. The spec below is tool-agnostic.
+
+**What it is:** once a month (the 1st), a report to the author covering every published edition. **Report only** — it does not commit, branch, open pull requests, or edit the site. The author approves items; a session that holds the repository then applies them.
+
+**Inputs:** `posts.json`; every `posts/*.html` (essay text and Trust Ledger); `since-publication.html` and `corrections.html` (to avoid repeating what is already recorded); the list of files in `Raw Articles/` if the tool can see the author's folder; web search. Read from the repository (clone or raw files) or the live site — whichever the tool can reach.
+
+**What it does, per edition:**
+1. Re-derive the time-sensitive claims from the essay text each month (don't just reuse last month's list). In scope: pending legislation; upcoming events; product launches and roadmap claims by named companies; ongoing investigations, breaches and scams with evolving figures; recent papers that may be revised or published; market-size figures that a newer report edition may supersede. Opinion, analysis, inference and speculation are out of scope.
+2. Web-search each claim for developments since the edition's `Last checked` date on `since-publication.html` (or its publication date if none).
+3. Look for **errors** — things that were wrong at publication: a figure that doesn't match its cited source, a misattribution, a wrong date, a ledger claim with no supporting source, a placeholder still open, inconsistencies between the essay, its ledger, `posts.json` and the listing cards.
+4. **Do not fetch cited websites.** If confirming something requires opening a source, put it under "Needs your verification" with the URL and the reason. Check `Raw Articles/` for a saved copy first.
+5. Never touch, quote-correct, or reword prose. Never manufacture findings.
+
+**Report format** (plain text, numbered so the author can approve by number):
+```
+Device Layer — corrections check, <Month YYYY>
+Editions covered: 1–N. Searches run: N. Citations not fetched (by design): N.
+
+CORRECTION CANDIDATES (wrong at publication)
+ 1. Edition N — what is wrong · evidence · proposed notice text · proposed corrections.html row
+DEVELOPMENTS (happened after publication)
+ 2. Edition N — YYYY-MM-DD: what happened · source (primary if found) · proposed since-publication entry
+NEEDS YOUR VERIFICATION
+ 3. Edition N — URL · claim it supports · why it needs a human check
+NO CHANGE
+ Editions a, b, c — nothing material moved.
+LIMITS
+ What could not be checked and why.
+
+Reply "approve <numbers>" to post those items, or tell me what to change.
+```
+A clean month says so plainly: "No corrections, no developments."
+
+**Applying approved items** (a session with the repository, e.g. Claude Code with `illithics/the-device-layer-website` attached): developments → entries on `since-publication.html` and that edition's `Last checked`; corrections → notice + `corrections.html` row + ledger fix (§6, §9); regenerate feed/sitemap; verify; commit; push the working branch and fast-forward `main` (approved work is human-reviewed); report the deploy result. Only approved item numbers are applied.
+
+**Current threads to seed the first run** (re-derive anyway):
+- Edition 3 — CLARITY Act. Development: Senate cloture on the motion to proceed failed 49–50 on 2026-09-15 (secondary coverage seen; the senate.gov roll-call vote is the primary source to cite — author to verify). The ledger already listed a floor vote as uncertain; this is **not** a correction.
+- Edition 8 — bunnie/baochip DEF CON 34 badge (shipped; development) and the TROPIC secure-element testing placeholder (open placeholder; needs a real source or removal — correction candidate).
+- Edition 7 — Coinbase Agentic Wallets, MetaMask agent wallet, Ledger Agent Stack: feature changes, incidents, adoption figures.
+- Edition 6 — Queensland Ledger-impersonation letter scam: loss totals, arrests, prosecutions.
+- Edition 9 — arXiv 2607.00772 ("No Country for Old Privacy", University of York): revisions, peer-reviewed publication, rebuttals.
+- Edition 5 — Coinbase May 2025 breach cost: further recognition in SEC filings.
+- Edition 1 — Coherent Market Insights hardware-wallet report: newer edition superseding $431M / 39.4%.
+
+### Retired: the claims patrol
+Routine `trig_01Fimo47UE1ngqrmqoqnbhtd` ("Device Layer — monthly claims patrol", cron `0 15 1 * *`) and `claims-patrol.md` are retired as of 2026-10-02. Reasons: the Routine never managed to push (no branch or PR from either run), and its design logged developments as corrections. **The author must disable or delete the Routine before 2026-11-01**, or it will fire again with the old instructions. Do not recreate it.
 
 ### Not automated on purpose
-- The author runs a **weekly research brief on ChatGPT** and asked to keep it there. Do not create a competing weekly Routine.
+- The author runs a **weekly research brief on ChatGPT** and asked to keep it there. Do not create a competing weekly routine.
 - Nothing posts to X automatically; the author posts by hand.
 - Newsletter sending is designed (`deploy/listmonk/crontab`) but not deployed.
+- No automated link-checking or Wayback archiving of cited sites: sites increasingly block automated access, and the author keeps source PDFs offline instead (§4a).
 
-### Candidate future automations the author was offered (not scheduled)
-Link-rot sweep with Wayback archiving; "Last reviewed" sweep; RSS→newsletter campaign drafting (already scripted in `deploy/listmonk/scripts/rss-to-campaign.py`); sitemap ping; quarterly standards/privacy page review; dependency-free Lighthouse/accessibility check.
+### Candidate future automations (not scheduled)
+RSS→newsletter campaign drafting (already scripted in `deploy/listmonk/scripts/rss-to-campaign.py`); quarterly standards/privacy page review; dependency-free Lighthouse/accessibility check.
 
 ## 11. Newsletter plan (designed, not deployed)
 
@@ -236,26 +342,29 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
 
 ## 12. Backlog (ordered roughly by value)
 
-1. Apply and verify the two patrol findings (Edition 3 CLARITY cloture; Edition 8 DEF CON 34 badge) with corrections rows.
-2. Fix the patrol's push capability (§10) and confirm the 2026-11-01 run opens a PR.
-3. Replace the Edition 8 placeholder "Published external testing of the TROPIC secure element (archive link being added)" with the actual Ledger Donjon / TROPIC evaluation link, or remove the claim if none exists.
-4. Real publication dates for Editions 4–8 from the X timestamps; close the provisional-dates correction.
-5. Edition 1: link the specific Coherent Market Insights report page in the ledger (currently the figures are attributed, the page link is generic).
-6. Archive fragile sources (news articles, vendor pages) on the Wayback Machine and add `archive.org` links in ledgers — needs a session with open network, the sandbox proxy blocks it.
-7. "Last reviewed" sweep across all nine ledgers after items 1–5.
-8. Small inconsistency: topic pages show Edition 8 as "5 min"; `posts.json`, `essays.html` and the essay say "4 min". Make them agree.
-9. Submit `sitemap.xml` to Google Search Console and Bing Webmaster Tools (author action; needs domain verification in those consoles).
-10. About page: add the author's real photo when provided (avatar stays footer-only).
-11. Launch the newsletter (§11) when the author buys the VPS.
-12. Delete stale branch `claude/keepkey-2fa-authenticator-ly595k`.
+1. **Author:** disable or delete the old claims-patrol Routine (`trig_01Fimo47UE1ngqrmqoqnbhtd`) before 2026-11-01.
+2. **Author:** choose the tool for the monthly corrections check; set it up from §10 and test it once by hand.
+3. Build the new apparatus: `since-publication.html` (empty `#edition-1`…`#edition-9` sections), the `aside.correction-notice` style, the "Since publication →" link in every essay's `article-foot`, the footer Trust link on every page, and `since-publication.html` in `tools/genfeed.py`'s page list.
+4. Rewrite the corrections policy on `standards.html` to match §9 — **author approves the wording** (it is a public promise). Also revise its archiving sentences ("archive link being added", "Fragile sources get archived copies") to match §10.
+5. First since-publication entries, after the author approves and verifies sources: Edition 3 (CLARITY cloture failed 49–50, 2026-09-15; cite the senate.gov roll call), Edition 8 (DEF CON 34 badge shipped on the Baochip-1x).
+6. Edition 8's TROPIC placeholder: the author supplies the Ledger Donjon / TROPIC evaluation link, or the claim comes out — either way handled as an approved correction.
+7. Real publication dates for Editions 4–8 from the X timestamps (author supplies); close the provisional-dates correction.
+8. Edition 1: link the specific Coherent Market Insights report page in the ledger (author verifies the page).
+9. Small inconsistency: `topics/device-architecture.html` and `topics/trust-and-institutions.html` show Edition 8 as "5 min"; `posts.json`, `essays.html` and the essay say "4 min". Make them agree (typo-level; no notice).
+10. Edition 10: manuscript in `Drafts/`; needs hero, X date, standfirst, argument line, topics. Exclude the scratch pad section.
+11. Submit `sitemap.xml` to Google Search Console and Bing Webmaster Tools (author action; needs domain verification).
+12. About page: add the author's real photo when provided (avatar stays footer-only).
+13. Launch the newsletter (§11) when the author buys the VPS.
+14. Delete stale branch `claude/keepkey-2fa-authenticator-ly595k`.
 
 ## 13. Gotchas and lessons learned
 
-- **Sandbox network:** outbound traffic goes through an intercepting proxy that blocks most hosts. GitHub's API and fonts.googleapis.com are reachable; the live site, arXiv, archive.org and most news sites are not. Report link checks as "could not verify" rather than "dead". Never disable TLS verification.
+- **Network differs by environment.** The Claude Code sandbox's proxy blocked most hosts (live site, arXiv, archive.org, most news). The claude.ai project sandbox (network egress set to all domains) reached the live site, arXiv, ledger.com and senate.gov on 2026-10-02, but archive.org was "Blocked by egress policy", and the unauthenticated GitHub API was rate-limited. Either way: don't spend effort reaching cited websites — ask the author (§10). Never disable TLS verification.
+- **Where work happens.** The claude.ai project can read the author's local folder and the public repository and do research, but cannot push to GitHub. Commits and deploys happen in a session that holds the repository (Claude Code with the repo attached).
 - **Images pasted into chat are not files.** Only true attachments land in `/root/.claude/uploads/`. Ask the author to attach, or extract from the manuscript.
 - **`pkill` inside a compound Bash command kills the whole command** (exit 144); run it as its own call.
 - **Screenshots:** `python3 -m http.server 8311 --directory <repo>` + Playwright with `executablePath: /opt/pw-browsers/chromium`. Fonts failed to render in early mockups because they were served from a different port (CORS) — serve same-origin. The footer avatar is `loading="lazy"`; `scrollIntoView` + a short wait before capturing or it shows as an empty circle.
-- **Design edits must be applied to all 25 pages** — there is no template. Pattern used: `perl -0pi -e` over `*.html posts/*.html topics/*.html`, then `git diff --stat` to confirm 25 files changed.
+- **Design edits must be applied to every page** (25 today, 26 with `since-publication.html`) — there is no template. Pattern used: `perl -0pi -e` over `*.html posts/*.html topics/*.html`, then `git diff --stat` to confirm every file changed.
 - **Edition 1 charts:** the donut's label positions were tuned by hand (center x = 195, legend moved below, labels shortened) after clipping at 390px; path coordinates are not round numbers, so match loosely when editing with regex.
 - **Headline is locked** (§1). Any request to change it should be treated as a deliberate editorial decision by the author, confirmed in the reply.
 - **genfeed.py assumptions:** essay body is everything inside `<article class="article">` minus `header.article-head`, `details.trust-ledger`, `nav.pager`, `section.related`, `footer.article-foot`; relative `../` paths become absolute; bare hrefs (other essays) become `BASE + posts/`. Keep those class names stable or update the script.
@@ -277,7 +386,8 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
 | 2026-08-11 | b620c6a, e747229 | Footer avatar added, then moved after the name |
 | 2026-08-12 | (Routine) | Monthly claims patrol scheduled; Trust Ledger to-do list produced |
 | 2026-10-01 | (Routine) | Patrol prompt rewritten to use draft PRs + explicit approval; push fallback via GitHub MCP added |
-| 2026-10-02 | this commit | `tools/genfeed.py` committed; `HANDOFF.md` + `AGENTS.md` written; README refreshed |
+| 2026-10-02 | fa6eded | `tools/genfeed.py` committed; `HANDOFF.md` + `AGENTS.md` written; README refreshed |
+| 2026-10-02 | (docs) | Editorial model changed: claims patrol and `claims-patrol.md` retired; report-only monthly corrections check; corrections vs. developments split; Since Publication page and correction notice specified; Raw Articles offline library and scratch-pad exclusion added |
 
 ## 15. The author's standing preferences (collected verbatim where it matters)
 
@@ -286,12 +396,17 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
 - "Make the above the fold just say 'Devices, security, and the systems we trust with irreversible decisions.'"
 - Avatar: "only on the footer", "after the name illithics not before"; a real photo goes on About later.
 - Charts on mobile: fully visible and scrolling with the page beats touch-interactive.
-- Weekly brief stays on ChatGPT; only the monthly claims patrol is scheduled with Claude.
+- Weekly brief stays on ChatGPT; the only monthly job is the report-only corrections check (§10).
 - Essays are the author's writing. Preserve prose; copyedit lightly; never let an automated run touch prose.
+- An essay is accurate as of when it was written: "If I wrote before the CLARITY Act had moved out of committee, then that's when I wrote it." Later progress is worth reporting, but it doesn't make the original less credible — hence Since Publication, separate from corrections.
+- "Absolutely run a corrections check. Have it report to me and then those get posted at the top of each article if I give the say so."
+- Since Publication is a separate page, linked at the bottom of each article.
+- Source PDFs live offline in `Raw Articles/`: don't host them, just know they exist; link the websites. Don't waste resources trying to reach citations — ask the author.
+- The scratch pad is the author's own brainstorming, never to be used here at all.
 
 ## 16. Conventions for commits and PRs from Claude sessions
 
-Commit messages: imperative, specific ("Publish Edition 10: …", "Update Edition 3 Trust Ledger: CLARITY Act cloture failed"). End each commit body with the attribution lines the session is given (currently `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` and `Claude-Session: <session url>`). PR descriptions end with `🤖 Generated with [Claude Code](https://claude.com/claude-code)` and the session URL. No model identifiers in page content, comments, or filenames.
+Commit messages: imperative, specific ("Publish Edition 10: …", "Update Edition 3 Trust Ledger: CLARITY Act cloture failed"). End each commit body with the attribution lines the session is given (currently `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>` and `Claude-Session: <session url>`). PR descriptions (only when the author asks for a PR) end with `🤖 Generated with [Claude Code](https://claude.com/claude-code)` and the session URL. No model identifiers in page content, comments, or filenames.
 
 ## 17. Appendix — snippets
 
@@ -332,6 +447,5 @@ Commit messages: imperative, specific ("Publish Edition 10: …", "Update Editio
 ```bash
 python3 tools/genfeed.py                                   # feed + sitemap + robots
 python3 -m http.server 8000                                # local preview
-git ls-remote --heads origin 'claude/claims-patrol-*'      # did the patrol push?
 curl -s https://api.github.com/repos/illithics/the-device-layer-website/actions/runs?per_page=1 | python3 -c 'import json,sys;r=json.load(sys.stdin)["workflow_runs"][0];print(r["status"],r["conclusion"],r["head_sha"][:7])'
 ```
