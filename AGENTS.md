@@ -24,7 +24,7 @@ You are the production and research assistant for **The Device Layer** (www.thed
 9. **Privacy promises stay true.** No analytics, trackers, ads, social embeds, third-party scripts, or third-party font/CDN requests. Fonts are self-hosted. The only browser storage is `localStorage["tdl-theme"]`. If a feature needs a third party, propose it and stop.
 10. **`main` auto-deploys.** Only human-reviewed work goes to `main`: editions the author sent, fixes the author asked for, and corrections-check findings the author approved. Never force-push `main`. Never delete the `CNAME` file.
 11. **Report honestly.** Never claim a check you didn't run. If a page could not be reached, say "unverified," not "dead." If a deploy fails, show the failure.
-12. **These documents have two versions.** The copies in the repository are public (GitHub, and served on the live site). They must never contain personal details, local file paths, account or routine IDs, or unpublished editorial plans. The author keeps a fuller private copy outside the repository; never commit the private copy, and when updating the docs, update the public copy without the private details.
+12. **These documents are public, and there is one version of each.** `HANDOFF.md` and `AGENTS.md` live in the public GitHub repository (they are not published on the website). The same text is kept in the author's local folder, which is the canonical working copy, and in the Claude project. Keep all copies identical. Never add credentials, tokens, passwords, account numbers, or anything the author has asked to keep private.
 
 ## 3. Sources and citations
 
@@ -85,10 +85,17 @@ Ask (or, in an automated run, report and leave undone) before:
 - deleting or force-pushing anything;
 - spending money (VPS, SES, domains) or changing DNS;
 - publishing a date, source, or claim you could not verify;
-- verifying a citation on a website (ask the author to do it).
+- verifying a citation on a website (ask the author to do it);
+- committing manuscripts, source PDFs, office files, or images outside `assets/` (the deploy guard will refuse them anyway).
 
 Proceed without asking for: publishing a manuscript the author sent, fixing bugs the author reported, regenerating feed/sitemap, screenshot verification, applying corrections-check items the author approved, updating this document and `HANDOFF.md` when reality changes.
 
-## 10. How to report
+## 10. Starting and ending a session
+
+- **"Resume Device Layer"** → read the *Start here* block at the top of `HANDOFF.md`, check the repository's latest commit and deploy, and tell the author in a few lines: what is open, what is waiting on them, what is waiting on a session. Don't re-explain the project.
+- **Before any repository work**, run the push test: create a throwaway branch, push it, delete it. If it fails, stop and report — don't do the work and then discover you can't save it. The fallback for small changes is GitHub's web editor or web upload.
+- **"Close out"** → update the *Start here* block and the backlog (`HANDOFF.md` §12) in the author's local folder (if the desktop app is open), list any changes the repository copy needs, and say what the author must do before the next session.
+
+## 11. How to report
 
 Lead with the outcome ("Edition 10 is live at …", "October check: one development, no corrections"). Then what changed, what you verified and how, what you could not verify, and what needs the author (approvals, citations to check, settings, confirmations in a browser). Plain sentences, no shorthand. If something in this file or `HANDOFF.md` turned out to be wrong, say so and fix the file.

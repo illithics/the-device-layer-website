@@ -5,11 +5,19 @@ Drop this file (with `AGENTS.md`) into a Claude project folder; a fresh session 
 
 **Order of authority:** the author's latest explicit instruction → this file and `AGENTS.md` → anything else. `claims-patrol.md` is **retired** (superseded by §9–§10 on 2026-10-02); ignore any copy of it.
 
-**Two versions of this file.** The repository copy is public (GitHub and the live site) and omits personal details, local paths, account/routine IDs and unpublished plans. The author's private copy (local folder and Claude project) is the full version. Never commit the private copy.
+**One version, public.** This file and `AGENTS.md` are in the public GitHub repository (not on the website). The author's local folder holds the canonical working copy; the repository and the Claude project hold identical copies. Never add credentials or anything the author wants private.
 
 Snapshot date: 2026-10-02 (revised the same day: claims patrol replaced by the corrections check and the Since Publication page). Repository: `github.com/illithics/the-device-layer-website`. Live: https://www.thedevicelayer.com/.
 
 ---
+
+## 0. Start here (update at every close-out)
+
+- **Last session:** 2026-10-02 — editorial model changed (corrections vs. developments; Since Publication page specified; report-only monthly corrections check); claims-patrol Routine deleted; guarded deploy workflow installed (`c9b81ec`) and verified on the live site; `main` ruleset set by the author.
+- **Waiting on the author:** upload the current `HANDOFF.md`/`AGENTS.md` to GitHub (repo copies are behind the local ones); long-break safety items (§12 1b); choose the corrections-check tool (§10); approve `standards.html` wording (§12); confirm the Editions folder layout (§4a); Edition 10 decisions.
+- **Waiting on a session with the repository:** build `since-publication.html` + correction notice (§12 item 3); fix the Edition 8 "5 min" listing.
+- **Next scheduled job:** none until the corrections-check tool is chosen.
+- **To resume:** say "Resume Device Layer." **Before a break:** say "Close out."
 
 ## 1. What this is
 
@@ -32,9 +40,11 @@ Snapshot date: 2026-10-02 (revised the same day: claims patrol replaced by the c
 
 - Nine editions published (see §7 for the table). Editions 1–3 and 9 have confirmed publication dates; Editions 4–8 carry **provisional** dates reconstructed from the weekly cadence, which `corrections.html` says will be corrected against the original X timestamps.
 - An Edition 10 manuscript exists in the author's `Drafts/` folder (§4a). Not yet scheduled; decisions pending (hero, date, standfirst, topics).
-- `main` = `fa6eded` ("Add handoff and agent behavior docs; commit the feed generator"). No open pull requests. A stale branch `claude/keepkey-2fa-authenticator-ly595k` exists from an unrelated early experiment (safe to delete).
-- GitHub Pages deploy from `main` works; last known deploys succeeded.
-- **Editorial model changed 2026-10-02.** The old monthly claims patrol (a Claude Code Routine that edited ledgers and logged developments as corrections) is retired. It fired twice and never produced a branch or PR. It is replaced by a report-only **monthly corrections check** (§10) and a public **Since Publication** page (§9). Neither the new page nor the correction-notice component is built yet (backlog §12). The old Routine must be disabled before its next scheduled run on 2026-11-01.
+- `main` = `c9b81ec` ("Enhance GitHub Pages deployment workflow" — the guarded deploy). No open pull requests. A stale branch `claude/keepkey-2fa-authenticator-ly595k` exists from an unrelated early experiment (safe to delete).
+- GitHub Pages deploy from `main` works. The guarded deploy workflow (publishes only site files; refuses private material) is installed as of `c9b81ec` (2026-10-02). Verified the same day: home page, essays, heroes, `posts.json`, `feed.xml`, `security.txt` and search load (200); `/HANDOFF.md`, `/AGENTS.md`, `/README.md`, `/tools/`, `/deploy/` return 404.
+- A repository ruleset protects `main` (deletion and force pushes blocked; target: default branch only). Set by the author 2026-10-02.
+- `HANDOFF.md` and `AGENTS.md` are public in the repository by the author's choice (decided 2026-10-02); they are no longer served on the website.
+- **Editorial model changed 2026-10-02.** The old monthly claims patrol (a Claude Code Routine that edited ledgers and logged developments as corrections) is retired. It fired twice and never produced a branch or PR. It is replaced by a report-only **monthly corrections check** (§10) and a public **Since Publication** page (§9). Neither the new page nor the correction-notice component is built yet (backlog §12). The old Routine was deleted by the author on 2026-10-02.
 - Newsletter: **not live.** The signup form deliberately shows an honest "not live yet" message. A complete self-hosted Listmonk + Amazon SES plan sits in `deploy/listmonk/` (see §11).
 - Search Console / Bing sitemap submission: not done.
 - About page uses no photo yet; the author plans to add a real photo later. The digital avatar (`assets/avatar.webp`) is used **only in the footer, after the name "illithics"**, for continuity with X / Discord / Signal.
@@ -53,8 +63,16 @@ Snapshot date: 2026-10-02 (revised the same day: claims patrol replaced by the c
   Never force-push `main`. Only human-reviewed work goes to `main` (editions the author sent, fixes the author asked for, corrections-check items the author approved). Automated runs do not write to the repository at all (§10).
 
 ### Deploy: GitHub Pages via Actions
-`.github/workflows/deploy.yml` — triggers on push to `main` and on `workflow_dispatch`:
-`actions/checkout@v4` → `actions/configure-pages@v5` (`enablement: true`) → `actions/upload-pages-artifact@v3` (path `.`) → `actions/deploy-pages@v4`, environment `github-pages`, concurrency group `pages`.
+`.github/workflows/deploy.yml` — triggers on push to `main` and on `workflow_dispatch`. Original version (replaced 2026-10-02): `actions/checkout@v4` → `actions/configure-pages@v5` (`enablement: true`) → `actions/upload-pages-artifact@v3` (path `.`, i.e. the **whole repository**, docs included) → `actions/deploy-pages@v4`, environment `github-pages`, concurrency group `pages`.
+
+**Guarded version (installed 2026-10-02, commit `c9b81ec`):** two steps added before upload.
+1. *Block private material* — fails the deploy if the repository contains `.pdf`, `.doc(x)`, `.pages`, `.key`, `.numbers`, `.xls(x)`, `.ppt(x)`, `.psd`, `.env`, anything under a `Raw Articles/` or `Scratch…` path, or any image outside `assets/`.
+2. *Assemble site* — copies only `*.html`, `CNAME`, `feed.xml`, `sitemap.xml`, `robots.txt`, `posts.json`, `posts/`, `topics/`, `css/`, `js/`, `assets/`, `.well-known/` into `_site/` and uploads that. Docs, `tools/`, `deploy/` and `.github/` stay in the repo and off the website. **Any new top-level site file (e.g. `since-publication.html` is covered by `*.html`; a new folder is not) must be added to this list.**
+Simulated against `main` @ `c6c53b5`: guard passes; 52 files published; every internal link and asset resolves.
+
+**Branch protection (set 2026-10-02):** a repository ruleset targeting the default branch only (`main`) that blocks force pushes and deletion. Ordinary pushes and web uploads still work. Working branches (`claude/…`) are deliberately not covered so they can be deleted.
+
+**Working-access checklist (start of any repository session):** session opened with `illithics/the-device-layer-website` attached → the Claude GitHub app still has Contents read & write on this repository (GitHub → Settings → Applications) → push a throwaway branch and delete it. Fallback for small changes: GitHub's web editor / "Add file → Upload files".
 
 Repository settings that had to be set by hand (already done; recorded so nobody re-debugs them):
 1. Settings → Pages → Source: **GitHub Actions** (deploys failed with "Pages not enabled" until this was flipped).
@@ -112,11 +130,15 @@ HANDOFF.md, AGENTS.md      this handoff and the behavior contract
 .gitignore                 excludes deploy/listmonk/.env, data/, backups/, logs/, scripts/.rss-state, __pycache__/
 ```
 
+Files not on the website (guarded workflow): `*.md`, `tools/`, `deploy/`, `.github/`, `.gitignore`.
+
 There is **no build step** and **no dependency**. Local preview: `python3 -m http.server 8000` from the repo root.
 
 ## 4a. The author's local folder
 
-`/Users/illithics.openclaw/Documents/Device Layer/` on the author's Mac (readable from the Claude project via the Filesystem connector):
+`/Users/illithics.openclaw/Documents/Device Layer/` on the author's Mac — **the canonical working copy** of everything outside the repository, including these two documents. Readable (and writable) from the Claude project via the Filesystem connector, but only while the Claude desktop app is open on that Mac.
+
+**Drafting vs. finals.** The author drafts in Google Drive. Drive is a drafting space, not a source of record: an edition is ready for publishing when its final manuscript is in `Editions/`. **Intended `Editions/` layout (author to confirm):** final manuscripts together with their hero art and a markdown notes file per edition.
 
 | Folder / file | What it holds | How to use it |
 |---|---|---|
@@ -321,7 +343,7 @@ A clean month says so plainly: "No corrections, no developments."
 - Edition 1 — Coherent Market Insights hardware-wallet report: newer edition superseding $431M / 39.4%.
 
 ### Retired: the claims patrol
-Routine `trig_01Fimo47UE1ngqrmqoqnbhtd` ("Device Layer — monthly claims patrol", cron `0 15 1 * *`) and `claims-patrol.md` are retired as of 2026-10-02. Reasons: the Routine never managed to push (no branch or PR from either run), and its design logged developments as corrections. **The author must disable or delete the Routine before 2026-11-01**, or it will fire again with the old instructions. Do not recreate it.
+Routine `trig_01Fimo47UE1ngqrmqoqnbhtd` ("Device Layer — monthly claims patrol", cron `0 15 1 * *`) and `claims-patrol.md` are retired as of 2026-10-02. Reasons: the Routine never managed to push (no branch or PR from either run), and its design logged developments as corrections. The author deleted the Routine on 2026-10-02. Do not recreate it.
 
 ### Not automated on purpose
 - The author runs a **weekly research brief on ChatGPT** and asked to keep it there. Do not create a competing weekly routine.
@@ -342,7 +364,8 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
 
 ## 12. Backlog (ordered roughly by value)
 
-1. **Author:** disable or delete the old claims-patrol Routine (`trig_01Fimo47UE1ngqrmqoqnbhtd`) before 2026-11-01.
+1b. **Author, long-break safety:** confirm auto-renew and a current card for thedevicelayer.com at its registrar; store GitHub and Cloudflare two-factor recovery codes; calendar reminder for July 2027 to renew `.well-known/security.txt` (expires 2027-08-05).
+1c. **Author:** confirm the `Editions/` layout (§4a); a session can then reorganise the folder.
 2. **Author:** choose the tool for the monthly corrections check; set it up from §10 and test it once by hand.
 3. Build the new apparatus: `since-publication.html` (empty `#edition-1`…`#edition-9` sections), the `aside.correction-notice` style, the "Since publication →" link in every essay's `article-foot`, the footer Trust link on every page, and `since-publication.html` in `tools/genfeed.py`'s page list.
 4. Rewrite the corrections policy on `standards.html` to match §9 — **author approves the wording** (it is a public promise). Also revise its archiving sentences ("archive link being added", "Fragile sources get archived copies") to match §10.
@@ -360,6 +383,7 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
 ## 13. Gotchas and lessons learned
 
 - **Network differs by environment.** The Claude Code sandbox's proxy blocked most hosts (live site, arXiv, archive.org, most news). The claude.ai project sandbox (network egress set to all domains) reached the live site, arXiv, ledger.com and senate.gov on 2026-10-02, but archive.org was "Blocked by egress policy", and the unauthenticated GitHub API was rate-limited. Either way: don't spend effort reaching cited websites — ask the author (§10). Never disable TLS verification.
+- **The docs are public.** `HANDOFF.md`/`AGENTS.md` sit in a public repository; anything written in them is world-readable. The guarded workflow keeps them off the website, not off GitHub.
 - **Where work happens.** The claude.ai project can read the author's local folder and the public repository and do research, but cannot push to GitHub. Commits and deploys happen in a session that holds the repository (Claude Code with the repo attached).
 - **Images pasted into chat are not files.** Only true attachments land in `/root/.claude/uploads/`. Ask the author to attach, or extract from the manuscript.
 - **`pkill` inside a compound Bash command kills the whole command** (exit 144); run it as its own call.
@@ -388,6 +412,8 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
 | 2026-10-01 | (Routine) | Patrol prompt rewritten to use draft PRs + explicit approval; push fallback via GitHub MCP added |
 | 2026-10-02 | fa6eded | `tools/genfeed.py` committed; `HANDOFF.md` + `AGENTS.md` written; README refreshed |
 | 2026-10-02 | (docs) | Editorial model changed: claims patrol and `claims-patrol.md` retired; report-only monthly corrections check; corrections vs. developments split; Since Publication page and correction notice specified; Raw Articles offline library and scratch-pad exclusion added |
+| 2026-10-02 | c6c53b5 | Revised docs uploaded via GitHub web; author chose to keep them public as-is; claims-patrol Routine deleted; Start here block and Resume/Close out routine added |
+| 2026-10-02 | c9b81ec | Guarded deploy workflow installed (site-only publish + private-material block); `main` ruleset added; docs no longer served on the website |
 
 ## 15. The author's standing preferences (collected verbatim where it matters)
 
@@ -403,6 +429,7 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
 - Since Publication is a separate page, linked at the bottom of each article.
 - Source PDFs live offline in `Raw Articles/`: don't host them, just know they exist; link the websites. Don't waste resources trying to reach citations — ask the author.
 - The scratch pad is the author's own brainstorming, never to be used here at all.
+- The author's device is the canonical private copy; `Editions/` holds the final drafts with hero art and markdown notes. Drafting happens in Google Drive.
 
 ## 16. Conventions for commits and PRs from Claude sessions
 
