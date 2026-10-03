@@ -13,10 +13,10 @@ Snapshot date: 2026-10-02 (revised the same day: claims patrol replaced by the c
 
 ## 0. Start here (update at every close-out)
 
-- **Last session:** 2026-10-03 — Edition 10 built and handed to the author for web upload (verify it is live at the next resume); `standards.html` wording approved incl. sources option A (§12 item 4); local folder reorganised into one folder per edition (§4a); domain auto-renew and two-factor confirmed. Previous (2026-10-02): editorial model changed; claims-patrol Routine deleted; guarded deploy installed (`c9b81ec`); `main` ruleset set.
-- **Docs sync:** these docs were included in the Edition 10 upload bundle (2026-10-03); if uploaded, repo and local match.
+- **Last session:** 2026-10-03 — Edition 10 published 2026-10-03 (`502aab7`, web upload) and verified live the same day; `standards.html` wording approved incl. sources option A (§12 item 4); local folder reorganised into one folder per edition (§4a); domain auto-renew and two-factor confirmed. Previous (2026-10-02): editorial model changed; claims-patrol Routine deleted; guarded deploy installed (`c9b81ec`); `main` ruleset set.
+- **Docs sync:** included in the Editions 4–8 date-fix upload bundle (2026-10-03).
 - **Waiting on the author:** long-break safety — domain auto-renew confirmed (2026-10-03) and two-factor set up (2026-10-03); still to do: July 2027 `security.txt` reminder (§12 1b); corrections-check tool choice is on the back burner by the author's choice (§10).
-- **Waiting on a session with the repository:** build `since-publication.html` (now with an `#edition-10` section too) + correction notice and apply the approved `standards.html` wording in the same commit (§12 items 3–4).
+- **Waiting on a session with the repository:** build `since-publication.html` (with `#edition-1`…`#edition-10`) and apply the approved `standards.html` wording in the same commit (§12 items 3–4). The correction notice is already built.
 - **Next scheduled job:** none until the corrections-check tool is chosen.
 - **To resume:** say "Resume Device Layer." **Before a break:** say "Close out."
 
@@ -39,9 +39,9 @@ Snapshot date: 2026-10-02 (revised the same day: claims patrol replaced by the c
 
 ## 2. State as of 2026-10-02
 
-- Ten editions published (see §7 for the table). Editions 1–3, 9 and 10 have confirmed publication dates; Editions 4–8 carry **provisional** dates reconstructed from the weekly cadence, which `corrections.html` says will be corrected against the original X timestamps.
+- Ten editions published (see §7 for the table). Editions 1–10 all have confirmed publication dates (Editions 4–8 were confirmed against the X posts on 2026-10-03; 4 moved to June 22 and 5 to July 7, both with correction notices).
 - Edition 10 ("Nothing is secure anymore. Good.", 2026-10-03) built from `Editions/ED 10/` and published via GitHub web upload. Same commit fixed two listing bugs: `topics/trust-and-institutions.html` was missing Edition 4 and listed oldest-first (now newest-first, 5 essays; counts on `index.html` and `topics/index.html` corrected), and Edition 8 showed "5 min" on two topic pages (now 4 min).
-- `main` = `c9b81ec` ("Enhance GitHub Pages deployment workflow" — the guarded deploy). No open pull requests. A stale branch `claude/keepkey-2fa-authenticator-ly595k` exists from an unrelated early experiment (safe to delete).
+- `main` = `502aab7` ("Add files via upload" — Edition 10 + docs). No open pull requests. A stale branch `claude/keepkey-2fa-authenticator-ly595k` exists from an unrelated early experiment (safe to delete).
 - GitHub Pages deploy from `main` works. The guarded deploy workflow (publishes only site files; refuses private material) is installed as of `c9b81ec` (2026-10-02). Verified the same day: home page, essays, heroes, `posts.json`, `feed.xml`, `security.txt` and search load (200); `/HANDOFF.md`, `/AGENTS.md`, `/README.md`, `/tools/`, `/deploy/` return 404.
 - A repository ruleset protects `main` (deletion and force pushes blocked; target: default branch only). Set by the author 2026-10-02.
 - `HANDOFF.md` and `AGENTS.md` are public in the repository by the author's choice (decided 2026-10-02); they are no longer served on the website.
@@ -217,7 +217,7 @@ Body, inside `<main id="main" class="article-wrap"><article class="article">`:
     <h3>What is confirmed / what remains uncertain</h3>
                                     <ul><li>Confirmed: …</li><li>Uncertain: …</li></ul>
     <div class="tl-dates">
-      <span>Published: YYYY-MM-DD</span>   <!-- "(provisional)" suffix for Editions 4–8 until corrected -->
+      <span>Published: YYYY-MM-DD</span>   <!-- "(provisional)" only if the X date is unknown -->
       <span>Last reviewed: YYYY-MM-DD</span>
       <span>Corrections: none</span>       <!-- or "see corrections log (YYYY-MM-DD)" -->
     </div>
@@ -261,11 +261,11 @@ Entries are append-only, dated by the date of the event, newest first, primary s
 | 1 | `431m-and-the-map-nobody-is-reading-right` | 2026-05-31 | 8 | self-custody | Inline SVG donut + regional map, schematic recreations of Coherent Market Insights charts ($431M / 39.4%) |
 | 2 | `the-interface-became-the-attack-surface` | 2026-06-07 | 6 | security-and-signing | |
 | 3 | `self-custody-is-not-just-a-vibe` | 2026-06-14 | 8 | self-custody, trust-and-institutions | CLARITY Act status is time-sensitive (see §10) |
-| 4 | `stress-test-self-custody` | 2026-06-21 (prov.) | 3 | self-custody, trust-and-institutions | |
-| 5 | `the-wallet-was-secure-the-customer-wasnt` | 2026-06-28 (prov.) | 3 | security-and-signing, trust-and-institutions | Privacy page quotes its thesis |
-| 6 | `the-psychological-signature` | 2026-07-19 (prov.) | 4 | security-and-signing | Queensland letterbox scam figures are time-sensitive |
-| 7 | `the-architecture-of-agentic-commerce` | 2026-07-26 (prov.) | 4 | agents-and-automation | Coinbase/MetaMask/Ledger agent products are time-sensitive |
-| 8 | `is-there-such-a-thing-as-the-perfect-wallet` | 2026-08-02 (prov.) | 4 | device-architecture, trust-and-institutions | Has one ledger placeholder: "Published external testing of the TROPIC secure element (archive link being added)"; DEF CON badge claim is time-sensitive |
+| 4 | `stress-test-self-custody` | 2026-06-22 | 3 | self-custody, trust-and-institutions | |
+| 5 | `the-wallet-was-secure-the-customer-wasnt` | 2026-07-07 | 3 | security-and-signing, trust-and-institutions | Privacy page quotes its thesis |
+| 6 | `the-psychological-signature` | 2026-07-19 | 4 | security-and-signing | Queensland letterbox scam figures are time-sensitive |
+| 7 | `the-architecture-of-agentic-commerce` | 2026-07-26 | 4 | agents-and-automation | Coinbase/MetaMask/Ledger agent products are time-sensitive |
+| 8 | `is-there-such-a-thing-as-the-perfect-wallet` | 2026-08-02 | 4 | device-architecture, trust-and-institutions | Has one ledger placeholder: "Published external testing of the TROPIC secure element (archive link being added)"; DEF CON badge claim is time-sensitive |
 | 9 | `a-decline-in-user-demand-for-privacy` | 2026-08-09 | 4 | security-and-signing | Sources: arXiv 2607.00772, FBI IC3 PSA240425; hero "Viking HPC cluster" |
 | 10 | `nothing-is-secure-anymore-good` | 2026-10-03 | 3 | device-architecture, trust-and-institutions | Response to Ledger CTO Charles Guillemet's "How AI Is Rewriting the Economics of Security"; second link POGO "Exquisite Defense Fails in Practice"; hero: glass castle. First edition built from the per-edition folder layout. |
 
@@ -303,7 +303,7 @@ Rules:
 - `corrections.html` rows: `Date | Edition | What was wrong, what it now says, why`. Newest first.
 - On a correction: bump the ledger's `Last reviewed`, set `Corrections: see corrections log (YYYY-MM-DD)`, and move JSON-LD `dateModified` only if prose changed.
 - A resolved uncertainty is a development, not a correction. If a ledger listed something as uncertain and it later resolved, the ledger was right.
-- Current provisional-date debt: Editions 4–8. The fix is to get the original X post timestamps from the author, set the real dates in `posts.json`, each essay's meta-line/`<time>`/JSON-LD/ledger, the listing cards, regenerate the feed, and close the 2026-08-05 "provisional dates" row with a new row.
+- Provisional-date debt: **closed 2026-10-03.** The author supplied the X post dates (X's Articles list). Editions 6–8 were right; Edition 4 (June 21 → 22) and Edition 5 (June 28 → July 7) got correction notices, new JSON-LD `datePublished`, and `dateModified` 2026-10-03. All five ledgers lost the provisional label and now read `Last reviewed: 2026-10-03` / `Corrections: see corrections log (2026-10-03)`. Note: X article titles are sometimes the post's hook line rather than the essay title (Edition 2 appears on X as "This study didn't test a single hardware wallet…").
 - `standards.html` must say the same thing as this section (backlog §12). Its current line "Material changes to a developing technical claim are versioned the same way" conflicts with this model and is to be replaced with wording the author approves.
 
 ## 10. Automation
@@ -378,7 +378,7 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
 
 1b. **Author, long-break safety:** confirm auto-renew and a current card for thedevicelayer.com at its registrar; store GitHub and Cloudflare two-factor recovery codes; calendar reminder for July 2027 to renew `.well-known/security.txt` (expires 2027-08-05).
 2. **Author:** choose the tool for the monthly corrections check; set it up from §10 and test it once by hand.
-3. Build the new apparatus: `since-publication.html` (empty `#edition-1`…`#edition-9` sections), the `aside.correction-notice` style, the "Since publication →" link in every essay's `article-foot`, the footer Trust link on every page, and `since-publication.html` in `tools/genfeed.py`'s page list.
+3. Build the new apparatus: `since-publication.html` (empty `#edition-1`…`#edition-10` sections), the "Since publication →" link in every essay's `article-foot`, the footer Trust link on every page, and `since-publication.html` in `tools/genfeed.py`'s page list. (The correction notice already exists since 2026-10-03: markup `<aside class="disclosure-note correction-notice" id="correction">` after the header; CSS `.correction-notice` in `style.css`.)
 4. `standards.html` corrections policy: **wording approved by the author 2026-10-03** — replace the `#corrections` list with the version below, in the same commit as item 3 (it links to `since-publication.html`). Sources section: **author chose A (2026-10-03)** — replace "Fragile sources get archived copies as the library grows." with "Ledgers link to the original source. The publication keeps private offline copies of sources for its own verification and does not republish them."
    ```html
    <h2 id="corrections">Corrections policy</h2>
@@ -393,7 +393,7 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
    ```
 5. First since-publication entries, after the author approves and verifies sources: Edition 3 (CLARITY cloture failed 49–50, 2026-09-15; cite the senate.gov roll call), Edition 8 (DEF CON 34 badge shipped on the Baochip-1x).
 6. Edition 8's TROPIC placeholder: the author supplies the Ledger Donjon / TROPIC evaluation link, or the claim comes out — either way handled as an approved correction.
-7. Real publication dates for Editions 4–8 from the X timestamps (author supplies); close the provisional-dates correction.
+7. ~~Real publication dates for Editions 4–8~~ — done 2026-10-03.
 8. Edition 1: link the specific Coherent Market Insights report page in the ledger (author verifies the page).
 9. ~~Edition 8 "5 min" on topic pages~~ — fixed in the Edition 10 commit (2026-10-03).
 10. ~~Edition 10~~ — published 2026-10-03.
@@ -436,7 +436,8 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
 | 2026-10-02 | (docs) | Editorial model changed: claims patrol and `claims-patrol.md` retired; report-only monthly corrections check; corrections vs. developments split; Since Publication page and correction notice specified; Raw Articles offline library and scratch-pad exclusion added |
 | 2026-10-02 | c6c53b5 | Revised docs uploaded via GitHub web; author chose to keep them public as-is; claims-patrol Routine deleted; Start here block and Resume/Close out routine added |
 | 2026-10-02 | c9b81ec | Guarded deploy workflow installed (site-only publish + private-material block); `main` ruleset added; docs no longer served on the website |
-| 2026-10-03 | (web upload) | Edition 10 published; Trust & Institutions topic page fixed (Edition 4 restored, newest-first); topic counts corrected; Edition 8 minutes aligned |
+| 2026-10-03 | 502aab7 | Edition 10 published; Trust & Institutions topic page fixed (Edition 4 restored, newest-first); topic counts corrected; Edition 8 minutes aligned |
+| 2026-10-03 | (web upload) | Editions 4–8 dates confirmed against X; first correction notices (Editions 4, 5) using `aside.disclosure-note.correction-notice` + one CSS rule (accent left border) |
 
 ## 15. The author's standing preferences (collected verbatim where it matters)
 

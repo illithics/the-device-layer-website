@@ -434,9 +434,16 @@
       <title>The Wallet Was Secure. The Customer Wasn&#x27;t.</title>
       <link>https://www.thedevicelayer.com/posts/the-wallet-was-secure-the-customer-wasnt.html</link>
       <guid>https://www.thedevicelayer.com/posts/the-wallet-was-secure-the-customer-wasnt.html</guid>
-      <pubDate>Sun, 28 Jun 2026 12:00:00 +0000</pubDate>
+      <pubDate>Tue, 07 Jul 2026 12:00:00 +0000</pubDate>
       <description>Privacy is not the same thing as security — and crypto companies need to stop treating customer data like ordinary retail exhaust.</description>
-      <content:encoded><![CDATA[<figure class="hero-figure">
+      <content:encoded><![CDATA[<aside class="disclosure-note correction-notice" id="correction">
+        <strong>Correction (2026-10-03):</strong> this essay's publication date was shown as June 28, 2026, a
+        provisional date reconstructed from the publication's weekly schedule. Checked against the
+        original post on X, it was first published on July 7, 2026.
+        <a href="https://www.thedevicelayer.com/corrections.html">Corrections log</a>
+      </aside>
+
+      <figure class="hero-figure">
         <img src="https://www.thedevicelayer.com/assets/heroes/ed5.webp" alt="A street of storefronts at dusk labeled Data Brokers, Ad Trackers, Lead Scrapers, Phishing Kits, SIM Swap, Identity Lookup, and Doxx Services — a Hardware Wallets / Self-Custody sign hangs further down." width="1600" height="900" />
       </figure>
 
@@ -509,9 +516,16 @@
       <title>Stress Test: Self-Custody for Users, Institutions, and Wallet Developers</title>
       <link>https://www.thedevicelayer.com/posts/stress-test-self-custody.html</link>
       <guid>https://www.thedevicelayer.com/posts/stress-test-self-custody.html</guid>
-      <pubDate>Sun, 21 Jun 2026 12:00:00 +0000</pubDate>
+      <pubDate>Mon, 22 Jun 2026 12:00:00 +0000</pubDate>
       <description>Paper exposure is not weakening self-custody habits so much as revealing who was never practicing them.</description>
-      <content:encoded><![CDATA[<figure class="hero-figure">
+      <content:encoded><![CDATA[<aside class="disclosure-note correction-notice" id="correction">
+        <strong>Correction (2026-10-03):</strong> this essay's publication date was shown as June 21, 2026, a
+        provisional date reconstructed from the publication's weekly schedule. Checked against the
+        original post on X, it was first published on June 22, 2026.
+        <a href="https://www.thedevicelayer.com/corrections.html">Corrections log</a>
+      </aside>
+
+      <figure class="hero-figure">
         <img src="https://www.thedevicelayer.com/assets/heroes/ed4.webp" alt="A security workstation: 'The Device Layer' on a monitor, a laptop reading 'Attack Surface is Growing', and a whiteboard of self-custody principles and threat models." width="1600" height="800" />
       </figure>
 
