@@ -13,9 +13,10 @@ Snapshot date: 2026-10-02 (revised the same day: claims patrol replaced by the c
 
 ## 0. Start here (update at every close-out)
 
-- **Last session:** 2026-10-02 — editorial model changed (corrections vs. developments; Since Publication page specified; report-only monthly corrections check); claims-patrol Routine deleted; guarded deploy workflow installed (`c9b81ec`) and verified on the live site; `main` ruleset set by the author.
-- **Waiting on the author:** upload the current `HANDOFF.md`/`AGENTS.md` to GitHub (repo copies are behind the local ones); long-break safety items (§12 1b); choose the corrections-check tool (§10); approve `standards.html` wording (§12); confirm the Editions folder layout (§4a); Edition 10 decisions.
-- **Waiting on a session with the repository:** build `since-publication.html` + correction notice (§12 item 3); fix the Edition 8 "5 min" listing.
+- **Last session:** 2026-10-03 — Edition 10 built and handed to the author for web upload (verify it is live at the next resume); `standards.html` wording approved incl. sources option A (§12 item 4); local folder reorganised into one folder per edition (§4a); domain auto-renew and two-factor confirmed. Previous (2026-10-02): editorial model changed; claims-patrol Routine deleted; guarded deploy installed (`c9b81ec`); `main` ruleset set.
+- **Docs sync:** these docs were included in the Edition 10 upload bundle (2026-10-03); if uploaded, repo and local match.
+- **Waiting on the author:** long-break safety — domain auto-renew confirmed (2026-10-03) and two-factor set up (2026-10-03); still to do: July 2027 `security.txt` reminder (§12 1b); corrections-check tool choice is on the back burner by the author's choice (§10).
+- **Waiting on a session with the repository:** build `since-publication.html` (now with an `#edition-10` section too) + correction notice and apply the approved `standards.html` wording in the same commit (§12 items 3–4).
 - **Next scheduled job:** none until the corrections-check tool is chosen.
 - **To resume:** say "Resume Device Layer." **Before a break:** say "Close out."
 
@@ -30,16 +31,16 @@ Snapshot date: 2026-10-02 (revised the same day: claims patrol replaced by the c
   |---|---|---|
   | `security-and-signing` | Security & Signing | 2, 5, 6, 9 |
   | `self-custody` | Self-Custody | 1, 3, 4 |
-  | `device-architecture` | Device Architecture | 8 |
+  | `device-architecture` | Device Architecture | 8, 10 |
   | `agents-and-automation` | Agents & Automation | 7 |
-  | `trust-and-institutions` | Trust & Institutions | 3, 4, 5, 8 |
+  | `trust-and-institutions` | Trust & Institutions | 3, 4, 5, 8, 10 |
 - **Homepage headline is fixed text:** `Devices, security, and the systems we trust with irreversible decisions.` (The last two words are wrapped in `<span class="accent">`.) The author once asked for a joke headline as a test and then asked for it to be reverted; treat the headline as locked unless the author explicitly changes it.
 - **Essays are posted first on X** (https://x.com/illithicKeepKey); the site is the archive of record.
 
 ## 2. State as of 2026-10-02
 
-- Nine editions published (see §7 for the table). Editions 1–3 and 9 have confirmed publication dates; Editions 4–8 carry **provisional** dates reconstructed from the weekly cadence, which `corrections.html` says will be corrected against the original X timestamps.
-- An Edition 10 manuscript exists in the author's `Drafts/` folder (§4a). Not yet scheduled; decisions pending (hero, date, standfirst, topics).
+- Ten editions published (see §7 for the table). Editions 1–3, 9 and 10 have confirmed publication dates; Editions 4–8 carry **provisional** dates reconstructed from the weekly cadence, which `corrections.html` says will be corrected against the original X timestamps.
+- Edition 10 ("Nothing is secure anymore. Good.", 2026-10-03) built from `Editions/ED 10/` and published via GitHub web upload. Same commit fixed two listing bugs: `topics/trust-and-institutions.html` was missing Edition 4 and listed oldest-first (now newest-first, 5 essays; counts on `index.html` and `topics/index.html` corrected), and Edition 8 showed "5 min" on two topic pages (now 4 min).
 - `main` = `c9b81ec` ("Enhance GitHub Pages deployment workflow" — the guarded deploy). No open pull requests. A stale branch `claude/keepkey-2fa-authenticator-ly595k` exists from an unrelated early experiment (safe to delete).
 - GitHub Pages deploy from `main` works. The guarded deploy workflow (publishes only site files; refuses private material) is installed as of `c9b81ec` (2026-10-02). Verified the same day: home page, essays, heroes, `posts.json`, `feed.xml`, `security.txt` and search load (200); `/HANDOFF.md`, `/AGENTS.md`, `/README.md`, `/tools/`, `/deploy/` return 404.
 - A repository ruleset protects `main` (deletion and force pushes blocked; target: default branch only). Set by the author 2026-10-02.
@@ -138,14 +139,24 @@ There is **no build step** and **no dependency**. Local preview: `python3 -m htt
 
 `/Users/illithics.openclaw/Documents/Device Layer/` on the author's Mac — **the canonical working copy** of everything outside the repository, including these two documents. Readable (and writable) from the Claude project via the Filesystem connector, but only while the Claude desktop app is open on that Mac.
 
-**Drafting vs. finals.** The author drafts in Google Drive. Drive is a drafting space, not a source of record: an edition is ready for publishing when its final manuscript is in `Editions/`. **Intended `Editions/` layout (author to confirm):** final manuscripts together with their hero art and a markdown notes file per edition.
+**Drafting vs. finals.** The author drafts in Google Drive. Drive is a drafting space, not a source of record: an edition is ready for publishing when its final manuscript is in its `Editions/ED NN/` folder.
+
+**Layout (confirmed and applied 2026-10-03): one folder per edition**, two-digit numbers so they sort in order:
+```
+Editions/ED NN/
+  DL ED NN.docx        final manuscript (source for publishing)
+  DL ED NN.pages       same manuscript in Pages, where it exists (Editions 1–9)
+  DL ED NN Hero.png    hero art (Edition 8 also has a .jpg) → convert to assets/heroes/edN.webp
+  notes.md             optional: the author's markdown notes/suggestions for the edition
+  (extras)             edition-specific material, e.g. ED 06 holds the Psychological Signature infographic (.html + .png)
+```
+New editions follow the same pattern: create `Editions/ED NN/`, put the final `.docx` and `DL ED NN Hero.png` in it.
 
 | Folder / file | What it holds | How to use it |
 |---|---|---|
-| `Drafts/` | Manuscripts not yet published (`Device Layer ED 10 .docx`) | Source for the next edition |
-| `Editions/` | Final `.docx` manuscripts, Editions 1–9 (`DV ED 1–3`, `DL ED 4–9`) | Reference copies of published text |
-| `Pages/` | The same manuscripts as `.pages` | Hero art is embedded here (`Data/`) |
-| `Graphics/` | Hero images (`DL ED N Hero.png`) | Convert to `assets/heroes/edN.webp` |
+| `Editions/ED 01` … `ED 10` | Finals per edition (see layout above) | Source of record for publishing |
+| `Drafts/` | Work in progress, including the Scratch Pad document | Ignore unless the author points at a draft; **never open the Scratch Pad** |
+| `Graphics/`, `Pages/` | Empty since 2026-10-03 (contents moved into the edition folders) | The author may delete them |
 | `Raw Articles/` | **Private offline library of source PDFs** | Evidence only — see below |
 | `AGENTS.md`, `HANDOFF.md` | Local copies of these documents | Keep in step with the repository copies |
 | Scratch Pad (separate document) | The author's private brainstorming | **Never open, read, quote, or use** |
@@ -256,6 +267,7 @@ Entries are append-only, dated by the date of the event, newest first, primary s
 | 7 | `the-architecture-of-agentic-commerce` | 2026-07-26 (prov.) | 4 | agents-and-automation | Coinbase/MetaMask/Ledger agent products are time-sensitive |
 | 8 | `is-there-such-a-thing-as-the-perfect-wallet` | 2026-08-02 (prov.) | 4 | device-architecture, trust-and-institutions | Has one ledger placeholder: "Published external testing of the TROPIC secure element (archive link being added)"; DEF CON badge claim is time-sensitive |
 | 9 | `a-decline-in-user-demand-for-privacy` | 2026-08-09 | 4 | security-and-signing | Sources: arXiv 2607.00772, FBI IC3 PSA240425; hero "Viking HPC cluster" |
+| 10 | `nothing-is-secure-anymore-good` | 2026-10-03 | 3 | device-architecture, trust-and-institutions | Response to Ledger CTO Charles Guillemet's "How AI Is Rewriting the Economics of Security"; second link POGO "Exquisite Defense Fails in Practice"; hero: glass castle. First edition built from the per-edition folder layout. |
 
 Hero art for every edition came embedded in the author's manuscripts (`.pages` → `Data/DL ED N Hero-31.png`; `.docx` → `word/media/`). Convert to 1600px-wide WebP at quality 80 (`cwebp -q 80 -resize 1600 0`, or Pillow).
 
@@ -365,16 +377,26 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
 ## 12. Backlog (ordered roughly by value)
 
 1b. **Author, long-break safety:** confirm auto-renew and a current card for thedevicelayer.com at its registrar; store GitHub and Cloudflare two-factor recovery codes; calendar reminder for July 2027 to renew `.well-known/security.txt` (expires 2027-08-05).
-1c. **Author:** confirm the `Editions/` layout (§4a); a session can then reorganise the folder.
 2. **Author:** choose the tool for the monthly corrections check; set it up from §10 and test it once by hand.
 3. Build the new apparatus: `since-publication.html` (empty `#edition-1`…`#edition-9` sections), the `aside.correction-notice` style, the "Since publication →" link in every essay's `article-foot`, the footer Trust link on every page, and `since-publication.html` in `tools/genfeed.py`'s page list.
-4. Rewrite the corrections policy on `standards.html` to match §9 — **author approves the wording** (it is a public promise). Also revise its archiving sentences ("archive link being added", "Fragile sources get archived copies") to match §10.
+4. `standards.html` corrections policy: **wording approved by the author 2026-10-03** — replace the `#corrections` list with the version below, in the same commit as item 3 (it links to `since-publication.html`). Sources section: **author chose A (2026-10-03)** — replace "Fragile sources get archived copies as the library grows." with "Ledgers link to the original source. The publication keeps private offline copies of sources for its own verification and does not republish them."
+   ```html
+   <h2 id="corrections">Corrections policy</h2>
+   <p>An essay is accurate as of the day it was published. Two kinds of change are handled separately, and neither is made silently.</p>
+   <ul>
+     <li><strong>Corrections</strong> — something was wrong when the essay was published: a figure, a date, an attribution, a source. A dated correction notice appears at the top of the essay, its Trust Ledger is updated, and the change is logged on the public <a href="corrections.html">corrections page</a>.</li>
+     <li><strong>Developments</strong> — something happened after publication that bears on a time-sensitive claim: a vote, a launch, a revised paper. These are recorded, dated and sourced, on the <a href="since-publication.html">Since publication</a> page, linked from the foot of each essay. They do not change the essay and are not treated as corrections.</li>
+     <li>Time-sensitive claims are re-checked periodically. Nothing is posted in either category until the author has reviewed it.</li>
+     <li>Each essay shows its original publication date and a "last reviewed" date — the last date its Trust Ledger was verified or corrected. Provisional dates (reconstructed from the publication's weekly cadence) are marked provisional until confirmed against the original posts.</li>
+     <li>To report an error, use the <a href="contact.html">contact page</a>. Corrections that survive scrutiny are credited if the reporter wishes.</li>
+   </ul>
+   ```
 5. First since-publication entries, after the author approves and verifies sources: Edition 3 (CLARITY cloture failed 49–50, 2026-09-15; cite the senate.gov roll call), Edition 8 (DEF CON 34 badge shipped on the Baochip-1x).
 6. Edition 8's TROPIC placeholder: the author supplies the Ledger Donjon / TROPIC evaluation link, or the claim comes out — either way handled as an approved correction.
 7. Real publication dates for Editions 4–8 from the X timestamps (author supplies); close the provisional-dates correction.
 8. Edition 1: link the specific Coherent Market Insights report page in the ledger (author verifies the page).
-9. Small inconsistency: `topics/device-architecture.html` and `topics/trust-and-institutions.html` show Edition 8 as "5 min"; `posts.json`, `essays.html` and the essay say "4 min". Make them agree (typo-level; no notice).
-10. Edition 10: manuscript in `Drafts/`; needs hero, X date, standfirst, argument line, topics. Exclude the scratch pad section.
+9. ~~Edition 8 "5 min" on topic pages~~ — fixed in the Edition 10 commit (2026-10-03).
+10. ~~Edition 10~~ — published 2026-10-03.
 11. Submit `sitemap.xml` to Google Search Console and Bing Webmaster Tools (author action; needs domain verification).
 12. About page: add the author's real photo when provided (avatar stays footer-only).
 13. Launch the newsletter (§11) when the author buys the VPS.
@@ -414,6 +436,7 @@ Go-live touches on the site: set `data-endpoint="https://news.<domain>/subscript
 | 2026-10-02 | (docs) | Editorial model changed: claims patrol and `claims-patrol.md` retired; report-only monthly corrections check; corrections vs. developments split; Since Publication page and correction notice specified; Raw Articles offline library and scratch-pad exclusion added |
 | 2026-10-02 | c6c53b5 | Revised docs uploaded via GitHub web; author chose to keep them public as-is; claims-patrol Routine deleted; Start here block and Resume/Close out routine added |
 | 2026-10-02 | c9b81ec | Guarded deploy workflow installed (site-only publish + private-material block); `main` ruleset added; docs no longer served on the website |
+| 2026-10-03 | (web upload) | Edition 10 published; Trust & Institutions topic page fixed (Edition 4 restored, newest-first); topic counts corrected; Edition 8 minutes aligned |
 
 ## 15. The author's standing preferences (collected verbatim where it matters)
 

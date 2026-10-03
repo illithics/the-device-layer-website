@@ -117,6 +117,19 @@
       "topics": [
         "security-and-signing"
       ]
+    },
+    {
+      "edition": 10,
+      "status": "published",
+      "title": "Nothing is secure anymore. Good.",
+      "subtitle": "Charles Guillemet, CTO of Ledger, recently made a compelling argument that AI is rewriting the economics of security.",
+      "url": "posts/nothing-is-secure-anymore-good.html",
+      "date": "2026-10-03",
+      "readingTime": "3 min",
+      "topics": [
+        "device-architecture",
+        "trust-and-institutions"
+      ]
     }
   ]
 }

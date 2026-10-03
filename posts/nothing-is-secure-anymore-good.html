@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nothing is secure anymore. Good. — The Device Layer</title>
+  <meta name="description" content="Charles Guillemet, CTO of Ledger, recently made a compelling argument that AI is rewriting the economics of security." />
+  <link rel="canonical" href="https://www.thedevicelayer.com/posts/nothing-is-secure-anymore-good.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Nothing is secure anymore. Good." />
+  <meta property="og:description" content="At some point you can secure crypto so thoroughly that you’ve secured away part of the reason for crypto existing." />
+  <meta property="og:image" content="https://www.thedevicelayer.com/assets/heroes/ed10.webp" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Nothing is secure anymore. Good.",
+    "datePublished": "2026-10-03",
+    "dateModified": "2026-10-03",
+    "author": { "@type": "Person", "name": "illithics", "url": "https://x.com/illithicKeepKey" },
+    "publisher": { "@type": "Organization", "name": "The Device Layer" }
+  }
+  </script>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate" type="application/rss+xml" title="The Device Layer" href="../feed.xml" />
+  <script>try{if(localStorage.getItem("tdl-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="container">
+      <a class="brand" href="../" aria-label="The Device Layer — home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+        <span class="brand-name">The&nbsp;Device&nbsp;Layer</span>
+      </a>
+      <nav class="masthead-links" aria-label="Primary">
+        <a href="../essays.html">Essays</a>
+        <a href="../topics/">Topics</a>
+        <a href="../about.html">About</a>
+        <a href="../subscribe.html">Subscribe</a>
+        <a href="../search.html">Search</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M17.5 17.5l2 2M19.5 4.5l-2 2M6.5 17.5l-2 2"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="article-wrap">
+    <article class="article">
+      <header class="article-head">
+        <p class="meta-line">
+          <span class="topic-chip">Device Architecture</span>
+          <span>Edition 10</span>
+          <time datetime="2026-10-03">October 3, 2026</time>
+          <span>3 min read</span>
+          <span>by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a></span>
+        </p>
+        <h1>Nothing is secure anymore. Good.</h1>
+        <p class="standfirst">
+          Charles Guillemet, CTO of Ledger, recently made a compelling argument that <a href="https://www.ledger.com/blog-how-ai-is-rewriting-the-economics-of-security" rel="noopener">AI is rewriting the economics of security</a>.
+        </p>
+        <div class="argument-line">
+          <span class="label">The argument in one sentence</span>
+          If AI makes attacks cheap, a wallet’s security has to be observable, not just strong — the
+          goal is to empower the owner, not the castle builder.
+        </div>
+      </header>
+
+      <figure class="hero-figure">
+        <img src="../assets/heroes/ed10.webp" alt="A medieval castle built of transparent glass on a moated hill, its stairways, rooms and machinery visible through the walls." width="1600" height="640" />
+      </figure>
+
+      <blockquote><p>I agree with the diagnosis.</p></blockquote>
+
+      <p>Systems have never needed to be perfectly secure; they needed to be expensive enough to attack that the reward wasn’t worth the effort. AI is eating away at that advantage. Vulnerabilities that once required time, money and highly specialized knowledge to uncover are becoming cheaper to find and easier to exploit.</p>
+
+      <p>Guillemet argues that the old security asymmetry needs to be rebuilt around stronger guarantees: cryptography, formal verification and hardware-rooted trust.</p>
+
+      <p>Ledger has helped establish many of the hardware wallet industry’s foundational principles. I’m obviously not a neutral observer, but I believe crypto users benefit from hardware wallets—including Ledger’s. My bias is worn openly.</p>
+
+      <p><strong>With that said, I’m less convinced by the prescription he lays out.</strong></p>
+
+      <p>If the economics of attack have fundamentally changed, building a more expensive castle may not be enough. Before deciding what comes next, there is another question worth asking:</p>
+
+      <blockquote><p>What exactly are we trying to defend?</p></blockquote>
+
+      <p>A perfectly secure device whose manufacturer ultimately determines what software it runs might provide superb asset protection while providing less user sovereignty.</p>
+
+      <p>A perfectly secure custodial platform might protect assets better than self-custody while eliminating self-custody entirely.</p>
+
+      <p>A formally verified wallet could faithfully execute software whose behavior the user cannot independently inspect.</p>
+
+      <p>A Secure Element can make extracting a private key extraordinarily difficult while doing nothing to establish whether the transaction being authorized represents the owner’s intent.</p>
+
+      <p>And a system could theoretically become <em>more secure</em> by becoming increasingly restrictive, proprietary, centralized and institutionally controlled.</p>
+
+      <blockquote><p>At some point you can secure crypto so thoroughly that you’ve secured away part of the reason for crypto existing.</p></blockquote>
+
+      <p>We can see this line of thinking in the response to another real-world example of the breakdown of security economics, war. The response to cheap and effective asymmetric drone and electronic warfare has been to layer defenses, distribute capability, assume surveillance, use cheap counters against cheap threats, learn publicly from failure, and adapt faster than the adversary.</p>
+
+      <p>This response doesn’t mean that you don’t still want <a href="https://www.pogo.org/analyses/exquisite-defense-fails-in-practice" rel="noopener">“exquisite platforms”</a> that are well thought out with purpose-built security. It just means that no matter how many fortifications you build, <strong>the foe doesn’t owe you the attack you designed against.</strong> Biometrics and Secure Enclaves do bring something substantial to the table, but don’t mistake strengthening one layer for strengthening the system.</p>
+
+      <p>We also need to consider what it is we are protecting. If the objective were merely maximum asset protection, self-custody itself is questionable. Banks, custodians, withdrawal controls and institutional enforcement can provide formidable security. Crypto deliberately accepts responsibilities and risks because it is trying to preserve something else: <strong>individual authority over digital economic activity.</strong> We don’t want a system that is completely bought out by government or corporate interests. We don’t want a system that is relegated to the trash heap of scammers and thieves with only a few true believers holding on for dear life. We want a secure future for crypto that allows individual autonomy over global trade, entrepreneurship and freedom from the existing constraints. <strong>We can’t do that unless we treat openness to the system as a feature, not a bug.</strong></p>
+
+      <p>A wallet isn’t successful merely because nobody can extract its key. If achieving that security requires opaque hardware, unverifiable software, manufacturer authority, institutional attestations the owner cannot independently evaluate, or an ecosystem where users simply have to believe “trust us, it’s secure,” then you have protected one property while compromising another property crypto was supposed to protect.</p>
+
+      <p>At the <em>system level</em>, we want something that remains defensible despite scrutiny, disclosed failures, knowledgeable adversaries, compromised layers and changing attack vectors.</p>
+
+      <p>Open-source software isn’t automatically secure. Auditable hardware isn’t automatically secure. A five-year-old architecture that has been battle tested isn’t automatically better than a new chip. Their advantage is that security can become an observable process: reproducible builds, independent researchers, coordinated disclosure, public vulnerability histories, patches, community scrutiny and years of real-world adversarial exposure. Secure Elements and formal verification can be part of that system too.</p>
+
+      <p><strong>Security is an activity, not a product.</strong></p>
+
+      <p>That’s why openness isn’t an ideological ornament, it’s a consequence of the proposed threat model.</p>
+
+      <p>If AI increasingly means we have to assume the attacker eventually knows how the system works anyway, then you might as well design the system so the defender, owner, researcher and community get to know too.</p>
+
+      <p><strong>The person we should be ultimately trying to empower is the owner—not the castle builder.</strong></p>
+
+      <aside class="disclosure-note">
+        <strong>Disclosure:</strong> the author is COO of KeepKey, an open-source hardware-wallet
+        company and a direct competitor of Ledger, whose CTO's argument this essay responds to. The
+        case for openness made here aligns with the author's commercial position. See the
+        <a href="../about.html#affiliations">affiliation policy</a>.
+      </aside>
+
+      <details class="trust-ledger">
+        <summary>Trust Ledger <span class="tl-sub">claims · sources · uncertainty</span></summary>
+        <div class="trust-ledger-body">
+          <h3>Claims checked</h3>
+          <ul>
+            <li>Charles Guillemet is Ledger's CTO and the author of a piece arguing that AI is rewriting the economics of security by collapsing the cost of attack.</li>
+            <li>Guillemet's prescription centers on stronger guarantees — cryptography, formal verification, and hardware-rooted trust (secure enclaves and zero-knowledge proofs are also named).</li>
+            <li>"Exquisite" is an established defense-procurement term for complex, expensive, low-density platforms, used in debates over their performance against cheap threats.</li>
+          </ul>
+          <h3>Primary sources</h3>
+          <ul>
+            <li><a href="https://www.ledger.com/blog-how-ai-is-rewriting-the-economics-of-security" rel="noopener">How AI Is Rewriting the Economics of Security — Charles Guillemet, Ledger blog (also published as the X article “Nothing is secure anymore”, March 2026)</a>.</li>
+            <li><a href="https://www.pogo.org/analyses/exquisite-defense-fails-in-practice" rel="noopener">Exquisite Defense Fails in Practice — Project On Government Oversight (POGO), analysis</a>.</li>
+          </ul>
+          <h3>Commercial interests</h3>
+          <ul>
+            <li>Ledger sells hardware wallets and related services; the piece discussed is published on Ledger's own blog and describes Ledger's approach.</li>
+            <li>The author is COO of KeepKey, a hardware-wallet company that competes with Ledger and whose open-source model aligns with the essay's argument.</li>
+            <li>POGO is a nonprofit government-oversight organization with no commercial stake in wallets.</li>
+          </ul>
+          <h3>What is confirmed / what remains uncertain</h3>
+          <ul>
+            <li>Confirmed: the authorship, title and central argument of Guillemet's piece; the terms of his prescription.</li>
+            <li>Uncertain: the exact first-publication date of the Ledger blog version (the X article version is dated March 24, 2026 in search indexes).</li>
+            <li>Analysis, not reporting: the comparison with drone and electronic warfare, and the claim that openness follows from the threat model, are the author's argument.</li>
+          </ul>
+          <div class="tl-dates">
+            <span>Published: 2026-10-03</span>
+            <span>Last reviewed: 2026-10-03</span>
+            <span>Corrections: none</span>
+          </div>
+        </div>
+      </details>
+
+      <nav class="pager" aria-label="Edition navigation">
+        <a href="a-decline-in-user-demand-for-privacy.html"><span class="dir">Previous · Edition 9</span><span class="title">A Decline in User Demand for Privacy?</span></a>
+      </nav>
+
+      <section class="related">
+        <h2>~$ related essays</h2>
+        <ol class="post-list">
+          <li><a class="post-item" href="is-there-such-a-thing-as-the-perfect-wallet.html"><span class="meta-line"><span class="topic-chip">Device Architecture</span><span>Edition 8</span></span><h3>Is There Such a Thing as "The Perfect Wallet?"</h3><p>No. But try, fail, and try again.</p></a></li>
+          <li><a class="post-item" href="the-wallet-was-secure-the-customer-wasnt.html"><span class="meta-line"><span class="topic-chip">Trust &amp; Institutions</span><span>Edition 5</span></span><h3>The Wallet Was Secure. The Customer Wasn't.</h3><p>Privacy is not the same thing as security.</p></a></li>
+          <li><a class="post-item" href="self-custody-is-not-just-a-vibe.html"><span class="meta-line"><span class="topic-chip">Trust &amp; Institutions</span><span>Edition 3</span></span><h3>Self-Custody Is Not Just a "Vibe"</h3><p>The CLARITY Act is turning a crypto slogan into a legal boundary.</p></a></li>
+        </ol>
+      </section>
+
+      <footer class="article-foot"><a class="back" href="../essays.html">← All essays</a></footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="20" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="13" width="24" height="5" rx="1.5" class="mark-dim"/><rect x="4" y="6" width="24" height="5" rx="1.5" class="mark-hot"/></svg>
+          <span>The Device Layer — long-form writing about devices, security, and the systems we trust with irreversible decisions. Written by <a href="https://x.com/illithicKeepKey" rel="noopener">illithics</a><img src="../assets/avatar.webp" alt="" class="footer-avatar" width="26" height="26" loading="lazy" />.</span>
+        </div>
+        <div>
+          <h4>Publication</h4>
+          <ul>
+            <li><a href="../essays.html">Essays</a></li>
+            <li><a href="../topics/">Topics</a></li>
+            <li><a href="../subscribe.html">Subscribe</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+            <li><a href="../search.html">Search</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Trust</h4>
+          <ul>
+            <li><a href="../about.html">About &amp; the author</a></li>
+            <li><a href="../standards.html">Editorial standards</a></li>
+            <li><a href="../corrections.html">Corrections</a></li>
+            <li><a href="../privacy.html">Privacy</a></li>
+            <li><a href="../disclosure.html">Responsible disclosure</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-note">© <span id="year"></span> The Device Layer · An independent publication. The author is COO of KeepKey; the publication is editorially independent — <a href="../about.html#affiliations">read the disclosure</a>.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
